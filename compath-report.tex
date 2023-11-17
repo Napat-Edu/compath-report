@@ -1,58 +1,48 @@
-%%%%%% Run at command line, run
-%%%%%% xelatex grad-sample.tex 
-%%%%%% for a few times to generate the output pdf file
 \documentclass[12pt,oneside,openright,a4paper]{cpe-thai-project}
 
 \usepackage{polyglossia}
+
 \setmainfont[
-  Path = fonts/,
-  Extension = .ttf ,
-  ItalicFont = * Italic ,
-  BoldFont = * Bold ,
-  BoldItalicFont = * BoldItalic ,
-  Script = Thai,
-  Mapping=tex-text]{THSarabunNew}
+    Path = fonts/,
+    Extension = .ttf ,
+    ItalicFont = * Italic ,
+    BoldFont = * Bold ,
+    BoldItalicFont = * BoldItalic ,
+    Script = Thai,
+    Mapping=tex-text,
+    Scale=1.23,
+    LetterSpace=0.0,
+    FakeStretch=1.0]{THSarabunNew}
 \setdefaultlanguage{thai}
 \setotherlanguage{english}
-% \newfontfamily\thaifont[Script=Thai,Scale=1.23]{TH Sarabun New}
-% \defaultfontfeatures{Mapping=tex-text,Scale=1.23,LetterSpace=0.0}
-% \setmainfont[
-%   Path = fonts/,
-%   Scale=1.23,LetterSpace=0,WordSpace=1.0,FakeStretch=1.0,Mapping=tex-text]{TH Sarabun New}
 \XeTeXlinebreaklocale "th"
 \XeTeXlinebreakskip=0pt plus 0pt
 \emergencystretch=10pt
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Customize below to suit your needs 
-% The ones that are optional can be left blank. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % First line of title
-\def\disstitleone{Project/Indep study title line 1}   
+\def\disstitleone{Compath: เว็บแอปพลิเคชันสำหรับนักศึกษาวิศวกรรมคอมพิวเตอร์เพื่อปรับปรุงการพัฒนาตนเองและเรซูเม}   
 % Second line of title
-\def\disstitletwo{Project/Indep title line 2 (optional)}   
-% Your first name and lastname
-\def\dissauthor{Mr./Ms. Firstname1 Lastname1}   % 1st member
-%%% Put other group member names here ..
-\def\dissauthortwo{Mr./Ms. Firstname2 Lastname2}   % 2nd member (optional)
-\def\dissauthorthree{Mr./Ms. Firstname3 Lastname3}   % 3rd member (optional)
+\def\disstitletwo{Compath: Web application for CPE students to improve their self-development and resume}   
 
+% author section
+\def\dissauthor{63070501025 Niwatchai Wangtrakuldee}
+\def\dissauthortwo{63070501038 นายนภัทร วารีดี}
+\def\dissauthorthree{63070501039 Narith Thanomsup}
 
-% The degree that you're persuing..
 \def\dissdegree{Bachelor of Engineering} % Name of the degree
 \def\dissdegreeabrev{B.Eng} % Abbreviation of the degree
-\def\dissyear{202x}                   % Year of submission
-\def\thaidissyear{256x}               % Year of submission (B.E.)
+\def\dissyear{2023}                   % Year of submission
+\def\thaidissyear{2566}               % Year of submission (B.E.)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Your project and independent study committee..
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\dissadvisor{Assoc.Prof. My main advisor name , Ph.D.}  % Advisor
-%%% Leave it empty if you have no Co-advisor
-\def\disscoadvisor{Assoc.Prof. My Co-advisor name, Ph.D.}  % Co-advisor
-\def\disscommitteetwo{Asst.Prof. Committee2, Ph.D.}  % 3rd committee member (optional)
-\def\disscommitteethree{Asst.Prof. Committee3, Ph.D.}   % 4th committee member (optional) 
-\def\disscommitteefour{}    % 5th committee member (optional) 
+\def\dissadvisor{ผศ.ดร. ขจรพงษ์ อัครจิตสกุล}  % Advisor
+
+\def\disscoadvisor{}  % Co-advisor (none)
+\def\disscommitteetwo{Asst.Prof. Committee1, Ph.D.}  % 3rd committee member (optional)
+\def\disscommitteethree{Asst.Prof. Committee2, Ph.D.}   % 4th committee member (optional) 
+\def\disscommitteefour{Asst.Prof. Committee3, Ph.D.}    % 5th committee member (optional) 
 
 \def\worktype{Project} %%  Project or Independent study
 \def\disscredit{3}   %% 3 credits or 6 credits
@@ -122,11 +112,11 @@
 \begin{document}
 
 \pdfstringdefDisableCommands{%
-  \let\MakeUppercase\relax
+    \let\MakeUppercase\relax
 }
 
 \begin{center}
-  \includegraphics[width=2.8cm]{logo02.jpg}
+    \includegraphics[width=2.8cm]{logo02.jpg}
 \end{center}
 \vspace*{-1cm}
 
@@ -153,9 +143,9 @@ the network connectivity is considered, the obtainable throughput
 will reduce by as many as 43\% of the maximum throughput.
 
 \begin{flushleft}
-  \begin{tabular*}{\textwidth}{@{}lp{0.8\textwidth}}
-    \textbf{Keywords}: & Multihop ad hoc networks / Topology control / Single-Hop Throughput
-  \end{tabular*}
+    \begin{tabular*}{\textwidth}{@{}lp{0.8\textwidth}}
+        \textbf{Keywords}: & Multihop ad hoc networks / Topology control / Single-Hop Throughput
+    \end{tabular*}
 \end{flushleft}
 \endabstract
 
@@ -170,11 +160,11 @@ will reduce by as many as 43\% of the maximum throughput.
 เซ็นเซอร์ เอ็กซ์เพรสรองรับคอนเซปต์สหัสวรรษเมจิก อิ่มแปร้ เฟรชชี่ ชาร์ปเช็งเม้งคลาสสิก แพตเทิร์น แอลมอนด์ เพลซว้อยก๊วน ซาร์ดีนซี้เนิร์สเซอรีอีสต์ สเตเดียมเพียบแปร้โอ้ยแคมปัส จัมโบ้ช็อตแมคเคอเรลอึ๋ม สตริง แมกกาซีนสตริงผ้าห่ม ฮัลโหล ยิม รอยัลตี้
 
 \begin{flushleft}
-  \begin{tabular*}{\textwidth}{@{}lp{0.8\textwidth}}
-    & \\
+    \begin{tabular*}{\textwidth}{@{}lp{0.8\textwidth}}
+        & \\
 
-    \textbf{คำสำคัญ}: & การชุบเคลือบด้วยไฟฟ้า / การชุบเคลือบผิวเหล็ก /  เคลือบผิวรังสี
-  \end{tabular*}
+        \textbf{คำสำคัญ}: & การชุบเคลือบด้วยไฟฟ้า / การชุบเคลือบผิวเหล็ก /  เคลือบผิวรังสี
+    \end{tabular*}
 \end{flushleft}
 \endabstract
 
@@ -201,12 +191,12 @@ will reduce by as many as 43\% of the maximum throughput.
 % You have to add this manually..
 \listofsymbols
 \begin{flushleft}
-  \begin{tabular}{@{}p{0.07\textwidth}p{0.7\textwidth}p{0.1\textwidth}}
-    \textbf{SYMBOL} &                        & \textbf{UNIT} \\[0.2cm]
-    $\alpha$        & Test variable\hfill    & m$^2$         \\
-    $\lambda$       & Interarival rate\hfill & jobs/second   \\
-    $\mu$           & Service rate\hfill     & jobs/second   \\
-  \end{tabular}
+    \begin{tabular}{@{}p{0.07\textwidth}p{0.7\textwidth}p{0.1\textwidth}}
+        \textbf{SYMBOL} &                        & \textbf{UNIT} \\[0.2cm]
+        $\alpha$        & Test variable\hfill    & m$^2$         \\
+        $\lambda$       & Interarival rate\hfill & jobs/second   \\
+        $\mu$           & Service rate\hfill     & jobs/second   \\
+    \end{tabular}
 \end{flushleft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%% List of vocabs & terms %%%%%%%%%%%%%%%%%
@@ -214,10 +204,10 @@ will reduce by as many as 43\% of the maximum throughput.
 % You also have to add this manually..
 \listofvocab
 \begin{flushleft}
-  \begin{tabular}{@{}p{1in}@{=\extracolsep{0.5in}}p{0.73\textwidth}}
-    Test  & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condimentum purus. Pellentesque sed augue sapien. In volutpat quis diam laoreet suscipit. Curabitur fringilla sem nisi, at condimentum lectus consequat vitae. \\
-    MANET & Mobile Ad Hoc Network
-  \end{tabular}
+    \begin{tabular}{@{}p{1in}@{=\extracolsep{0.5in}}p{0.73\textwidth}}
+        Test  & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condimentum purus. Pellentesque sed augue sapien. In volutpat quis diam laoreet suscipit. Curabitur fringilla sem nisi, at condimentum lectus consequat vitae. \\
+        MANET & Mobile Ad Hoc Network
+    \end{tabular}
 \end{flushleft}
 
 %\setlength{\parskip}{1.2mm}
@@ -245,17 +235,17 @@ will reduce by as many as 43\% of the maximum throughput.
 \cite{bworld}
 
 \begin{figure}[!h]
-  \centering
-  \fbox{\includegraphics[width=10cm]{./chart-figure-5.png}}
-  \caption{This is the figure x1 ทดสอบ จาก \href{https://www.google.com} {https://www.google.com}}\label{fig:x1}
+    \centering
+    \fbox{\includegraphics[width=10cm]{./chart-figure-5.png}}
+    \caption{This is the figure x1 ทดสอบ จาก \href{https://www.google.com} {https://www.google.com}}\label{fig:x1}
 \end{figure}
 
 
 Explain the motivations of your works.
 \begin{itemize}
-  \item   What are the problems you are addressing?
-  \item  Why they are important?
-  \item  What are the limitations of existing approaches?
+    \item   What are the problems you are addressing?
+    \item  Why they are important?
+    \item  What are the limitations of existing approaches?
 \end{itemize}
 You may combine this section with the background section.
 
@@ -269,9 +259,9 @@ You may combine this section with the background section.
 
 Explain the scope of your works.
 \begin{itemize}
-  \item   What are the problems you are addressing?
-  \item  Why they are important?
-  \item  What are the limitations of existing approaches?
+    \item   What are the problems you are addressing?
+    \item  Why they are important?
+    \item  What are the limitations of existing approaches?
 \end{itemize}
 
 \section{ประโยชน์ที่คาดว่าจะได้่รับ}
@@ -299,14 +289,14 @@ Explain theory, algorithms, protocols, or existing research works and tools rela
 \section{ระบบแนะนำสินค้า}
 
 \begin{table}[!h]
-  \caption{test table method1}\label{tbl:method1}
-  \begin{tabular}{c|c|l|rr} \hline\hline
-    Center & Center & left aligned & Right & Right aligned \\ \hline\hline
-    Center & Center & left aligned & Right & Right aligned \\ \hline
-    Center & Center & left aligned & Right & Right aligned \\
-    Center & Center & left aligned & Right & Right aligned \\ \hline
-    Center & Center & left aligned & Right & Right aligned \\ \hline\hline
-  \end{tabular}
+    \caption{test table method1}\label{tbl:method1}
+    \begin{tabular}{c|c|l|rr} \hline\hline
+        Center & Center & left aligned & Right & Right aligned \\ \hline\hline
+        Center & Center & left aligned & Right & Right aligned \\ \hline
+        Center & Center & left aligned & Right & Right aligned \\
+        Center & Center & left aligned & Right & Right aligned \\ \hline
+        Center & Center & left aligned & Right & Right aligned \\ \hline\hline
+    \end{tabular}
 \end{table}
 
 
@@ -318,10 +308,10 @@ You can place the figure and refer to it as รูปที่~\ref{fig:model2}.
 The figure and table numbering will be run and updated automatically when you add/remove tables/figures from the document.
 
 \begin{figure}[!h]\centering
-  \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-  \setlength{\fboxsep}{1cm}
-  \fbox{\includegraphics[width=5cm]{./model2.pdf}}
-  \caption{The network model}\label{fig:model2}
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \setlength{\fboxsep}{1cm}
+    \fbox{\includegraphics[width=5cm]{./model2.pdf}}
+    \caption{The network model}\label{fig:model2}
 \end{figure}
 
 
@@ -349,18 +339,18 @@ Explain the design (how you plan to implement your work) of your project. Adjust
 \section{สถาปัตยกรรมระบบ}
 
 \begin{table}[!h]
-  \centering
-  \caption{test table x1}\label{tbl:symbols}
-  \begin{tabular}{@{}p{0.07\textwidth}|p{0.7\textwidth}p{0.1\textwidth}}\hline
-    \multicolumn{2}{l}{\textbf{SYMBOL}} & \textbf{UNIT}                         \\ \hline
-    $\alpha$                            & Test variable\hfill     & m$^2$       \\
-    $\lambda$                           & Interarrival rate\hfill & jobs/second \\
-    $\mu$                               & Service rate\hfill      & jobs/second \\ \hline
-  \end{tabular}
-  %\begin{tabular}{c|c} \hline
-  % $\alpha$ & $\beta$ \\ \hline
-  % $\delta$ & $\mu$ \\ \hline
-  %\end{tabular}
+    \centering
+    \caption{test table x1}\label{tbl:symbols}
+    \begin{tabular}{@{}p{0.07\textwidth}|p{0.7\textwidth}p{0.1\textwidth}}\hline
+        \multicolumn{2}{l}{\textbf{SYMBOL}} & \textbf{UNIT}                         \\ \hline
+        $\alpha$                            & Test variable\hfill     & m$^2$       \\
+        $\lambda$                           & Interarrival rate\hfill & jobs/second \\
+        $\mu$                               & Service rate\hfill      & jobs/second \\ \hline
+    \end{tabular}
+    %\begin{tabular}{c|c} \hline
+    % $\alpha$ & $\beta$ \\ \hline
+    % $\delta$ & $\mu$ \\ \hline
+    %\end{tabular}
 \end{table}
 
 
@@ -459,7 +449,7 @@ This is where you put hardware circuit diagrams, detailed experimental data in t
 
 
 \begin{figure}[!h]
-  \caption{This is the figure x11 ทดสอบ จาก \href{https://www.google.com} {https://www.google.com}}\label{fig:x1}
+    \caption{This is the figure x11 ทดสอบ จาก \href{https://www.google.com} {https://www.google.com}}\label{fig:x1}
 \end{figure}
 
 
@@ -470,7 +460,7 @@ converted to a physical time unit by multiplying the step size
 $\Delta$. For a fBm self-similar traffic source,
 Norros~\cite{norros95} provides its EB as
 \begin{equation}\label{eq:norros}
-  C = \lambda + (\kappa(H)\sqrt{-2\ln\epsilon})^{1/H}a^{1/(2H)}x^{-(1-H)/H}\lambda^{1/(2H)}
+    C = \lambda + (\kappa(H)\sqrt{-2\ln\epsilon})^{1/H}a^{1/(2H)}x^{-(1-H)/H}\lambda^{1/(2H)}
 \end{equation}
 where $\kappa(H) = H^H(1-H)^{(1-H)}$. Simplicity in the calculation is
 the attractive feature of (\ref{eq:norros}).
@@ -480,22 +470,22 @@ accurate estimation of the loss probability compared to previous
 bandwidth allocation techniques according to simulation results.
 Consider a discrete-time queueing system with constant service rate
 $C$ and input process $\lambda_n$ with $\mathbb{E}\{\lambda_n\} =
-  \lambda$ and $\mathrm{Var}\{\lambda_n\} = \sigma^2$.  Define $X_n \equiv
-  \sum_{k=1}^n \lambda_k - Cn$.  The loss probability due to the MVA
+    \lambda$ and $\mathrm{Var}\{\lambda_n\} = \sigma^2$.  Define $X_n \equiv
+    \sum_{k=1}^n \lambda_k - Cn$.  The loss probability due to the MVA
 approach is given by
 \begin{equation}\label{eq:loss_mva}
-  \varepsilon \approx \alpha e^{-m_x/2}
+    \varepsilon \approx \alpha e^{-m_x/2}
 \end{equation}
 where
 \begin{equation}\label{eq:mx}
-  m_x = \min_{n \geq 0} \frac{((C-\lambda)n + B)^2}{\mathrm{Var}\{X_n\}} =
-  \frac{((C-\lambda)n^\ast + B)^2}{\mathrm{Var}\{X_{n^{\ast}}\}}
+    m_x = \min_{n \geq 0} \frac{((C-\lambda)n + B)^2}{\mathrm{Var}\{X_n\}} =
+    \frac{((C-\lambda)n^\ast + B)^2}{\mathrm{Var}\{X_{n^{\ast}}\}}
 \end{equation}
 and
 \begin{equation}\label{eq:alpha}
-  \alpha =
-  \frac{1}{\lambda\sqrt{2\pi\sigma^2}}\exp\left(\frac{(C-\lambda)^2}{2\sigma^2}\right)
-  \int_C^\infty (r-C)\exp\left(\frac{(r-\lambda)^2}{2\sigma^2}\right)\, dr
+    \alpha =
+    \frac{1}{\lambda\sqrt{2\pi\sigma^2}}\exp\left(\frac{(C-\lambda)^2}{2\sigma^2}\right)
+    \int_C^\infty (r-C)\exp\left(\frac{(r-\lambda)^2}{2\sigma^2}\right)\, dr
 \end{equation}
 For a given $\varepsilon$, we numerically solve for $C$ that satisfies
 (\ref{eq:loss_mva}). Any search algorithm can be used to do the task.
@@ -508,7 +498,7 @@ with a Gaussian process, which allows $\mathrm{Var}\{X_n\}$ to be
 represented by the autocovariance function.  In particular, the
 variance of $X_n$ can be expressed in terms of $C_{\lambda}(l)$ as
 \begin{equation}
-  \mathrm{Var}\{X_n\} = nC_{\lambda}(0) + 2\sum_{l=1}^{n-1} (n-l)C_{\lambda}(l)
+    \mathrm{Var}\{X_n\} = nC_{\lambda}(0) + 2\sum_{l=1}^{n-1} (n-l)C_{\lambda}(l)
 \end{equation}
 Therefore, $C_{\lambda}(l)$ must be known in the MVA technique, either
 by assuming specific traffic models or by off-line analysis in case of
@@ -516,7 +506,7 @@ traces.  In most practical situations, $C_{\lambda}(l)$ will not be
 known in advance, and an on-line measurement algorithm developed
 in~\cite{eun01} is required to jointly determine both $n^\ast$ and
 $m_x$. For fGn traffic, $\mathrm{Var}\{X_n\}$ is equal to $\sigma^2
-  n^{2H}$, where $\sigma^2 = \mathrm{Var}\{\lambda_n\}$, and we can find
+    n^{2H}$, where $\sigma^2 = \mathrm{Var}\{\lambda_n\}$, and we can find
 the $n^\ast$ that minimizes (\ref{eq:mx}) directly. Although $\lambda$
 can be easily measured, it is not the case for $\sigma^2$ and $H$.
 Consequently, the MVA technique suffers from the need of prior
@@ -531,7 +521,7 @@ knowledge traffic parameters.
 
 
 \begin{figure}[!h]
-  \caption{This is the figure x11 ทดสอบ จาก \href{https://www.google.com} {https://www.google.com}}\label{fig:x1}
+    \caption{This is the figure x11 ทดสอบ จาก \href{https://www.google.com} {https://www.google.com}}\label{fig:x1}
 \end{figure}
 
 Next, we show how $\mathrm{Var}\{X_n\}$ can be determined.  Let
@@ -541,7 +531,7 @@ with a Gaussian process, which allows $\mathrm{Var}\{X_n\}$ to be
 represented by the autocovariance function.  In particular, the
 variance of $X_n$ can be expressed in terms of $C_{\lambda}(l)$ as
 \begin{equation}
-  \mathrm{Var}\{X_n\} = nC_{\lambda}(0) + 2\sum_{l=1}^{n-1} (n-l)C_{\lambda}(l)
+    \mathrm{Var}\{X_n\} = nC_{\lambda}(0) + 2\sum_{l=1}^{n-1} (n-l)C_{\lambda}(l)
 \end{equation}
 
 \noindent{\large\bf Add more topic as you need} \\
@@ -552,7 +542,7 @@ traces.  In most practical situations, $C_{\lambda}(l)$ will not be
 known in advance, and an on-line measurement algorithm developed
 in~\cite{eun01} is required to jointly determine both $n^\ast$ and
 $m_x$. For fGn traffic, $\mathrm{Var}\{X_n\}$ is equal to $\sigma^2
-  n^{2H}$, where $\sigma^2 = \mathrm{Var}\{\lambda_n\}$, and we can find
+    n^{2H}$, where $\sigma^2 = \mathrm{Var}\{\lambda_n\}$, and we can find
 the $n^\ast$ that minimizes (\ref{eq:mx}) directly. Although $\lambda$
 can be easily measured, it is not the case for $\sigma^2$ and $H$.
 Consequently, the MVA technique suffers from the need of prior
