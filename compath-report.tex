@@ -1,0 +1,379 @@
+\documentclass[12pt,oneside,openright,a4paper]{cpe-thai-project}
+
+\usepackage{polyglossia}
+
+\setmainfont[
+    Path = fonts/,
+    Extension = .ttf ,
+    ItalicFont = * Italic ,
+    BoldFont = * Bold ,
+    BoldItalicFont = * BoldItalic ,
+    Script = Thai,
+    Mapping=tex-text,
+    Scale=1.23,
+    LetterSpace=0.0,
+    FakeStretch=1.0]{THSarabunNew}
+\setdefaultlanguage{thai}
+\setotherlanguage{english}
+\XeTeXlinebreaklocale "th"
+\XeTeXlinebreakskip=0pt plus 0pt
+\emergencystretch=10pt
+
+% First line of title
+\def\disstitleone{Compath: เว็บแอปพลิเคชันสำหรับนักศึกษาวิศวกรรมคอมพิวเตอร์เพื่อปรับปรุงการพัฒนาตนเองและเรซูเม}   
+% Second line of title
+\def\disstitletwo{Compath: Web application for CPE students to improve their self-development and resume}   
+
+% author section
+\def\dissauthor{63070501025 Niwatchai Wangtrakuldee}
+\def\dissauthortwo{63070501038 นายนภัทร วารีดี}
+\def\dissauthorthree{63070501039 Narith Thanomsup}
+
+\def\dissdegree{Bachelor of Engineering} % Name of the degree
+\def\dissdegreeabrev{B.Eng} % Abbreviation of the degree
+\def\dissyear{2023}                   % Year of submission
+\def\thaidissyear{2566}               % Year of submission (B.E.)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Your project and independent study committee..
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\dissadvisor{ผศ.ดร. ขจรพงษ์ อัครจิตสกุล}  % Advisor
+
+\def\disscoadvisor{}  % Co-advisor (none)
+\def\disscommitteetwo{Asst.Prof. Committee1, Ph.D.}  % 3rd committee member (optional)
+\def\disscommitteethree{Asst.Prof. Committee2, Ph.D.}   % 4th committee member (optional) 
+\def\disscommitteefour{Asst.Prof. Committee3, Ph.D.}    % 5th committee member (optional) 
+
+\def\worktype{Project} %%  Project or Independent study
+\def\disscredit{3}   %% 3 credits or 6 credits
+
+
+\def\fieldofstudy{Computer Engineering} 
+\def\department{Computer Engineering} 
+\def\faculty{Engineering}
+
+\def\thaifieldofstudy{วิศวกรรมคอมพิวเตอร์} 
+\def\thaidepartment{วิศวกรรมคอมพิวเตอร์} 
+\def\thaifaculty{วิศวกรรมศาสตร์}
+ 
+\def\appendixnames{Appendix} %%% Appendices or Appendix
+
+\def\thaiworktype{ปริญญานิพนธ์} %  Project or research project % 
+\def\thaidisstitleone{หัวข้อปริญญานิพนธ์บรรทัดแรก}
+\def\thaidisstitletwo{หัวข้อปริญญานิพนธ์บรรทัดสอง}
+\def\thaidissauthor{นายสมศักดิ์ คอมพิวเตอร์}
+\def\thaidissauthortwo{นางสาวสมศรี คอมพิวเตอร์2} %Optional
+\def\thaidissauthorthree{นางสาวสมปอง คอมพิวเตอร์3} %Optional
+
+\def\thaidissadvisor{รศ.ดร.ที่ปรึกษา วิทยานิพนธ์}
+%% Leave this empty if you have no co-advisor
+\def\thaidisscoadvisor{รศ.ดร.ที่ปรึกษา วิทยานิพนธ์ร่วม} %Optional
+\def\thaidissdegree{วิศวกรรมศาสตรบัณฑิต}
+
+% Change the line spacing here...
+\linespread{1.15}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End of personal customization.  Do not modify from this part 
+% to \begin{document} unless you know what you are doing...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%% Dissertation style %%%%%%%%%%%
+%\linespread{1.6} % Double-spaced  
+%%\oddsidemargin    0.5in
+%%\evensidemargin   0.5in
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\subfigtopskip}{10pt}
+%\renewcommand{\subfigbottomskip}{-5pt} 
+%\renewcommand{\subfigcapskip}{-6pt} %vertical space between caption
+%                                    %and figure.
+%\renewcommand{\subfigcapmargin}{0pt}
+
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\def\QED{\mbox{\rule[0pt]{1.5ex}{1.5ex}}}
+\def\proof{\noindent\hspace{2em}{\itshape Proof: }}
+\def\endproof{\hspace*{\fill}~\QED\par\endtrivlist\unskip}
+%\newenvironment{proof}{{\sc Proof:}}{~\hfill \blacksquare}
+%% The hyperref package redefines the \appendix. This one 
+%% is from the dissertation.cls
+%\def\appendix#1{\iffirstappendix \appendixcover \firstappendixfalse \fi \chapter{#1}}
+%\renewcommand{\arraystretch}{0.8}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{ragged2e}
+\begin{document}
+
+\pdfstringdefDisableCommands{%
+    \let\MakeUppercase\relax
+}
+
+\begin{center}
+    \includegraphics[width=2.8cm]{logo02.jpg}
+\end{center}
+\vspace*{-1cm}
+
+\maketitlepage
+\makesignaturepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% English abstract %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstract
+
+In a multihop ad hoc network, the interference among nodes is
+reduced to maximize the throughput by using a smallest transmission
+range that still preserve the network connectivity. However, most
+existing works on transmission range control focus on the
+connectivity but lack of results on the throughput performance. This
+paper analyzes the per-node saturated throughput of an IEEE 802.11b
+multihop ad hoc network with a uniform transmission range. Compared
+to simulation, our model can accurately predict the per-node
+throughput.  The results show that the maximum achievable per-node
+throughput can be as low as 11\% of the channel capacity in a normal
+set of $\alpha$ operating parameters independent of node density. However, if
+the network connectivity is considered, the obtainable throughput
+will reduce by as many as 43\% of the maximum throughput.
+
+\begin{flushleft}
+    \begin{tabular*}{\textwidth}{@{}lp{0.8\textwidth}}
+        \textbf{Keywords}: & Multihop ad hoc networks / Topology control / Single-Hop Throughput
+    \end{tabular*}
+\end{flushleft}
+\endabstract
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Thai abstract here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% {\newfontfamily\thaifont{TH Sarabun New:script=thai}[Scale=1.3]
+% \XeTeXlinebreaklocale "th_TH"	
+% \thaifont
+\thaiabstract
+
+เซ็นเซอร์ เอ็กซ์เพรสรองรับคอนเซปต์สหัสวรรษเมจิก อิ่มแปร้ เฟรชชี่ ชาร์ปเช็งเม้งคลาสสิก แพตเทิร์น แอลมอนด์ เพลซว้อยก๊วน ซาร์ดีนซี้เนิร์สเซอรีอีสต์ สเตเดียมเพียบแปร้โอ้ยแคมปัส จัมโบ้ช็อตแมคเคอเรลอึ๋ม สตริง แมกกาซีนสตริงผ้าห่ม ฮัลโหล ยิม รอยัลตี้
+
+\begin{flushleft}
+    \begin{tabular*}{\textwidth}{@{}lp{0.8\textwidth}}
+        & \\
+
+        \textbf{คำสำคัญ}: & การชุบเคลือบด้วยไฟฟ้า / การชุบเคลือบผิวเหล็ก /  เคลือบผิวรังสี
+    \end{tabular*}
+\end{flushleft}
+\endabstract
+
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% Acknowledgments %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\preface
+ขอบคุณอาจารย์ที่ปรึกษา กรรมการ พ่อแม่พี่น้อง และเพื่อนๆ คนที่ช่วยให้งานสำเร็จ ตามต้องการ
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% ToC, List of figures/tables %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The three commands below automatically generate the table 
+% of content, list of tables and list of figures
+\tableofcontents
+\listoftables
+\listoffigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% List of symbols page %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You have to add this manually..
+\listofsymbols
+\begin{flushleft}
+    \begin{tabular}{@{}p{0.07\textwidth}p{0.7\textwidth}p{0.1\textwidth}}
+        \textbf{SYMBOL} &                        & \textbf{UNIT} \\[0.2cm]
+        $\alpha$        & Test variable\hfill    & m$^2$         \\
+        $\lambda$       & Interarival rate\hfill & jobs/second   \\
+        $\mu$           & Service rate\hfill     & jobs/second   \\
+    \end{tabular}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% List of vocabs & terms %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You also have to add this manually..
+\listofvocab
+\begin{flushleft}
+    \begin{tabular}{@{}p{1in}@{=\extracolsep{0.5in}}p{0.73\textwidth}}
+        Test  & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non condimentum purus. Pellentesque sed augue sapien. In volutpat quis diam laoreet suscipit. Curabitur fringilla sem nisi, at condimentum lectus consequat vitae. \\
+        MANET & Mobile Ad Hoc Network
+    \end{tabular}
+\end{flushleft}
+
+%\setlength{\parskip}{1.2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% Main body %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\include{chapters/chapter1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  Literature Review %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{chapters/chapter2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{chapters/chapter3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Experiments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{chapters/chapter4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Conclusions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{chapters/chapter5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% Comment this in your report to show only references you have
+%%%% cited. Otherwise, all the references below will be shown.
+%\nocite{*}
+%% Use the kmutt.bst for bibtex bibliography style 
+%% You must have cpe.bib and string.bib in your current directory.
+%% You may go to file .bbl to manually edit the bib items.
+
+% Sept, 2021 by Thanin
+% improve url breaks to prevent unnecessary big white spaces in some cases
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+% 
+
+\bibliographystyle{kmutt}
+\bibliography{string,cpe}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% Appendix %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix{ชื่อภาคผนวกที่ 1}
+\noindent{\large\bf ใส่หัวข้อตามความเหมาะสม} \\
+
+This is where you put hardware circuit diagrams, detailed experimental data in tables or source codes, etc.. \\ \bigskip
+
+
+\begin{figure}[!h]
+    \caption{This is the figure x11 ทดสอบ จาก \href{https://www.google.com} {https://www.google.com}}\label{fig:x1}
+\end{figure}
+
+
+This appendix describes two static allocation methods for fGn (or fBm)
+traffic. Here, $\lambda$ and $C$ are respectively the traffic arrival
+rate and the service rate per dimensionless time step. Their unit are
+converted to a physical time unit by multiplying the step size
+$\Delta$. For a fBm self-similar traffic source,
+Norros~\cite{norros95} provides its EB as
+\begin{equation}\label{eq:norros}
+    C = \lambda + (\kappa(H)\sqrt{-2\ln\epsilon})^{1/H}a^{1/(2H)}x^{-(1-H)/H}\lambda^{1/(2H)}
+\end{equation}
+where $\kappa(H) = H^H(1-H)^{(1-H)}$. Simplicity in the calculation is
+the attractive feature of (\ref{eq:norros}).
+
+The MVA technique developed in~\cite{kim01} so far provides the most
+accurate estimation of the loss probability compared to previous
+bandwidth allocation techniques according to simulation results.
+Consider a discrete-time queueing system with constant service rate
+$C$ and input process $\lambda_n$ with $\mathbb{E}\{\lambda_n\} =
+    \lambda$ and $\mathrm{Var}\{\lambda_n\} = \sigma^2$.  Define $X_n \equiv
+    \sum_{k=1}^n \lambda_k - Cn$.  The loss probability due to the MVA
+approach is given by
+\begin{equation}\label{eq:loss_mva}
+    \varepsilon \approx \alpha e^{-m_x/2}
+\end{equation}
+where
+\begin{equation}\label{eq:mx}
+    m_x = \min_{n \geq 0} \frac{((C-\lambda)n + B)^2}{\mathrm{Var}\{X_n\}} =
+    \frac{((C-\lambda)n^\ast + B)^2}{\mathrm{Var}\{X_{n^{\ast}}\}}
+\end{equation}
+and
+\begin{equation}\label{eq:alpha}
+    \alpha =
+    \frac{1}{\lambda\sqrt{2\pi\sigma^2}}\exp\left(\frac{(C-\lambda)^2}{2\sigma^2}\right)
+    \int_C^\infty (r-C)\exp\left(\frac{(r-\lambda)^2}{2\sigma^2}\right)\, dr
+\end{equation}
+For a given $\varepsilon$, we numerically solve for $C$ that satisfies
+(\ref{eq:loss_mva}). Any search algorithm can be used to do the task.
+Here, the bisection method is used.
+
+Next, we show how $\mathrm{Var}\{X_n\}$ can be determined.  Let
+$C_{\lambda}(l)$ be the autocovariance function of $\lambda_n$.  The
+MVA technique basically approximates the input process $\lambda_n$
+with a Gaussian process, which allows $\mathrm{Var}\{X_n\}$ to be
+represented by the autocovariance function.  In particular, the
+variance of $X_n$ can be expressed in terms of $C_{\lambda}(l)$ as
+\begin{equation}
+    \mathrm{Var}\{X_n\} = nC_{\lambda}(0) + 2\sum_{l=1}^{n-1} (n-l)C_{\lambda}(l)
+\end{equation}
+Therefore, $C_{\lambda}(l)$ must be known in the MVA technique, either
+by assuming specific traffic models or by off-line analysis in case of
+traces.  In most practical situations, $C_{\lambda}(l)$ will not be
+known in advance, and an on-line measurement algorithm developed
+in~\cite{eun01} is required to jointly determine both $n^\ast$ and
+$m_x$. For fGn traffic, $\mathrm{Var}\{X_n\}$ is equal to $\sigma^2
+    n^{2H}$, where $\sigma^2 = \mathrm{Var}\{\lambda_n\}$, and we can find
+the $n^\ast$ that minimizes (\ref{eq:mx}) directly. Although $\lambda$
+can be easily measured, it is not the case for $\sigma^2$ and $H$.
+Consequently, the MVA technique suffers from the need of prior
+knowledge traffic parameters.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% The 2nd appendix %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix{ชื่อภาคผนวกที่ 2}
+\noindent{\large\bf ใส่หัวข้อตามความเหมาะสม} \\
+
+
+\begin{figure}[!h]
+    \caption{This is the figure x11 ทดสอบ จาก \href{https://www.google.com} {https://www.google.com}}\label{fig:x1}
+\end{figure}
+
+Next, we show how $\mathrm{Var}\{X_n\}$ can be determined.  Let
+$C_{\lambda}(l)$ be the autocovariance function of $\lambda_n$.  The
+MVA technique basically approximates the input process $\lambda_n$
+with a Gaussian process, which allows $\mathrm{Var}\{X_n\}$ to be
+represented by the autocovariance function.  In particular, the
+variance of $X_n$ can be expressed in terms of $C_{\lambda}(l)$ as
+\begin{equation}
+    \mathrm{Var}\{X_n\} = nC_{\lambda}(0) + 2\sum_{l=1}^{n-1} (n-l)C_{\lambda}(l)
+\end{equation}
+
+\noindent{\large\bf Add more topic as you need} \\
+
+Therefore, $C_{\lambda}(l)$ must be known in the MVA technique, either
+by assuming specific traffic models or by off-line analysis in case of
+traces.  In most practical situations, $C_{\lambda}(l)$ will not be
+known in advance, and an on-line measurement algorithm developed
+in~\cite{eun01} is required to jointly determine both $n^\ast$ and
+$m_x$. For fGn traffic, $\mathrm{Var}\{X_n\}$ is equal to $\sigma^2
+    n^{2H}$, where $\sigma^2 = \mathrm{Var}\{\lambda_n\}$, and we can find
+the $n^\ast$ that minimizes (\ref{eq:mx}) directly. Although $\lambda$
+can be easily measured, it is not the case for $\sigma^2$ and $H$.
+Consequently, the MVA technique suffers from the need of prior
+knowledge traffic parameters.
+
+
+
+\end{document}
