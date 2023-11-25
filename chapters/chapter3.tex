@@ -1,48 +1,186 @@
-\chapter{วิธีการดำเนินงาน}
+\chapter{การออกแบบและวิธีการดำเนินงาน}
 
-\emph{หัวข้อต่าง ๆ ในแต่ละบทเป็นเพียงตัวอย่างเท่านั้น หัวข้อที่จะใส่ในแต่ละบทขึ้นอยู่กับโปรเจคของนักศึกษาและอาจารย์ที่ปรึกษา}
+\section{รายละเอียดของโครงงาน}
+\subsection{Use Case Narrative}
+\begin{itemize}
+    \item Use Case Narrative ของ Resume Career Prediction
+          \begin{table}[!h]
+              % \centering
+              \begin{tabular}{|l|l|} \hline
+                  Actor                 & Anonymous                                       \\ \hline
+                  Goal                  & ต้องการทราบถึงอาชีพที่เหมาะสมกับตนเอง                 \\ \hline
+                  Precondition          & -                                               \\ \hline
+                  Main success scenario & 1. ผู้ใช้ขอคำแนะนำอาชีพที่เหมาะสมกับตนเอง                \\
+                                        & 2. ระบบถามข้อมูลของผู้ใช้                            \\
+                                        & 3. ผู้ใช้กรอกข้อมูล                                  \\
+                                        & 4. ระบบถามเพื่อยืนยันการกรอกข้อมูล                    \\
+                                        & 5. ผู้ใช้ยืนยันการกรอกข้อมูล                           \\
+                                        & 6. ระบบแสดงอาชีพที่เหมาะสมกับผู้ใช้                    \\ \hline
+                  Extensions (a)        & 5a. ผู้ใช้กรอกข้อมูลไม่ครบ                            \\
+                                        & 6a. ระบบขึ้นเตือนว่าผู้ใช้ยังกรอกข้อมูลไม่ครบ              \\
+                                        & 7a. กลับไปที่ขั้นตอนที่ 3                              \\ \hline
+                  Postcodition          & ระบบแนะนำให้ผู้ใช้ไปวิเคราะห์ข้อมูลเชิงลึกของอาชีพที่ได้แนะนำไป \\ \hline
+              \end{tabular}
+          \end{table}
+    \item Use Case Narrative ของ See career path node tree
+          \begin{table}[!h]
+              % \centering
+              \begin{tabular}{|l|l|} \hline
+                  Actor                 & Anonymous                                              \\ \hline
+                  Goal                  & ต้องการดูแผนผังสายอาชีพ                                    \\ \hline
+                  Precondition          & ผู้ใช้กำลังดูแผนผังรวมของสายอาชีพ                              \\ \hline
+                  Main success scenario & 1. ใช้เลือกอาชีพที่ต้องการจะดู                                \\
+                                        & 2. ระบบแสดงรายละเอียดย่อยเป็นรูปแบบแผนผังของสายอาชีพที่ผู้ใช้เลือก \\ \hline
+                  Extensions (a)        & 1a. ผู้ใช้ยังไม่ได้เลือกอาชีพที่ต้องการจะดู                        \\
+                                        & 2a. ระบบขึ้นเตือนว่าผู้ใช้ยังไม่ได้เลือกอาชีพที่ต้องการดู              \\
+                                        & 3a. กลับไปที่ขั้นตอนที่ 1                                     \\ \hline
+                  Postcodition          & -                                                      \\ \hline
+              \end{tabular}
+          \end{table}
+    \item Use Case Narrative ของ View Community
+          \begin{table}[!h]
+              % \centering
+              \begin{tabular}{|l|l|} \hline
+                  Actor                 & Anonymous                              \\ \hline
+                  Goal                  & ต้องการดูรายการของกระทู้ต่าง ๆ ในชุมชน       \\ \hline
+                  Precondition          & ผู้ใช้กำลังดูประเภทของกระทู้                   \\ \hline
+                  Main success scenario & 1. ผู้ใช้เลือกประเภทของกระทู้                \\
+                                        & 2. ระบบแสดงรายการของกระทู้ประเภทที่ผู้ใช้เลือก \\ \hline
+                  Extensions (a)        & -                                      \\ \hline
+                  Postcodition          & -                                      \\ \hline
+              \end{tabular}
+          \end{table}
+    \item Use Case Narrative ของ View Topic/Forum
+          \begin{table}[!h]
+              % \centering
+              \begin{tabular}{|l|l|} \hline
+                  Actor                 & Anonymous                                        \\ \hline
+                  Goal                  & ต้องการดูรายละเอียดของกระทู้                          \\ \hline
+                  Precondition          & ผู้ใช้กำลังดูรายการของกระทู้ที่อยู่ในชุมชน (กระทู้ประเภทไหนก็ได้) \\ \hline
+                  Main success scenario & 1. ผู้ใช้เลือกกระทู้ที่ต้องการดูรายละเอียด                  \\
+                                        & 2. ระบบแสดงรายละเอียดของกระทู้ผู้ใช้เลือก               \\ \hline
+                  Extensions (a)        & -                                                \\ \hline
+                  Postcodition          & -                                                \\ \hline
+              \end{tabular}
+          \end{table}
+    \item Use Case Narrative ของ Create Topic/Forum
+          \begin{table}[!h]
+              % \centering
+              \begin{tabular}{|l|l|} \hline
+                  Actor                 & Logged-in User                                   \\ \hline
+                  Goal                  & ต้องการสร้างกระทู้                                   \\ \hline
+                  Precondition          & ผู้ใช้กำลังดูรายการของกระทู้ที่อยู่ในชุมชน (กระทู้ประเภทไหนก็ได้) \\ \hline
+                  Main success scenario & 1. ผู้ใช้เลือกกระทู้ที่ต้องการดูรายละเอียด                  \\
+                                        & 2. ระบบถามรายละเอียดภายในกระทู้                     \\
+                                        & 3. ผู้ใช้กรอกรายอะเอียดภายในกระทู้                     \\
+                                        & 4. ระบบถามเพื่อยืนยันการลงกระทู้                       \\
+                                        & 5. ผู้ใช้ยืนยันการลงกระทู้                              \\
+                                        & 6. ระบบสร้างและแสดงกระทู้ของผู้ใช้                     \\ \hline
+                  Extensions (a)        & 5a. ผู้ใช้กรอกข้อมูลไม่ครบ                             \\
+                                        & 6a. ระบบขึ้นเตือนว่าผู้ใช้ยังกรอกข้อมูลไม่ครบ               \\
+                                        & 7a. กลับไปที่ขั้นตอนที่ 3                               \\ \hline
+                  Postcodition          & กระทู้ของผู้ใช้แสดงอยู่ในชุมชน                           \\ \hline
+              \end{tabular}
+          \end{table}
+    \item Use Case Narrative ของ Reply Topic/Forum
+          \begin{table}[!h]
+              % \centering
+              \begin{tabular}{|l|l|} \hline
+                  Actor                 & Logged-in User                                   \\ \hline
+                  Goal                  & ต้องการแสดงความคิดเห็นในกระทู้                        \\ \hline
+                  Precondition          & ผู้ใช้กำลังดูรายการของกระทู้ที่อยู่ในชุมชน (กระทู้ประเภทไหนก็ได้) \\ \hline
+                  Main success scenario & 1. ผู้ใช้เลือกส่วนที่ต้องการแสดงความคิดเห็น                \\
+                                        & 2. ระบบถามถึงรายละเอียดความคิดเห็น                   \\
+                                        & 3. ผู้ใช้กรอกความคิดเห็น                              \\
+                                        & 4. ระบบถามเพื่อยืนยันการแสดงความคิดเห็น                \\
+                                        & 5. ผู้ใช้ยืนยันการแสดงความคิดเห็น                       \\
+                                        & 6. ระบบสร้างและแสดงความคิดเห็นของผู้ใช้ในกระทู้          \\ \hline
+                  Extensions (a)        & 4a. ผู้ใช้ยังไม่ได้กรอกความคิดเห็น                       \\
+                                        & 5a. ระบบขึ้นเตือนว่าผู้ใช้ยังไม่ได้กรอกความคิดเห็น           \\
+                                        & 6a. กลับไปที่ขั้นตอนที่ 3                               \\ \hline
+                  Postcodition          & ความคิดเห็นของผู้ใช้แสดงอยู่ในกระทู้                      \\ \hline
+              \end{tabular}
+          \end{table}
+    \item Use Case Narrative ของ Upload Resume
+          \begin{table}[!h]
+              % \centering
+              \begin{tabular}{|l|l|} \hline
+                  Actor                 & Logged-in User                                  \\ \hline
+                  Goal                  & ต้องการอัพโหลดเรซูเม่                               \\ \hline
+                  Precondition          & ผู้ใช้กำลังอยู่ดูข้อมูลส่วนตัวของตนเอง                      \\ \hline
+                  Main success scenario & 1. ผู้ใช้เลือกเรซูเม่ที่ต้องการอัพโหลด                    \\
+                                        & 2. ระบบถามเพื่อยืนยันการอัพโหลดเรซูเม่                 \\
+                                        & 3. ผู้ใช้ยืนยันการอัพโหลดเรซูเม่                        \\
+                                        & 4. ระบบอัพโหลดและแจ้งเตือนว่าอัพโหลดเรซูเม่สำเร็จ        \\ \hline
+                  Extensions (a)        & 3a. ผู้ใช้เลือกเรซูเม่ที่ต้องการอัพโหลด                   \\
+                                        & 4a. ระบบขึ้นเตือนว่าผู้ใช้ยังไม่ได้เลือกเรซูเม่ที่ต้องการอัพโหลด \\
+                                        & 5a. กลับไปที่ขั้นตอนที่ 1                              \\ \hline
+                  Postcodition          & เรซูเม่แสดงอยู่ในข้อมูลส่วนตัวของผู้ใช้                    \\ \hline
+              \end{tabular}
+          \end{table}
+    \item Use Case Narrative ของ Analyzed Resume
+          \begin{table}[!h]
+              % \centering
+              \begin{tabular}{|l|l|} \hline
+                  Actor                 & Logged-in User                  \\ \hline
+                  Goal                  & ต้องการดูข้อมูลเชิงลึกของอาชีพ         \\ \hline
+                  Precondition          & ผู้ใช้ต้องมีอาชีพที่ระบบแนะนำให้          \\ \hline
+                  Main success scenario & 1. ผู้ใช้เลือกอาชีพที่ต้องการดูข้อมูลเชิงลึก \\
+                                        & 2. ระบบแสดงข้อมูลเชิงลึกของอาชีพ     \\ \hline
+                  Extensions (a)        & 1a. ผู้ใช้ต้องวิเคราะห์อาชีพใหม่        \\
+                                        & 2a. ระบบถามถึงข้อมูลของผู้ใช้         \\
+                                        & 3a. ผู้ใช้กรอกข้อมูลใหม่              \\
+                                        & 4a. ผู้ใช้ยืนยันการกรอกข้อมูล          \\
+                                        & 5a. ระบบแสดงอาชีพที่เหมาะสมกับผู้ใช้   \\
+                                        & 6a. กลับไปที่ขั้นตอนที่ 1              \\ \hline
+                  Postcodition          & -                               \\ \hline
+              \end{tabular}
+          \end{table}
+\end{itemize}
+
+% \emph{หัวข้อต่าง ๆ ในแต่ละบทเป็นเพียงตัวอย่างเท่านั้น หัวข้อที่จะใส่ในแต่ละบทขึ้นอยู่กับโปรเจคของนักศึกษาและอาจารย์ที่ปรึกษา}
 
 
-ตัวอย่างการใส่อ้างอิงที่มา -> \cite{hypersense} ถ้าต้องการใส่แหล่งอ้างอิงมากกว่า 1 ให้ทำดังนี้ -> \cite{hypersense,bworld}
-Explain the design (how you plan to implement your work) of your project. Adjust the section titles below to suit the types of your work. Detailed physical design like circuits and source codes should be placed in the appendix.
+% ตัวอย่างการใส่อ้างอิงที่มา -> \cite{hypersense} ถ้าต้องการใส่แหล่งอ้างอิงมากกว่า 1 ให้ทำดังนี้ -> \cite{hypersense,bworld}
+% Explain the design (how you plan to implement your work) of your project. Adjust the section titles below to suit the types of your work. Detailed physical design like circuits and source codes should be placed in the appendix.
 
-\section{ข้อกำหนดและความต้องการของระบบ}
+% \section{ข้อกำหนดและความต้องการของระบบ}
 
-\section{สถาปัตยกรรมระบบ}
+% \section{สถาปัตยกรรมระบบ}
 
-\begin{table}[!h]
-    \centering
-    \caption{test table x1}\label{tbl:symbols}
-    \begin{tabular}{@{}p{0.07\textwidth}|p{0.7\textwidth}p{0.1\textwidth}}\hline
-        \multicolumn{2}{l}{\textbf{SYMBOL}} & \textbf{UNIT}                         \\ \hline
-        $\alpha$                            & Test variable\hfill     & m$^2$       \\
-        $\lambda$                           & Interarrival rate\hfill & jobs/second \\
-        $\mu$                               & Service rate\hfill      & jobs/second \\ \hline
-    \end{tabular}
-    %\begin{tabular}{c|c} \hline
-    % $\alpha$ & $\beta$ \\ \hline
-    % $\delta$ & $\mu$ \\ \hline
-    %\end{tabular}
-\end{table}
+% \begin{table}[!h]
+%     % \centering
+%     \caption{test table x1}\label{tbl:symbols}
+%     \begin{tabular}{@{}p{0.07\textwidth}|p{0.7\textwidth}p{0.1\textwidth}}\hline
+%         \multicolumn{2}{l}{\textbf{SYMBOL}} & \textbf{UNIT}                         \\ \hline
+%         $\alpha$                            & Test variable\hfill     & m$^2$       \\
+%         $\lambda$                           & Interarrival rate\hfill & jobs/second \\
+%         $\mu$                               & Service rate\hfill      & jobs/second \\ \hline
+%     \end{tabular}
+%     %\begin{tabular}{c|c} \hline
+%     % $\alpha$ & $\beta$ \\ \hline
+%     % $\delta$ & $\mu$ \\ \hline
+%     %\end{tabular}
+% \end{table}
 
 
 
-\section{Hardware Module 1}
-\subsection{Component 1}
-\subsection{Logical Circuit Diagram}
+% \section{Hardware Module 1}
+% \subsection{Component 1}
+% \subsection{Logical Circuit Diagram}
 
-\section{Hardware Module 2}
-\subsection{Component 1}
-\subsection{Component 2}
+% \section{Hardware Module 2}
+% \subsection{Component 1}
+% \subsection{Component 2}
 
-\section{Path Finding Algorithm}
+% \section{Path Finding Algorithm}
 
-\section{Database Design}
+% \section{Database Design}
 
-\section{UML Design}
+% \section{UML Design}
 
-\section{GUI Design}
+% \section{GUI Design}
 
-\section{การออกแบบการทดลอง}
-\subsection{ตัวชี้วัดและปัจจัยที่ศึกษา}
-\subsection{รูปแบบการเก็บข้อมูล}
+% \section{การออกแบบการทดลอง}
+% \subsection{ตัวชี้วัดและปัจจัยที่ศึกษา}
+% \subsection{รูปแบบการเก็บข้อมูล}
