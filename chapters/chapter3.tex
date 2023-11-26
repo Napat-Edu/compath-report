@@ -9,7 +9,7 @@
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
     \setlength{\fboxsep}{0.5cm}
     \fbox{\includegraphics[width=10cm]{./figure/figure_poll.png}}
-    \caption{ข้อมูลจากแบบสำรวจเชิงปริมาณ}\label{fig:model4}
+    \caption{ข้อมูลจากแบบสำรวจเชิงปริมาณ}\label{fig:insightPoll}
 \end{figure}
 จากข้อมูลในแบบสำรวจข้อนี้ ทำให้ทราบว่าปัจจัยที่มีผลต่อการเลือกสายงานในการทำงานมากสำหรับกลุ่มตัวอย่างก็คือเงินเดือน และความสมดุลของการทำงานกับชีวิตส่วนตัว กล่าวคือกลุ่มตัวอย่างให้ความสำคัญกับความจริงมากยิ่งขึ้น ความมั่นคง หรือเงินเดือนที่สามารถทำให้ดำเนินชีวิตได้อย่างราบรื่น รวมถึงการแบ่งเวลา การพักผ่อนที่เหมาะสมกับการทำงาน โดยมองอาจจะไม่ได้ให้ความสำคัญกับความชื่นชอบมากขนาดนั้น
 
@@ -27,8 +27,9 @@
     \item อยากรู้ก่อนเป็นอย่างมาก ว่าในการทำงานจริงต้องมีความสามารถอะไรบ้าง ใช้เครื่องมืออะไร
     \item กลุ่มเป้าหมายรู้สึกว่าอาจรู้ตัวช้าเกินไป หากมีโอกาสพัฒนาตนเองได้เร็วกว่านี้จะดีมาก
 \end{itemize}
-\newline
-\textbf{การสัมภาษณ์เชิงคุณภาพครั้งที่ 2}
+
+
+\noindent\textbf{การสัมภาษณ์เชิงคุณภาพครั้งที่ 2}
 \newline
 \textbf{จุดประสงค์: เพื่อพิสูจน์ความมีคุณภาพของวิธีการแก้ปัญหาที่ออกแบบ}
 \newline
@@ -38,8 +39,9 @@
     \item กลุ่มเป้าหมายรู้สึกสนใจในฟีเจอร์ช่วยเหลือการค้นหาแหล่งพัฒนาตนเอง เพราะเคยรู้สึกว่าตนเองอาจเริ่มพัฒนาช้าเกินไป เพราะรู้ใจตัวเองในช่วงที่อาจเรียนอยู่ชั้นปีที่ 2-3 แล้ว
     \item การตัดสินใจลงวิชาเรียนค่อนข้างมีจุดขัดใจ เพราะไม่ค่อยมีรีวิวหรือความเห็นของผู้ที่เคยเรียน ถึงแม้เคยมีแหล่งชุมชนที่รุ่นพี่เคยมอบให้ แต่รีวิวส่วนใหญ่จะมีความเก่าแล้ว ทำให้ใช้อ้างอิงได้ยาก
 \end{itemize}
-\newline
-\textbf{การสัมภาษณ์เชิงคุณภาพครั้งที่ 3}
+
+
+\noindent\textbf{การสัมภาษณ์เชิงคุณภาพครั้งที่ 3}
 \newline
 \textbf{จุดประสงค์: เพื่อทดลองนำ prototype ของเว็บแอปไปพิสูจน์ความรู้สึกในการใช้งานกับผู้ใช้}
 \newline
@@ -53,15 +55,15 @@
 
 \section{ความสามารถของระบบ}
 \subsection{Use Case Diagram}
-\begin{figure}[!h]\centering
+\begin{figure}[H]\centering
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
     \setlength{\fboxsep}{0.5cm}
     \fbox{\includegraphics[width=10cm]{./figure/figure_usecase.png}}
-    \caption{Use Case Diagram}\label{fig:model8}
+    \caption{Use Case Diagram}\label{fig:usecase}
 \end{figure}
 \subsection{Use Case Narrative}
 \subsubsection{Resume Career Prediction}
-\begin{table}[!h]
+\begin{table}[H]
     % \centering
     \begin{tabular}{|l|l|} \hline
         Actor                 & Anonymous                                       \\ \hline
@@ -81,7 +83,7 @@
 \end{table}
 
 \subsubsection{See career path node tree}
-\begin{table}[!h]
+\begin{table}[H]
     % \centering
     \begin{tabular}{|l|l|} \hline
         Actor                 & Anonymous                                              \\ \hline
@@ -97,7 +99,7 @@
 \end{table}
 
 \subsubsection{View Community}
-\begin{table}[!h]
+\begin{table}[H]
     % \centering
     \begin{tabular}{|l|l|} \hline
         Actor                 & Anonymous                              \\ \hline
@@ -111,7 +113,7 @@
 \end{table}
 
 \subsubsection{View Topic/Forum}
-\begin{table}[!h]
+\begin{table}[H]
     % \centering
     \begin{tabular}{|l|l|} \hline
         Actor                 & Anonymous                                        \\ \hline
@@ -125,7 +127,7 @@
 \end{table}
 
 \subsubsection{Create Topic/Forum}
-\begin{table}[!h]
+\begin{table}[H]
     % \centering
     \begin{tabular}{|l|l|} \hline
         Actor                 & Logged-in User                                   \\ \hline
@@ -145,7 +147,7 @@
 \end{table}
 
 \subsubsection{Reply Topic/Forum}
-\begin{table}[!h]
+\begin{table}[H]
     % \centering
     \begin{tabular}{|l|l|} \hline
         Actor                 & Logged-in User                                   \\ \hline
@@ -165,7 +167,7 @@
 \end{table}
 
 \subsubsection{Upload Resume}
-\begin{table}[!h]
+\begin{table}[H]
     % \centering
     \begin{tabular}{|l|l|} \hline
         Actor                 & Logged-in User                                  \\ \hline
@@ -183,7 +185,7 @@
 \end{table}
 
 \subsubsection{Analyzed Resume}
-\begin{table}[!h]
+\begin{table}[H]
     % \centering
     \begin{tabular}{|l|l|} \hline
         Actor                 & Logged-in User                  \\ \hline
@@ -202,11 +204,11 @@
 \end{table}
 
 \section{สถาปัตยกรรมของระบบ}
-\begin{figure}[!h]\centering
+\begin{figure}[H]\centering
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
     \setlength{\fboxsep}{0.5cm}
     \fbox{\includegraphics[width=10cm]{./figure/figure_system_architecture.png}}
-    \caption{System Architecture}\label{fig:model4}
+    \caption{System Architecture}\label{fig:system_architecture}
 \end{figure}
 จากแผนผังสถาปัตยกรรมระบบ เราได้ใช้บริการ Google Cloud เป็นหลักเนื่องจากสะดวกต่อการ scaling ในอนาคต สามารถจัดการและเปลี่ยนแปลงเวอร์ชันได้รวดเร็วระหว่างการพัฒนา โดยสถาปัตยกรรมแต่ละส่วนมีหน้าที่หลักดังนี้
 
@@ -231,7 +233,7 @@
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
     \setlength{\fboxsep}{0.5cm}
     \fbox{\includegraphics[width=10cm]{./figure/figure_siteMap.png}}
-    \label{fig:siteMap}
+    \caption{SiteMap}\label{fig:siteMap}
 \end{figure}
 
 \section{Navigation Map}
@@ -239,7 +241,7 @@
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
     \setlength{\fboxsep}{0.5cm}
     \fbox{\includegraphics[width=10cm]{./figure/figure_navMap.png}}
-    \label{fig:navMap}
+    \caption{Navigation Map}\label{fig:navMap}
 \end{figure}
 
 
