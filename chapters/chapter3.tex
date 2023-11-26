@@ -202,6 +202,29 @@
     \end{tabular}
 \end{table}
 
+\section{สถาปัตยกรรมของระบบ}
+\begin{figure}[!h]\centering
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \setlength{\fboxsep}{0.5cm}
+    \fbox{\includegraphics[width=10cm]{./figure/figure_system_architecture.png}}
+    \caption{System Architecture}\label{fig:model4}
+\end{figure}
+จากแผนผังสถาปัตยกรรมระบบ เราได้ใช้บริการ Google Cloud เป็นหลักเนื่องจากสะดวกต่อการ scaling ในอนาคต สามารถจัดการและเปลี่ยนแปลงเวอร์ชันได้รวดเร็วระหว่างการพัฒนา โดยสถาปัตยกรรมแต่ละส่วนมีหน้าที่หลักดังนี้
+
+\subsection{ส่วนผู้ใช้ (Client-Side)}
+รับผิดชอบในการติดต่อปฏิสัมพันธ์กับผู้ใช้ แสดง user interface ผ่านทาง web browser และเชื่อมต่อกับ server เพื่อขอข้อมูลและใช้บริการต่าง ๆ
+
+\subsection{ส่วนเซิร์ฟเวอร์ (Server-Side)}
+รับผิดชอบในการจัดการตรรกะและระบบคำนวณต่าง ๆ ทุกรูปแบบและส่งกลับไปให้ผู้ใช้ โดยทางคณะู้จัดทำได้แบ่งระบบ server เป็นสองบริการหลัก ประกอบด้วย
+\newline
+1. บริการหลัก (Main services)
+\newline
+บริการที่จะติดต่อกับผู้ใช้โดยตรงเพียงหนึ่งเดียว มีหน้าที่ในการจัดการทุกคำขอจากผู้ใช้ผ่านทาง API (Application Programming Interfaces) เช่น ดึงข้อมูลจากฐานข้อมูล คำนวณค่าต่าง ๆ และติดต่อกับบริการอื่น ๆ
+\newline
+2. บริการโมเดล (Model services)
+\newline
+บริการสำหรับใช้คำนวณเกี่ยวกับปัญญาประดิษฐ์ของทางคณะผู้จัดทำเท่านั้น เนื่องจากกินทรัพยากรสูง การแยกบริการออกมาจากบริการหลักจึงสามารถดูแลและจัดการได้ง่ายกว่า โดยจะรับค่ามาจากส่วนบริการหลักและส่งค่ากลับไปให้
+
 \newpage
 
 \section{Site Map}
@@ -218,14 +241,6 @@
     \setlength{\fboxsep}{0.5cm}
     \fbox{\includegraphics[width=10cm]{./figure/figure_navMap.png}}
     \label{fig:navMap}
-\end{figure}
-
-\section{สถาปัตยกรรมของระบบ}
-\begin{figure}[!h]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
-    \fbox{\includegraphics[width=10cm]{./figure/figure_system_architecture.png}}
-    \caption{System Architecture}\label{fig:model4}
 \end{figure}
 
 
