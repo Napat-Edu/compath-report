@@ -226,10 +226,127 @@
 \newline
 บริการสำหรับใช้คำนวณเกี่ยวกับปัญญาประดิษฐ์ของทางคณะผู้จัดทำเท่านั้น เนื่องจากกินทรัพยากรสูง การแยกบริการออกมาจากบริการหลักจึงสามารถดูแลและจัดการได้ง่ายกว่า โดยจะรับค่ามาจากส่วนบริการหลักและส่งค่ากลับไปให้
 
-\newpage
+\section{Sequence Diagram}
+\subsection{Register}
+\begin{figure}[H]\centering
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_register.png}}
+    \caption{Register Sequence Diagram}\label{fig:regisSeqDiagram}
+\end{figure}
+\textbf{สถานการณ์: }ผู้ใช้สมัครสมาชิก
+\begin{enumerate}
+    \item ผู้ใช้กรอกข้อมูลในหน้าสมัครสมาชิก
+    \item user interface จะทำการรับมือในกรณีที่ผู้ใช้กรอกข้อมูลยังไม่ถูกต้อง
+    \item เมื่อข้อมูลถูกต้องแล้ว ผู้ใช้ทำการกดยืนยัน และส่งคำขอไปที่บริการส่วนหลัก
+    \item บริการส่วนหลักทำการตรวจสอบข้อมูลผู้ใช้เดิม หากยังไม่มีข้อมูลจะบันทึกข้อมูลใหม่ลงญานข้อมูลและส่งสถานะกลับสู่ผู้ใช้ หากมีอยู่แล้วจะทำการส่งสถานะกลับสู่ผู้ใช้ทันที
+    \item เมื่อผู้ใช้ได้รับสถานะ หากสำเร็จที่ส่งผู้ใช้ไปที่หน้า login หากไม่สำเร็จจะแจ้งเตือนให้แก่ผู้ใช้
+\end{enumerate}
+
+\subsection{Login}
+\begin{figure}[H]\centering
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_login.png}}
+    \caption{Login Sequence Diagram}\label{fig:loginSeqDiagram}
+\end{figure}
+\textbf{สถานการณ์: }ผู้ใช้ล็อกอิน
+\begin{enumerate}
+    \item ผู้ใช้กรอกข้อมูลในหน้าล็อกอิน
+    \item user interface จะทำการรับมือในกรณีที่ผู้ใช้กรอกข้อมูลยังไม่ถูกต้อง
+    \item เมื่อข้อมูลถูกต้องแล้ว ผู้ใช้ทำการกดยืนยัน และส่งคำขอไปที่บริการส่วนหลัก
+    \item บริการส่วนหลักตรวจสอบข้อมูลผู้ใช้ที่มีอยู่ และส่งสถานะกลับสู่ผู้ใช้
+    \item เมื่อผู้ใช้ได้รับสถานะ หากสำเร็จที่ส่งผู้ใช้ไปที่หน้าหลัก หากไม่สำเร็จจะแจ้งเตือนให้แก่ผู้ใช้
+\end{enumerate}
+
+\subsection{Resume Prediction}
+\begin{figure}[H]\centering
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_resume_predict.png}}
+    \caption{Resume Prediction Sequence Diagram}\label{fig:resumePredictSeqDiagram}
+\end{figure}
+\textbf{สถานการณ์: }ผู้ใช้ใช้งานระบบวิเคราะห์เรซูเม
+\begin{enumerate}
+    \item ผู้ใช้กรอกข้อมูลเรซูเมของตัวเอง
+    \item user interface รับมือกรณีที่ผู้ใช้กรอกข้อมูลไม่ครบ และแจ้งเตือนแก่ผู้ใช้
+    \item ผู้ใช้กรอกข้อมูลถูกต้องและส่งคำขอสู่บริการหลัก
+    \item บริการหลักจัดการวิเคราะห์ข้อมูลเรซูเมของผู้ใช้ ในกรณีที่ผู้ใช้ login จะทำการบันทึกค่ารับเข้าต่าง ๆ ลงสู่ฐานข้อมูลเพื่อสำรองข้อมูลให้ผู้ใช้
+    \item ส่งข้อมูลกลับสู่ผู้ใช้และแสดงผล
+\end{enumerate}
+
+\subsection{Analyze Resume}
+\begin{figure}[H]\centering
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_analyze_resume.png}}
+    \caption{Analyze Resume Sequence Diagram}\label{fig:anaResumeSeqDiagram}
+\end{figure}
+\textbf{สถานการณ์: }ผู้ใช้เข้าดูข้อมูลเชิงลึกจากการวิเคราะห์เรซูเม
+\begin{enumerate}
+    \item ผู้ใช้เข้าสู่หน้าวิเคราะห์ข้อมูลเชิงลึกจากช่องใดทางหนึ่ง เช่น ผ่านการ redirect จากหน้าวิเคราะห์เรซูเม หรือเข้าสู่หน้าข้อมูลเชิงลึกโดยตรง (ต้องมีข้อมูลมาก่อน)
+    \item user interface ส่งคำขอสู่ระบบบริการหลัก และดึงข้อมูลจากฐานข้อมูล
+    \item บริการหลักคำนวณข้อมูลและส่งกลับสู่ผู้ใช้
+    \item แสดงผลแก่ผู้ใช้
+\end{enumerate}
+
+\subsection{View Forum}
+\begin{figure}[H]\centering
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_view_forum.png}}
+    \caption{View Forum Sequence Diagram}\label{fig:viewForumSeqDiagram}
+\end{figure}
+\textbf{สถานการณ์: }ผู้ใช้เข้าดูหน้าชุมชน
+\begin{enumerate}
+    \item ผู้ใช้เข้ากดเข้าสู่หน้าชุมชน
+    \item user interface ส่งคำขอสู่ระบบบริการหลักและดึงข้อมูลจากฐานข้อมูล
+    \item บริการหลักส่งข้อมูลกลับสู่ผู้ใช้และแสดงผล
+\end{enumerate}
+
+\subsection{Reply Forum}
+\begin{figure}[H]\centering
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_reply_forum.png}}
+    \caption{Reply Forum Sequence Diagram}\label{fig:ReplyForumSeqDiagram}
+\end{figure}
+\textbf{สถานการณ์: }ผู้ใช้ตอบกลับข้อความในกระทู้ชุมชน
+\begin{enumerate}
+    \item ผู้ใช้กดเข้าหน้าเลือกกระทู้จากชุมชน
+    \item user interface ส่งคำขอสู่บริการหลัก เพื่อดึงข้อมูลจากฐานข้อมูล
+    \item ส่งรายการกระทู้กลับสู่ผู้ใช้
+    \item ผู้ใช้เลือกกระทู้และเข้าสู่หน้ากระทู้
+    \item ผู้ใช้กดพิมพ์ข้อความและกดตอบกลับกระทู้
+    \item user interface ทำการส่งข้อมูลสู่บริการหลักเพื่อบันทุกข้อความใหม่นี้สู่ฐานข้อมูล
+    \item ส่งสถานะสำเร็จแก่ผู้ใช้และแสดงผล
+\end{enumerate}
+
+\subsection{Create Forum}
+\begin{figure}[H]\centering
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_create_forum.png}}
+    \caption{Create Forum Sequence Diagram}\label{fig:createForumSeqDiagram}
+\end{figure}
+\textbf{สถานการณ์: }ผู้ใช้สร้างกระทู้ใหม่
+\begin{enumerate}
+    \item ผู้ใช้กดสร้างกระทู้ใหม่
+    \item user interface ส่งคำขอจากบริการหลักเพื่อดึงข้อมูลประเภทกระทู้ที่อาจมีได้ และส่งกลับสู่ผู้ใช้
+    \item ผู้ใช้เลือกประเภทของกระทู้และกรอกข้อมูลกระทู้ทั้งหมด
+    \item user interface ตรวจสอบข้อมูลที่ผู้ใช้กรอก หากผิดพลาดจะแจ้งเตือนแก่ผู้ใช้ หากไม่มีปัญหาจะส่งคำขอสู่บริการหลัก
+    \item บริการหลักบันทึกข้อมูลกระทู้ลงสู่ฐานข้อมูล และส่งสถานะกลับสู่ผู้ใช้ พร้อมแสดงผล
+\end{enumerate}
+
+\subsection{See Career Node Tree}
+\begin{figure}[H]\centering
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_see_node.png}}
+    \caption{See Career Node Tree Sequence Diagram}\label{fig:nodeTreeSeqDiagram}
+\end{figure}
+\textbf{สถานการณ์: }ผู้ใช้เข้าดูหน้าสายใยอาชีพ
+\begin{enumerate}
+    \item ผู้ใช้เข้าสู่หน้าสายใยอาชีพ
+    \item user interface ขอข้อมูลจากบริการหลักและดึงข้อมูลจากฐานข้อมูล
+    \item บริการหลักส่งข้อมูลกลับสู่ผู้ใช้และแสดงผล
+\end{enumerate}
+
 
 \section{Site Map}
-\begin{figure}[h]\centering
+\begin{figure}[H]\centering
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
     \setlength{\fboxsep}{0.5cm}
     \fbox{\includegraphics[width=10cm]{./figure/figure_siteMap.png}}
@@ -237,7 +354,7 @@
 \end{figure}
 
 \section{Navigation Map}
-\begin{figure}[h]\centering
+\begin{figure}[H]\centering
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
     \setlength{\fboxsep}{0.5cm}
     \fbox{\includegraphics[width=10cm]{./figure/figure_navMap.png}}
