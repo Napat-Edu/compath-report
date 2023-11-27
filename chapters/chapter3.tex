@@ -344,6 +344,85 @@
     \item บริการหลักส่งข้อมูลกลับสู่ผู้ใช้และแสดงผล
 \end{enumerate}
 
+\section{Database}
+ระบบฐานข้อมูลของเราจะใช้เป็นรูปแบบ NoSQL ประเภท document ผ่านบริการของ MongoDB โดยมีรายละเอียดในแต่ละตาราง ดังนี้
+\begin{figure}[H]\centering
+  \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+  \setlength{\fboxsep}{0.5cm}
+  \fbox{\includegraphics[width=8cm]{./figure/figure_database.png}}
+  \caption{Database Structure}\label{fig:database}
+\end{figure}
+
+\begin{table}[H]
+  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+  \hline
+  \multicolumn{3}{c}{User}                                                                                                      \\ \hline
+  Field Name  & Field Type & Description                                                                                        \\ \hline
+  uid         & string     & รหัสประจำตัวของผู้ใช้ ที่ทางระบบจะเป็นผู้กำหนดให้ เพื่อใช้แยกผู้ใช้แต่ละท่านอย่างชัดเจน            \\
+  fName       & string     & ชื่อต้นของผู้ใช้                                                                                   \\
+  lName       & string     & นามสกุลของผู้ใช้                                                                                   \\
+  email       & string     & อีเมลของผู้ใช้                                                                                     \\
+  resume\_url & string     & url สำหรับเข้าถึงไฟล์ resume ที่ผู้ใช้อัพโหลดสู่ระบบของเรา โดยระบบจะบบจะเป็นผู้จัดการข้อมูลส่วนนี้ \\
+  avatar\_url & string     & url สำหรับเข้าถึงรูปโปรไฟล์ผู้ใช้ โดยระบบจะบบจะเป็นผู้จัดการข้อมูลส่วนนี้                          \\ \hline
+  \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+  \hline
+  \multicolumn{3}{c}{ResumeHistory}                                                                   \\\hline
+  Field Name    & Field Type & Description                                                            \\\hline
+  resume\_owner & string     & รหัสประจำตัวของผู้ใช้ รูปแบบเดียวกับ uid ใช้สำหรับการระบุเจ้าของข้อมูล \\
+  user\_input   & string     & ค่ารับเข้าจากผู้ใช้                                                    \\
+  input\_date   & Date       & วันที่ผู้ใช้กรอกข้อมูล \\ \hline
+  \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+  \hline
+    \multicolumn{3}{c}{ForumStock}  \\ \hline                                                                                                     
+    Field Name      & Field Type         & Description                                                                             \\\hline
+    forum\_title    & string             & ชื่อหัวข้อกระทู้                                                                                \\
+    forum\_owner    & string             & uid ของผู้ใช้ที่เป็นเจ้าของกระทู้ ใช้สำหรับระบุตัวตน                                            \\
+    content         & string             & เนื้อหาหลักของกระทู้                                                                            \\
+    forum\_type     & IForumType         & ประเภทของกระทู้ มีรูปแบบข้อมูลเป็น object ของประเภทกระทู้และ ชุดข้อมูลของ tag ที่เกี่ยวข้อง     \\
+    thumbups\_count & number             & จำนวนของการกดถูกใจกระทู้                                                                        \\
+    comments        & IUserComment{[}{]} & ความเห็นภายในกระทู้ มีรูปแบบข้อมูลเป็น object ของความเห็นหลักและข้อความตอบกลับภายในความเห็นนั้น \\ \hline
+  \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+  \hline
+    \multicolumn{3}{c}{ForumTypeConfig}                                           \\\hline  
+    Field Name        & Field Type   & Description                                \\\hline  
+    forum\_categories & string{[}{]} & ประเภททั้งหมดของกระทู้ที่สามารถมีได้ในระบบ \\
+    forum\_tags       & string{[}{]} & tag ของกระทู้ทั้งหมดที่สามารถมีได้ในระบบ \\ \hline  
+  \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+  \hline
+    \multicolumn{3}{c}{JobData}                                                                      \\\hline
+    Field Name  & Field Type     & Description                                                       \\\hline
+    job\_title  & string         & ชื่อของอาชีพ                                                      \\
+    salary      & number         & ฐานเงินเดือนของอาชีพนั้น                                          \\
+    job\_detail & string         & ข้อมูลเบื้องต้นของอาชีพนั้น                                       \\
+    job\_skill  & JobSkill{[}{]} & ข้อมูลความสามารถของอาชีพนั้น มีรูปแบบและข้อมูลมาจากตาราง JobSkill \\ \hline
+  \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+  \hline
+    \multicolumn{3}{c}{JobSkill}                              \\\hline
+    Field Name    & Field Type & Description                  \\\hline
+    job\_skill    & string     & ชื่อของความสามารถนั้นๆ       \\
+    skill\_detail & string     & รายละเอียดของความสามารถนั้นๆ \\\hline
+  \end{tabular*}
+\end{table}
 
 \section{แผนผังเว็บไซต์ (Site Map)}
 แผนผังเว็บไซต์(Site Map) เป็นโครงสร้างแบบภาพรวมที่แสดงถึงโครงสร้างของเว็บไซต์ทั้งหมด ซึ่งมีวัตถุประสงค์หลักคือการให้ผู้ใช้และเครื่องมือการค้นหาเข้าใจโครงสร้างและลำดับของเนื้อหาบนเว็บไซต์ได้ง่ายขึ้น แผนผังเว็บไซต์ช่วยในการนำทางผู้ใช้ไปสู่ส่วนต่าง ๆ ของเว็บไซต์, ลดความสับสนและเพิ่มประสิทธิภาพในการค้นหาข้อมูล
