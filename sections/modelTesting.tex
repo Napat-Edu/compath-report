@@ -1,0 +1,59 @@
+\section{Model Result}
+หลังจากที่คณะผู้จัดทำงานได้\hyperref[subsec:Data Collecting]{รวบรวมข้อมูล} และ\hyperref[subsec:Data Preparation]{เตรียมข้อมูล}ทางคณะผู้จัดทำจึงทำดำเนินขั้นตอนต่าง ๆ ดังนี้
+\subsection{Preprocessing Data}
+ผู้จัดทำได้สังเกตเห็นว่ามีเรซูเมที่ซ้ำกัน ทางผู้จัดทำจึงได้ทำการลบข้อมูลที่มีลักษณะเหมือนกันออก จนเหลือทั้งหมด 205 เล่ม
+ทางคณะผู้จัดทำได้นำข้อมูลในเรซูเมมาผ่านกระบวนการต่าง ๆ ได้แก่
+\begin{enumerate}
+    \item ลบอักขระพิเศษ (Remove Punctation) : คณะผู้จัดทำจะทำการลบ ลิงก์ (URL), การกล่าวถึง (@), อักขระพิเศษ (Punctation), เว้นวรรคที่มากเกิน (Extra Whitespace)
+    \item การแปรหรือผันคำ (Lemmatize Text) : คณะผู้จัดทำจะทำการแปลงคำให้กลับไปอยู่ในรูปเดิมของคำ เช่น Connects -> Connect หรือ Building -> Build
+    \item ลบคำบางคำออก (Remove Specific Word) : คณะผู้จัดทำได้ลบคำที่พบได้บ่อยในชุดข้อมูล และคิดว่าไม่ได้สำคัญในการทำนาย เช่น using, Ltd, Maharashtra เป็นต้น
+\end{enumerate}
+\subsection{Train Test Splitting}
+คณะผู้จัดทำได้ทำการแบ่งชุดข้อมูลออกเป็น 2 ส่วน ข้อมูลสำหรับการทดลอง ข้อมูลสำหรับการประเมินโมเดล
+และคณะผู้จัดทำได้รวบรวมเรซูเมจากนักศึกษาวิศวกรรมคอมพิวเตอร์ มจธ. จำนวนดังตารางต่อไปนี้
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{X|X|l}
+        ประเภทของชุดข้อมูล & จำนวนเรซูเม            & หมายเหตุ                                   \\ \hline
+        Training Set    & 164 (80\% ของชุดข้อมูล) &                                           \\ \hline
+        Validation Set  & 41 (20\% ของชุดข้อมูล)  &                                           \\ \hline
+        Testing Set     & 13                   & เรซูเมจากนักศึกษาวิศวกรรมคอมพิวเตอร์ มจธ. รุ่น 34 \\
+    \end{tabularx}
+\end{table}
+\subsection{Model Experiment}
+คณะผู้จัดทำได้นำ Machine Learning ต่าง ๆ มาทดลองทั้งหมด 6 ประเภท เนื่องจากทางคณะผู้จัดทำได้ทำการศึกษาลักษณะของชุดข้อมูล ทำให้เห็นว่าเรซูเมส่วนใหญ่จะมีลักษณะเป็นหัวข้อ ไม่ได้เป็นประโยคยาวที่ข้อความจะสัมพันธ์กัน
+ทางคณะผู้จัดจึงคิดว่า \hyperref[subsec:lstm]{Long Short Term Memory (LSTM)} ที่เน้นทำความเข้าใจความสัมพันธ์ของประโยค
+อาจจะไม่เหมาะกับชุดข้อมูลนี้ และมีผลการทดลองความแม่นยำดังนี้
+\begin{table}[H]
+    \caption{ตารางเปรียบเทียบความแม่นยำของแต่ละโมเดล}
+    \label{tab:Model accuracy}
+    \begin{tabularx}{\textwidth}{X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+        \multirow{2}{*}{Machine Learning Algorithm} & \multicolumn{2}{c}{Accuracy (Resumes, Percent)}               \\ \cline{2-3}
+                                                    & \centering Validation Set                       & Testing Set \\ \hline
+        Multinomial Naive Bayes                     & 19 (46.34\%)                                    & 2 (15.38\%) \\ \hline
+        Gaussian Naive Bayes                        & 27 (65.85\%)                                    & 3 (23.08\%) \\ \hline
+        K-Neighbors                                 & 37 (90.24\%)                                    & 9 (69.23\%) \\ \hline
+        OneVsRest (+ K-Neighbors)                   & 37 (90.24\%)                                    & 9 (69.23\%) \\ \hline
+        Support Vector Machine                      & 36 (87.80\%)                                    & 7 (53.85\%) \\ \hline
+        Logistic Regression                         & 35 (85.37\%)                                    & 7 (53.85\%) \\
+    \end{tabularx}
+\end{table}
+และเนื่่องจาก K-Neighbors มีความแม่นยำที่สูงที่สุด คณะผู้จัดทำจึงอยากที่จะแสดงผล Confusion Matrix เพื่อตรวจสอบว่าความผิดพลาดของโมเดลจะทำนายที่อาชีพไหน โดยที่หลักจะแสดงอาชีพที่โมเดลทำนาย และแถวจะแสดงเป็นอาชีพที่ถูกต้อง
+\begin{table}[H]
+    \caption{ตาราง Confusion Matrix ของ K-Nearest Neighbors ในการทำนาย Validation Set}
+    \label{tab:confusion matrix}
+    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+                 & Cloud                    & Data                     & Designer                 & Dev                       & QA                       & Security                 \\ \hline
+        Cloud    & {\cellcolor[gray]{.9}} 5 & 0                        & 0                        & 0                         & 0                        & 0                        \\ \hline
+        Data     & 1                        & {\cellcolor[gray]{.9}} 6 & 0                        & 0                         & 0                        & 0                        \\ \hline
+        Designer & 0                        & 0                        & {\cellcolor[gray]{.9}} 2 & 0                         & 0                        & 0                        \\ \hline
+        Dev      & 1                        & 0                        & 1                        & {\cellcolor[gray]{.9}} 13 & 1                        & 0                        \\ \hline
+        QA       & 0                        & 0                        & 0                        & 0                         & {\cellcolor[gray]{.9}} 6 & 0                        \\ \hline
+        Security & 0                        & 0                        & 0                        & 0                         & 0                        & {\cellcolor[gray]{.9}} 5 \\ \hline
+        \multicolumn{7}{l}{\textbf{หมายเหตุ} : ชื่อแถวกับหลักเป็นคำย่อของ Cloud Management, Data \& AI, Designer, Developer, QA \& Tester, Security}                                        \\ \hline \hline
+    \end{tabularx}
+\end{table}
+จะพบว่าโมเดลที่มีแนวโน้มที่จะทำนายเป็น Developer ที่ค่อนข้างสูง อาจจะเนื่องจากที่ชุดข้อมูลมีจำนวนอาชีพของ Developer ที่เยอะ
+\subsection{Model Evaluation}
+คณะผู้จัดทำคาดหวังจะนำผลลัพธ์ที่ได้จาก Model ไปเปรียบเทียบกับความคิดเห็น
+ของผู้ที่มีประสบการณ์อยู่ภายในสายงานนี้ โดยอาจจะเป็นอาจารย์ภาควิชาวิศวกรรมคอมพิวเตอร์
+หรือผู้ที่ทำงานอยู่ในแผนกบุคคลของบริษัทเทคโนโลยี เพื่อนำมาเปรียบเทียบกับ Test Set ของเราต่อไป
