@@ -141,7 +141,7 @@ the target group quickly identify what suits them and develop themselves promptl
 This will be achieved through a web application comprising a self-development guidelines, information on various professions,
 an artificial intelligence model capable of classification suited career path based on student's resume data, and insight of student's resume.
 
-To train our model, training dataset was created with 920 records that consists of data in resume and label of career path.
+To train our model, training dataset was created with 205 records from 962 raw datas that consists of data in resume and label of career path.
 We group all of datas into 6 classes that we provided, using TF-IDF as word counting frequency algorithm to extract feature of datas.
 After preprocesses method, we use thse data to train with KNN model which we have proven to be the most effective.
 In development process, we have usability test with target users and research for information that best serve for our targer user and objectives.
@@ -168,9 +168,9 @@ We also deploy these service on our web application to provide all feature for u
 รู้สิ่งที่เหมาะกับตนเองเร็วขึ้น สามารถพัฒนาตนเองได้อย่างทันท่วงทีสำหรับตลาดแรงงานในอนาคต ผ่านเว็บแอปพลิเคชันที่ประกอบด้วย ข้อมูลแนวทางการพัฒนาตนเอง ข้อมูลแต่ละสายอาชีพ ข้อมูลเชิงลึกของเรซูเมผู้ใช้งาน
 และโมเดลปัญญาประดิษฐ์ซึ่งสามารถวิเคราะห์แยกประเภทสายอาชีพที่เหมาะสมกับข้อมูลในเรซูเมของนักศึกษาได้
 
-ในการเทรนโมเดล เราได้นำชุดข้อมูลมาใช้เป็นจำนวน 920 รายการ โดยประกอบด้วยข้อมูลของเรซูเมและสายอาชีพของเรซูเมนั้น ๆ
+ในการฝึกสอนโมเดล เราได้นำชุดข้อมูลดิบมาจำนวน 962 รายการ มาผ่านกระบวนการเตรียมข้อมูล จนเหลือข้อมูลที่ได้คุณภาพ 205 ชุด โดยประกอบด้วยข้อมูลของเรซูเมและสายอาชีพของเรซูเมนั้น ๆ
 ซึ่งเราได้นำมาปรับปรุงและรวมกลุ่มกันจนออกมาเป็น 6 หมวดหมู่สายาชีพที่เราสามารถครอบคลุมได้ จากนั้นนำอัลกอริทึม TF-IDF มาใช้เพื่อค้นหาจุดสำคัญภายในข้อมูลจากความถี่ของคำ
-หลังสิ้นสุดการเตรียมข้อมูล เราได้นำชุดข้อมูลเหล่านี้มาเทรนกับโมเดลประเภท KNN ซึ่งเราได้พิสูจน์มาแล้วภายในโครงงานว่ามีประวิทธิภาพที่สุด
+หลังสิ้นสุดการเตรียมข้อมูล เราได้นำชุดข้อมูลเหล่านี้มาฝึกสอนกับโมเดลประเภท KNN ซึ่งเราได้พิสูจน์มาแล้วภายในโครงงานว่ามีประวิทธิภาพที่สุด
 ในระหว่างการพัฒนาเอง ทางผู้จัดทำเองก็ได้ออกทดสอบกับผู้ใช้งานจริง และค้นหาข้อมูลที่จะป้อนให้แก่ผู้ใช้งานได้ดีที่สุดเพื่อบรรลุตามเป้าหมายของโครงงาน
 โดยทางเราได้เปิดให้บริการเว็บแอปพลิเคชันนี้สู่สารณะผ่านบริการ Google Cloud ซึ่งสามารถเข้าใช้งานทุกฟีเจอร์ได้ตามที่เรากล่าวไปข้างต้น
 
