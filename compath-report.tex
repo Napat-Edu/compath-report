@@ -27,9 +27,9 @@
 \emergencystretch=10pt
 
 % First line of title
-\def\disstitleone{Compath: เว็บแอปพลิเคชันสำหรับนักศึกษาวิศวกรรมคอมพิวเตอร์เพื่อปรับปรุงการพัฒนาตนเองและเรซูเม}   
+\def\disstitleone{Compath: เว็บแอปพลิเคชันแยกประเภทเรซูเมสำหรับนักศึกษาวิศวกรรมคอมพิวเตอร์เพื่อแนะนำสายอาชีพ}   
 % Second line of title
-\def\disstitletwo{Compath: Web application for CPE students to improve their self-development and resume}   
+\def\disstitletwo{Compath: Web application with resume classification for CPE students to recommend their career path}   
 
 % author section
 \def\dissauthor{63070501025 Niwatchai Wangtrakuldee}
@@ -44,9 +44,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Your project and independent study committee..
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\dissadvisor{Asst.Prof.Dr. Khajonpong Akkarajitsakul, Ph.D.}  % Advisor
+\def\dissadvisor{Asst.Prof.Dr. Suthathip Maneewongvatana, Ph.D.}  % Advisor
+\def\disscoadvisor{Asst.Prof.Dr. Khajonpong Akkarajitsakul, Ph.D.}  % Co-advisor
 
-\def\disscoadvisor{}  % Co-advisor (none)
 \def\disscommitteetwo{Asst.Prof.Dr. Phond Phunchongharn, Ph.D.}  % 3rd committee member (optional)
 \def\disscommitteethree{Asst.Prof.Dr. Priyakorn Pusawiro, Ph.D.}   % 4th committee member (optional) 
 \def\disscommitteefour{Assoc.Prof.Dr Thumrongrat Amornraksa, Ph.D.}    % 5th committee member (optional) 
@@ -66,15 +66,15 @@
 \def\appendixnames{Appendix} %%% Appendices or Appendix
 
 \def\thaiworktype{ปริญญานิพนธ์} %  Project or research project % 
-\def\thaidisstitleone{Compath: เว็บแอปพลิเคชันสำหรับนักศึกษาวิศวกรรมคอมพิวเตอร์เพื่อปรับปรุงการพัฒนาตนเองและเรซูเม}
-\def\thaidisstitletwo{Compath: Web application for CPE students to improve their self-development and resume}
+\def\thaidisstitleone{Compath: เว็บแอปพลิเคชันแยกประเภทเรซูเมสำหรับนักศึกษาวิศวกรรมคอมพิวเตอร์เพื่อแนะนำสายอาชีพ}
+\def\thaidisstitletwo{Compath: Web application with resume classification for CPE students to recommend their career path}
 \def\thaidissauthor{63070501025 นาณิวัฒน์ชัย หวังตระกูลดี}
 \def\thaidissauthortwo{63070501038 นายนภัทร วารีดี} %Optional
 \def\thaidissauthorthree{63070501039 นายนริศ ถนอมทรัพย์} %Optional
 
-\def\thaidissadvisor{ผศ. ดร.ขจรพงษ์ อัครจิตสกุล}
+\def\thaidissadvisor{ผศ. ดร.สุธาทิพย์ มณีวงศ์วัฒนา}
 %% Leave this empty if you have no co-advisor
-\def\thaidisscoadvisor{} %Optional
+\def\thaidisscoadvisor{ผศ. ดร.ขจรพงษ์ อัครจิตสกุล} %Optional
 \def\thaidissdegree{วิศวกรรมศาสตรบัณฑิต}
 
 % Change the line spacing here...
@@ -135,14 +135,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \abstract
 
-The problems of students not knowing how to develop themselves or determine their suitability for a particular profession 
-is a problem that can lead to significant disappointments in the future. This is especially critical in an era where new graduates 
-must compete at an increasingly high rate every year with the root that just little problems. This project aims to help students in 
-the target group quickly identify what suits them and develop themselves promptly to meet the demands of the future job market. 
-This will be achieved through a web application comprising a community, self-development guidelines, information on various professions, 
-and an artificial intelligence model capable of analyzing suited career path based on students' resume data.
+The problems of students not knowing how to develop themselves or determine their suitability for a particular profession
+is a problem that can lead to significant disappointments in the future. This is especially critical in an era where new graduates
+must compete at an increasingly high rate every year with the root that just little problems. This project aims to help students in
+the target group quickly identify what suits them and develop themselves promptly to meet the demands of the future job market.
+This will be achieved through a web application comprising a self-development guidelines, information on various professions,
+an artificial intelligence model capable of classification suited career path based on student's resume data, and insight of student's resume.
 
-[Results are now in processes]
+To train our model, training dataset was created with 920 records that consists of data in resume and label of career path.
+We group all of datas into 6 classes that we provided, using TF-IDF as word counting frequency algorithm to extract feature of datas.
+After preprocesses method, we use thse data to train with KNN model which we have proven to be the most effective.
+In development process, we have usability test with target users and research for information that best serve for our targer user and objectives.
+We also deploy these service on our web application to provide all feature for user to use it, which is on Google Cloud and be able to access anywhere in public.
+
 
 \begin{flushleft}
     \begin{tabular*}{\textwidth}{@{}lp{0.8\textwidth}}
@@ -161,10 +166,14 @@ and an artificial intelligence model capable of analyzing suited career path bas
 
 ปัญญานักศึกษาไม่ทราบว่าตนเองควรพัฒนาตนเองอย่างไร หรือตอนนี้ตนเองเหมาะกับสายอาชีพใด เป็นปัญหาที่สามารถสร้างความผิดหวังใหญ่หลวงได้ในอนาคต
 โดยเฉพาะอย่างยิ่งในยุคที่นักศึกษาจบใหม่ต้องแข่งขันในอัตราที่สูงขึ้นทุกปี โดยมีสาเหตุมาจากปัญหาเล็กน้อยเท่านั้น โครงงานนี้จึงหวังว่าจะสามารถทำให้นักศึกษากลุ่มเป้าหมาย
-รู้สิ่งที่เหมาะกับตนเองเร็วขึ้น สามารถพัฒนาตนเองได้อย่างทันท่วงทีสำหรับตลาดแรงานในอนาคต ผ่านเว็บแอปพลิเคชันที่ประกอบด้วยชุมชน ข้อมูลแนวทางการพัฒนาตนเอง ข้อมูลแต่ละสายอาชีพ
-และโมเดลปัญญาประดิษฐ์ซึ่งสามารถวิเคราะห์อาชีพที่เหมาะสมกับข้อมูลในเรซูเมของนักศึกษาได้
+รู้สิ่งที่เหมาะกับตนเองเร็วขึ้น สามารถพัฒนาตนเองได้อย่างทันท่วงทีสำหรับตลาดแรงงานในอนาคต ผ่านเว็บแอปพลิเคชันที่ประกอบด้วย ข้อมูลแนวทางการพัฒนาตนเอง ข้อมูลแต่ละสายอาชีพ ข้อมูลเชิงลึกของเรซูเมผู้ใช้งาน
+และโมเดลปัญญาประดิษฐ์ซึ่งสามารถวิเคราะห์แยกประเภทสายอาชีพที่เหมาะสมกับข้อมูลในเรซูเมของนักศึกษาได้
 
-[ผลลัพธ์อยู่ในระหว่างรอดำเนินงาน]
+ในการเทรนโมเดล เราได้นำชุดข้อมูลมาใช้เป็นจำนวน 920 รายการ โดยประกอบด้วยข้อมูลของเรซูเมและสายอาชีพของเรซูเมนั้น ๆ
+ซึ่งเราได้นำมาปรับปรุงและรวมกลุ่มกันจนออกมาเป็น 6 หมวดหมู่สายาชีพที่เราสามารถครอบคลุมได้ จากนั้นนำอัลกอริทึม TF-IDF มาใช้เพื่อค้นหาจุดสำคัญภายในข้อมูลจากความถี่ของคำ
+หลังสิ้นสุดการเตรียมข้อมูล เราได้นำชุดข้อมูลเหล่านี้มาเทรนกับโมเดลประเภท KNN ซึ่งเราได้พิสูจน์มาแล้วภายในโครงงานว่ามีประวิทธิภาพที่สุด
+ในระหว่างการพัฒนาเอง ทางผู้จัดทำเองก็ได้ออกทดสอบกับผู้ใช้งานจริง และค้นหาข้อมูลที่จะป้อนให้แก่ผู้ใช้งานได้ดีที่สุดเพื่อบรรลุตามเป้าหมายของโครงงาน
+โดยทางเราได้เปิดให้บริการเว็บแอปพลิเคชันนี้สู่สารณะผ่านบริการ Google Cloud ซึ่งสามารถเข้าใช้งานทุกฟีเจอร์ได้ตามที่เรากล่าวไปข้างต้น
 
 \begin{flushleft}
     \begin{tabular*}{\textwidth}{@{}lp{0.8\textwidth}}
@@ -181,7 +190,10 @@ and an artificial intelligence model capable of analyzing suited career path bas
 %%%%%%%%%%%%%%%%%%%%%%% Acknowledgments %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \preface
-ขอบคุณอาจารย์ที่ปรึกษา กรรมการ พ่อแม่พี่น้อง และเพื่อนๆ คนที่ช่วยให้งานสำเร็จ (รอดำเนินงานจนเสร็จสิ้น)
+ขอขอบพระคุณอาจารย์ที่ปรึกษา อาจารย์ที่ปรึกษาร่วม คณะกรรมการ พ่อแม่พี่น้อง และเพื่อน ๆ รวมไปถึงผู้ให้อนุญาติในการทดสอบทุกท่าน
+ที่ช่วยให้โครงงานนี้สำเร็จไปได้ด้วยดี ถูกปรับปรุงจนสามารถใช้งานได้ตามที่คาดหวังไว้ และมีประสิทธิภาพ
+
+(เมื่อโครงงานดำเนินการจนเสร็จสิ้น จะกลับมาแก้ไขให้สมบูรณ์อีกครั้ง)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% ToC, List of figures/tables %%%%%%%%%%%%%%%%
