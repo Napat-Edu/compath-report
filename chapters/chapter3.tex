@@ -240,11 +240,10 @@
         \multicolumn{3}{c}{User}                                                                                                      \\ \hline
         Field Name  & Field Type & Description                                                                                        \\ \hline
         uid         & string     & รหัสประจำตัวของผู้ใช้ ที่ทางระบบจะเป็นผู้กำหนดให้ เพื่อใช้แยกผู้ใช้แต่ละท่านอย่างชัดเจน            \\
-        fName       & string     & ชื่อต้นของผู้ใช้                                                                                   \\
-        lName       & string     & นามสกุลของผู้ใช้                                                                                   \\
+        firstname   & string     & ชื่อต้นของผู้ใช้                                                                                   \\
+        lastname    & string     & นามสกุลของผู้ใช้                                                                                   \\
         email       & string     & อีเมลของผู้ใช้                                                                                     \\
-        resume\_url & string     & url สำหรับเข้าถึงไฟล์ resume ที่ผู้ใช้อัพโหลดสู่ระบบของเรา โดยระบบจะบบจะเป็นผู้จัดการข้อมูลส่วนนี้ \\
-        avatar\_url & string     & url สำหรับเข้าถึงรูปโปรไฟล์ผู้ใช้ โดยระบบจะบบจะเป็นผู้จัดการข้อมูลส่วนนี้                          \\ \hline
+        image\_url  & string     & url สำหรับเข้าถึงรูปโปรไฟล์ของผู้ใช้ \\ \hline
     \end{tabular*}
 \end{table}
 
@@ -255,58 +254,45 @@
         \multicolumn{3}{c}{ResumeHistory}                                                                   \\\hline
         Field Name    & Field Type & Description                                                            \\\hline
         resume\_owner & string     & รหัสประจำตัวของผู้ใช้ รูปแบบเดียวกับ uid ใช้สำหรับการระบุเจ้าของข้อมูล \\
-        user\_input   & string     & ค่ารับเข้าจากผู้ใช้                                                    \\
+        resume\_input   & IResumeInput     & ค่าเรซูเมรับเข้าจากผู้ใช้ โดยมีลักษณะข้อมูลดังภาพ ประกอบด้วย การศึกษา ความสามารถ ประสบการณ์ \\
         input\_date   & Date       & วันที่ผู้ใช้กรอกข้อมูล \\ \hline
     \end{tabular*}
 \end{table}
 
-\subsection{ตารางฐานข้อมูล ForumStock}
+\subsection{ตารางฐานข้อมูล Career Path Data}
 \begin{table}[H]
     \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
         \hline
-        \multicolumn{3}{c}{ForumStock}  \\ \hline
-        Field Name      & Field Type         & Description                                                                             \\\hline
-        forum\_title    & string             & ชื่อหัวข้อกระทู้                                                                                \\
-        forum\_owner    & string             & uid ของผู้ใช้ที่เป็นเจ้าของกระทู้ ใช้สำหรับระบุตัวตน                                            \\
-        content         & string             & เนื้อหาหลักของกระทู้                                                                            \\
-        forum\_type     & IForumType         & ประเภทของกระทู้ มีรูปแบบข้อมูลเป็น object ของประเภทกระทู้และ ชุดข้อมูลของ tag ที่เกี่ยวข้อง     \\
-        thumbups\_count & number             & จำนวนของการกดถูกใจกระทู้                                                                        \\
-        comments        & IUserComment{[}{]} & ความเห็นภายในกระทู้ มีรูปแบบข้อมูลเป็น object ของความเห็นหลักและข้อความตอบกลับภายในความเห็นนั้น \\ \hline
-    \end{tabular*}
-\end{table}
-
-\subsection{ตารางฐานข้อมูล ForumTypeConfig}
-\begin{table}[H]
-    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
-        \hline
-        \multicolumn{3}{c}{ForumTypeConfig}                                           \\\hline
-        Field Name        & Field Type   & Description                                \\\hline
-        forum\_categories & string{[}{]} & ประเภททั้งหมดของกระทู้ที่สามารถมีได้ในระบบ \\
-        forum\_tags       & string{[}{]} & tag ของกระทู้ทั้งหมดที่สามารถมีได้ในระบบ \\ \hline
-    \end{tabular*}
-\end{table}
-
-\subsection{ตารางฐานข้อมูล JobData}
-\begin{table}[H]
-    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
-        \hline
-        \multicolumn{3}{c}{JobData}                                                                      \\\hline
+        \multicolumn{3}{c}{Career Path Data}                                                                      \\\hline
         Field Name  & Field Type     & Description                                                       \\\hline
-        job\_title  & string         & ชื่อของอาชีพ                                                      \\
-        salary      & number         & ฐานเงินเดือนของอาชีพนั้น                                          \\
-        job\_detail & string         & ข้อมูลเบื้องต้นของอาชีพนั้น                                       \\
-        job\_skill  & JobSkill{[}{]} & ข้อมูลความสามารถของอาชีพนั้น มีรูปแบบและข้อมูลมาจากตาราง JobSkill \\ \hline
+        career\_path\_name             & string         & ชื่อของอาชีพ                                                      \\
+        career\_path\_description      & string         & ข้อมูลเบื้องต้นของอาชีพนั้น เพื่ออธิบายลักษณะของสายอาชีพให้เห็นภาพโดยง่าย \\
+        related\_careers              & IRelatedCareer{[}{]} &   อาชีพที่อยู่ในสายอาชีพนั้น ๆ และข้อมูลเบื้องต้น เช่น ชื่ออาชีพ ความสามารถ ทักษะที่ควรมี \\
+        base\_salary                   & IBaseSalary & ฐานเงินเดือนของอาชีพนั้นโดยเป็น object ที่จะเก็บขอบเขตเงินเดือนเอาไว้ \\ \hline
     \end{tabular*}
 \end{table}
 
-\subsection{ตารางฐานข้อมูล JobSkill}
+\subsection{ตารางฐานข้อมูล Skill Domain}
 \begin{table}[H]
     \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
         \hline
-        \multicolumn{3}{c}{JobSkill}                              \\\hline
+        \multicolumn{3}{c}{Skill Domain}                              \\\hline
         Field Name    & Field Type & Description                  \\\hline
-        job\_skill    & string     & ชื่อของความสามารถนั้นๆ       \\
-        skill\_detail & string     & รายละเอียดของความสามารถนั้นๆ \\\hline
+        id    & string     & หมายเลขจำเพาะของกลุ่มความสามารถที่ควรในประเภทเดียวกัน       \\
+        name & string     & ชื่อของกลุ่มความสามารถในประเภทเดียวกัน เช่น basic web development \\
+        skill\_list    & string[]     & ชุดของความสามารถที่อยู่ในกลุ่มนี้ ภายในจะเก็บ id ของความสามารถเอาไว้       \\
+        is\_in\_resume & boolean     & ตัวแปรสำหรับกำหนดว่า ความสามารถนี้เป็นสิ่งจำเป็น แต่อาจไม่จำเป็นต้องเขียนในเรซูเมใช่หรือไม่ เพื่อนำไปทำเป็นเงื่อนไขการแสดงผล \\\hline
+    \end{tabular*}
+\end{table}
+
+\subsection{ตารางฐานข้อมูล Skill Data}
+\begin{table}[H]
+    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+        \hline
+        \multicolumn{3}{c}{Skill Data}                              \\\hline
+        Field Name    & Field Type & Description                  \\\hline
+        id    & string     & หมายเลขจำเพาะของความามารถนี้       \\
+        name  & string[]   & ชื่อของความสามารถ \\ \hline
     \end{tabular*}
 \end{table}
 
