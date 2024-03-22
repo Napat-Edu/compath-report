@@ -74,159 +74,41 @@
 \begin{table}[H]
     % \centering
     \begin{tabular*}{\textwidth}{l|l} \hline
-        Actor                 & Anonymous                                       \\ \hline
-        Goal                  & ต้องการทราบถึงอาชีพที่เหมาะสมกับตนเอง                 \\ \hline
+        Actor                 & User                                       \\ \hline
+        Goal                  & ต้องการทราบถึงอาชีพที่เหมาะสมกับตนเองจากข้อมูลในเรซูเม            \\ \hline
         Precondition          & -                                               \\ \hline
-        Main success scenario & 1. ผู้ใช้ขอคำแนะนำอาชีพที่เหมาะสมกับตนเอง                \\
-                              & 2. ระบบถามข้อมูลของผู้ใช้                            \\
-                              & 3. ผู้ใช้กรอกข้อมูล                                  \\
-                              & 4. ระบบถามเพื่อยืนยันการกรอกข้อมูล                    \\
-                              & 5. ผู้ใช้ยืนยันการกรอกข้อมูล                           \\
-                              & 6. ระบบแสดงอาชีพที่เหมาะสมกับผู้ใช้                    \\ \hline
+        Main success scenario & 1. ผู้ใช้กดปุ่มทำนายผล                         \\
+        & 2. ระบบถามข้อมูลของผู้ใช้                            \\
+        & 3. ผู้ใช้กรอกข้อมูลเรซูเม                                  \\
+        & 4. ผู้ใช้กดปุ่มทำนายผล                                \\
+        & 5. ระบบตรวจสอบข้อมูลที่ผู้ใช้กรอก                           \\
+        & 6. ระบบแสดงอาชีพที่เหมาะสมกับผู้ใช้                    \\
+        & 7. บันทึกประวัติการทำนายผลลงในระบบ           \\ \hline
         Extensions (a)        & 5a. ผู้ใช้กรอกข้อมูลไม่ครบ                            \\
-                              & 6a. ระบบขึ้นเตือนว่าผู้ใช้ยังกรอกข้อมูลไม่ครบ              \\
-                              & 7a. กลับไปที่ขั้นตอนที่ 3                              \\ \hline
+        & 6a. ระบบขึ้นเตือนว่าผู้ใช้ยังกรอกข้อมูลไม่ครบ              \\
+        & 7a. กลับไปที่ขั้นตอนที่ 3                              \\ \hline
         Postcodition          & ระบบแนะนำให้ผู้ใช้ไปวิเคราะห์ข้อมูลเชิงลึกของอาชีพที่ได้แนะนำไป \\ \hline
     \end{tabular*}
 \end{table}
 
-\subsubsection{See career path node tree}
+\subsubsection{Watch Career Insight}
 \begin{table}[H]
     % \centering
     \begin{tabular*}{\textwidth}{l|l} \hline
-        Actor                 & Anonymous                                              \\ \hline
-        Goal                  & ต้องการดูแผนผังสายอาชีพ                                    \\ \hline
-        Precondition          & ผู้ใช้กำลังดูแผนผังรวมของสายอาชีพ                              \\ \hline
-        Main success scenario & 1. ใช้เลือกอาชีพที่ต้องการจะดู                                \\
-                              & 2. ระบบแสดงรายละเอียดย่อยเป็นรูปแบบแผนผังของสายอาชีพที่ผู้ใช้เลือก \\ \hline
-        Extensions (a)        & 1a. ผู้ใช้ยังไม่ได้เลือกอาชีพที่ต้องการจะดู                        \\
-                              & 2a. ระบบขึ้นเตือนว่าผู้ใช้ยังไม่ได้เลือกอาชีพที่ต้องการดู              \\
-                              & 3a. กลับไปที่ขั้นตอนที่ 1                                     \\ \hline
-        Postcodition          & -                                                      \\ \hline
+        Actor                 & User                  \\ \hline
+        Goal                  & ต้องการดูข้อมูลเชิงลึกของอาชีพ         \\ \hline
+        Precondition          & ผู้ใช้ต้องมีอาชีพที่ระบบแนะนำให้ในประวัติ          \\ \hline
+        Main success scenario & 1. ผู้ใช้เลือกอาชีพที่ต้องการดูข้อมูลเชิงลึก \\
+        & 2. ระบบแสดงข้อมูลเชิงลึกของอาชีพ     \\ \hline
+        Extensions (a)        & 1a. ผู้ใช้ต้องวิเคราะห์อาชีพใหม่        \\
+        & 2a. ระบบถามถึงข้อมูลของผู้ใช้         \\
+        & 3a. ผู้ใช้กรอกข้อมูลใหม่              \\
+        & 4a. ผู้ใช้ยืนยันการกรอกข้อมูล          \\
+        & 5a. ระบบแสดงอาชีพที่เหมาะสมกับผู้ใช้   \\
+        & 6a. กลับไปที่ขั้นตอนที่ 1              \\ \hline
+        Postcodition          & -                               \\ \hline
     \end{tabular*}
 \end{table}
-
-\subsubsection{View Community}
-\begin{table}[H]
-    % \centering
-    \begin{tabular*}{\textwidth}{l|l} \hline
-        Actor                 & Anonymous                              \\ \hline
-        Goal                  & ต้องการดูรายการของกระทู้ต่าง ๆ ในชุมชน       \\ \hline
-        Precondition          & ผู้ใช้กำลังดูประเภทของกระทู้                   \\ \hline
-        Main success scenario & 1. ผู้ใช้เลือกประเภทของกระทู้                \\
-                              & 2. ระบบแสดงรายการของกระทู้ประเภทที่ผู้ใช้เลือก \\ \hline
-        Extensions (a)        & -                                      \\ \hline
-        Postcodition          & -                                      \\ \hline
-    \end{tabular*}
-\end{table}
-
-\subsubsection{View Topic/Forum}
-\begin{table}[H]
-    % \centering
-    \begin{tabular*}{\textwidth}{l|l} \hline
-        Actor                 & Anonymous                                        \\ \hline
-        Goal                  & ต้องการดูรายละเอียดของกระทู้                          \\ \hline
-        Precondition          & ผู้ใช้กำลังดูรายการของกระทู้ที่อยู่ในชุมชน (กระทู้ประเภทไหนก็ได้) \\ \hline
-        Main success scenario & 1. ผู้ใช้เลือกกระทู้ที่ต้องการดูรายละเอียด                  \\
-                              & 2. ระบบแสดงรายละเอียดของกระทู้ผู้ใช้เลือก               \\ \hline
-        Extensions (a)        & -                                                \\ \hline
-        Postcodition          & -                                                \\ \hline
-    \end{tabular*}
-\end{table}
-
-\subsubsection{Create Topic/Forum}
-\begin{table}[H]
-    % \centering
-    \begin{tabular*}{\textwidth}{l|l} \hline
-        Actor                 & Logged-in User                                   \\ \hline
-        Goal                  & ต้องการสร้างกระทู้                                   \\ \hline
-        Precondition          & ผู้ใช้กำลังดูรายการของกระทู้ที่อยู่ในชุมชน (กระทู้ประเภทไหนก็ได้) \\ \hline
-        Main success scenario & 1. ผู้ใช้เลือกกระทู้ที่ต้องการดูรายละเอียด                  \\
-                              & 2. ระบบถามรายละเอียดภายในกระทู้                     \\
-                              & 3. ผู้ใช้กรอกรายอะเอียดภายในกระทู้                     \\
-                              & 4. ระบบถามเพื่อยืนยันการลงกระทู้                       \\
-                              & 5. ผู้ใช้ยืนยันการลงกระทู้                              \\
-                              & 6. ระบบสร้างและแสดงกระทู้ของผู้ใช้                     \\ \hline
-        Extensions (a)        & 5a. ผู้ใช้กรอกข้อมูลไม่ครบ                             \\
-                              & 6a. ระบบขึ้นเตือนว่าผู้ใช้ยังกรอกข้อมูลไม่ครบ               \\
-                              & 7a. กลับไปที่ขั้นตอนที่ 3                               \\ \hline
-        Postcodition          & กระทู้ของผู้ใช้แสดงอยู่ในชุมชน                           \\ \hline
-    \end{tabular*}
-\end{table}
-
-\subsubsection{Reply Topic/Forum}
-\begin{table}[H]
-    % \centering
-    \begin{tabular*}{\textwidth}{l|l} \hline
-        Actor                 & Logged-in User                                   \\ \hline
-        Goal                  & ต้องการแสดงความคิดเห็นในกระทู้                        \\ \hline
-        Precondition          & ผู้ใช้กำลังดูรายการของกระทู้ที่อยู่ในชุมชน (กระทู้ประเภทไหนก็ได้) \\ \hline
-        Main success scenario & 1. ผู้ใช้เลือกส่วนที่ต้องการแสดงความคิดเห็น                \\
-                              & 2. ระบบถามถึงรายละเอียดความคิดเห็น                   \\
-                              & 3. ผู้ใช้กรอกความคิดเห็น                              \\
-                              & 4. ระบบถามเพื่อยืนยันการแสดงความคิดเห็น                \\
-                              & 5. ผู้ใช้ยืนยันการแสดงความคิดเห็น                       \\
-                              & 6. ระบบสร้างและแสดงความคิดเห็นของผู้ใช้ในกระทู้          \\ \hline
-        Extensions (a)        & 4a. ผู้ใช้ยังไม่ได้กรอกความคิดเห็น                       \\
-                              & 5a. ระบบขึ้นเตือนว่าผู้ใช้ยังไม่ได้กรอกความคิดเห็น           \\
-                              & 6a. กลับไปที่ขั้นตอนที่ 3                               \\ \hline
-        Postcodition          & ความคิดเห็นของผู้ใช้แสดงอยู่ในกระทู้                      \\ \hline
-    \end{tabular*}
-\end{table}
-
-\subsubsection{Upload Resume}
-\begin{table}[H]
-    % \centering
-    \begin{tabular*}{\textwidth}{l|l} \hline
-        Actor                 & Logged-in User                                  \\ \hline
-        Goal                  & ต้องการอัพโหลดเรซูเม่                               \\ \hline
-        Precondition          & ผู้ใช้กำลังอยู่ดูข้อมูลส่วนตัวของตนเอง                      \\ \hline
-        Main success scenario & 1. ผู้ใช้เลือกเรซูเม่ที่ต้องการอัพโหลด                    \\
-                              & 2. ระบบถามเพื่อยืนยันการอัพโหลดเรซูเม่                 \\
-                              & 3. ผู้ใช้ยืนยันการอัพโหลดเรซูเม่                        \\
-                              & 4. ระบบอัพโหลดและแจ้งเตือนว่าอัพโหลดเรซูเม่สำเร็จ        \\ \hline
-        Extensions (a)        & 3a. ผู้ใช้เลือกเรซูเม่ที่ต้องการอัพโหลด                   \\
-                              & 4a. ระบบขึ้นเตือนว่าผู้ใช้ยังไม่ได้เลือกเรซูเม่ที่ต้องการอัพโหลด \\
-                              & 5a. กลับไปที่ขั้นตอนที่ 1                              \\ \hline
-        Postcodition          & เรซูเม่แสดงอยู่ในข้อมูลส่วนตัวของผู้ใช้                    \\ \hline
-    \end{tabular*}
-\end{table}
-
-\subsubsection{Analyzed Resume}
-\begin{table}[H]
-    % \centering
-    \begin{tabular*}{\textwidth}{l|l} \hline
-      Actor                 & Logged-in User                  \\ \hline
-      Goal                  & ต้องการดูข้อมูลเชิงลึกของอาชีพ         \\ \hline
-      Precondition          & ผู้ใช้ต้องมีอาชีพที่ระบบแนะนำให้          \\ \hline
-      Main success scenario & 1. ผู้ใช้เลือกอาชีพที่ต้องการดูข้อมูลเชิงลึก \\
-                            & 2. ระบบแสดงข้อมูลเชิงลึกของอาชีพ     \\ \hline
-      Extensions (a)        & 1a. ผู้ใช้ต้องวิเคราะห์อาชีพใหม่        \\
-                            & 2a. ระบบถามถึงข้อมูลของผู้ใช้         \\
-                            & 3a. ผู้ใช้กรอกข้อมูลใหม่              \\
-                            & 4a. ผู้ใช้ยืนยันการกรอกข้อมูล          \\
-                            & 5a. ระบบแสดงอาชีพที่เหมาะสมกับผู้ใช้   \\
-                            & 6a. กลับไปที่ขั้นตอนที่ 1              \\ \hline
-      Postcodition          & -                               \\ \hline
-  \end{tabular*}
-\end{table}
-
-\subsection{Class Diagram}
-\begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
-    \fbox{\includegraphics[width=8cm]{./figure/figure_class_diagram.png}}
-    \caption{Class Diagram}\label{fig:class_diagram}
-\end{figure}
-เพื่อการพัฒนาซอฟต์แวร์ร่วมกันที่มีประสิทธิภาพ และการจำแนกหน่วยการทำงานของระบบได้อย่างชัดเจน เราจึงได้ออกแบบ class diagram โดยมีหน่วยการทำงานหลัก 3 class ด้วยกัน ประกอบด้วย
-
-\begin{enumerate}
-    \item หน่วยจัดการผู้ใช้ (User Manager) รับหน้าที่ในการจัดการข้อมูลเกี่ยวกับผู้ใช้ทั้งหมด เช่น การล็อกอินหรือปรับข้อมูลส่วนตัว
-    \item หน่วยจัดการเรซูเม (Resume Manager) รับหน้าที่ในการจัดการระบบที่เกี่ยวกับเรซูเมทั้งหมด เช่น การส่งคำขอเพื่อใช้งานโมเดล บันทึกประวัติ เก็บข้อมูลการใช้งานของผู้ใช้
-    \item หน่วยจัดการกระทู้ชุมชน (Forum Manager) รับหน้าที่ในการจัดการระบบเกี่ยวกับกระทู้ในชุมชนทั้งหมด เช่น การสร้างกระทู้ใหม่ ขอข้อมูลกระทู้จากฐานข้อมูล
-     โดยมีหน่วยการทำงานย่อยเพิ่มเติม 2 หน่วยเพื่อช่วยเหลือการทำงาน ประกอบด้วย หน่วยจัดการความเห็นในกระทู้ (Comment) เพื่อรับมือการรับความเห็นจากผู้ใช้และบันทึกลงฐานข้อมูล
-     และหน่วยจัดการประเภทกระทู้ สำหรับใช้งานในตอนที่ผู้ใช้สร้างกระทู้ใหม่ เพื่อให้ผู้ใช้เลือกสร้างประเภทของกระทู้ที่สามารถมีได้ในปัจจุบัน
-\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -256,45 +138,47 @@
 \newline
 บริการสำหรับใช้คำนวณเกี่ยวกับปัญญาประดิษฐ์ของทางคณะผู้จัดทำเท่านั้น เนื่องจากกินทรัพยากรสูง การแยกบริการออกมาจากบริการหลักจึงสามารถดูแลและจัดการได้ง่ายกว่า โดยจะรับค่ามาจากส่วนบริการหลักและส่งค่ากลับไปให้
 
+
+\subsection{Architecture Pattern}
+\begin{figure}[H]\centering
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \setlength{\fboxsep}{0.5cm}
+    \fbox{\includegraphics[width=8cm]{./figure/figure_architecture_pattern.png}}
+    \caption{Architecture Pattern}\label{fig:arch_pattern}
+\end{figure}
+เพื่อการพัฒนาซอฟต์แวร์ร่วมกันที่มีประสิทธิภาพ และการจำแนกหน่วยการทำงานของระบบได้อย่างชัดเจน เราจึงได้ออกแบบ Architecture Pattern ตามหลักการของ NestJs ซึ่งประกอบด้วย 3 ระดับคือ
+
+\begin{enumerate}
+    \item Route รับหน้าที่ในการรับมือทางเข้าที่ผู้ใช้สามารถส่งคำขอทั้งหมดมาที่ระบบหลังบ้าน และเรียกใช้งานบริการภายใน เช่น การขอยืนยันตัวตน การขอเข้าชมข้อมูลเชิงลึก เป็นต้น
+    \item Service หน่วยบริการที่รับหน้าที่ดำเนินการเชิงตรรกะและคำนวณทั้งหมดตามหมดหมู่ เพื่อส่งกลับข้อมูลไปที่ผู้ใช้ หรือเรียกใช้ข้อมูลจากฐานข้อมูลผ่าน Data Acess เช่น บริการยืนยันตัวตน เพื่อรับหน้าที่ยืนยันตัวตน สร้างและส่งโทเคนกลับสู่ผู้ใช้
+    \item Data Access เป็นส่วนเชื่อมต่อกับฐานข้อมูลตามแผนภาพข้อมูลที่ประกาศไว้ ถูกแบ่งไว้ตามหมวดหมู่ตาม collection ในฐานข้อมูล และส่งกลับข้อมูลที่ตรงกันกลับสู่หน่วยบริการ
+\end{enumerate}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sequence Diagram Section
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Sequence Diagram}
-\subsection{Register}
+\subsection{Sign In with Google}
 \begin{figure}[H]\centering
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_register.png}}
-    \caption{Register Sequence Diagram}\label{fig:regisSeqDiagram}
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_sign_in.png}}
+    \caption{Sign In with Google Sequence Diagram}\label{fig:signinSeqDiagram}
 \end{figure}
-\textbf{สถานการณ์: }ผู้ใช้สมัครสมาชิก
+\textbf{สถานการณ์: }ผู้ใช้ลงชื่อเข้าใช้ด้วยบัญชี Google
 \begin{enumerate}
-    \item ผู้ใช้กรอกข้อมูลในหน้าสมัครสมาชิก
-    \item user interface จะทำการรับมือในกรณีที่ผู้ใช้กรอกข้อมูลยังไม่ถูกต้อง
-    \item เมื่อข้อมูลถูกต้องแล้ว ผู้ใช้ทำการกดยืนยัน และส่งคำขอไปที่บริการส่วนหลัก
-    \item บริการส่วนหลักทำการตรวจสอบข้อมูลผู้ใช้เดิม หากยังไม่มีข้อมูลจะบันทึกข้อมูลใหม่ลงญานข้อมูลและส่งสถานะกลับสู่ผู้ใช้ หากมีอยู่แล้วจะทำการส่งสถานะกลับสู่ผู้ใช้ทันที
-    \item เมื่อผู้ใช้ได้รับสถานะ หากสำเร็จที่ส่งผู้ใช้ไปที่หน้า login หากไม่สำเร็จจะแจ้งเตือนให้แก่ผู้ใช้
-\end{enumerate}
-
-\subsection{Login}
-\begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_login.png}}
-    \caption{Login Sequence Diagram}\label{fig:loginSeqDiagram}
-\end{figure}
-\textbf{สถานการณ์: }ผู้ใช้ล็อกอิน
-\begin{enumerate}
-    \item ผู้ใช้กรอกข้อมูลในหน้าล็อกอิน
-    \item user interface จะทำการรับมือในกรณีที่ผู้ใช้กรอกข้อมูลยังไม่ถูกต้อง
-    \item เมื่อข้อมูลถูกต้องแล้ว ผู้ใช้ทำการกดยืนยัน และส่งคำขอไปที่บริการส่วนหลัก
-    \item บริการส่วนหลักตรวจสอบข้อมูลผู้ใช้ที่มีอยู่ และส่งสถานะกลับสู่ผู้ใช้
-    \item เมื่อผู้ใช้ได้รับสถานะ หากสำเร็จที่ส่งผู้ใช้ไปที่หน้าหลัก หากไม่สำเร็จจะแจ้งเตือนให้แก่ผู้ใช้
+    \item ผู้ใช้ส่งคำขอลงชื่อเข้าใช้
+    \item redirect ผู้ใช้ไปที่หน้าเลือกบัญชีของ Google
+    \item ผู้ใช้เลือกบัญชี บริการ Google ส่งกลับข้อมูลบัญชีมานั้นที่ระบบหลังบ้าน
+    \item หากบัญชีนี้ยังไม่เคยสมัครสมาชิกมาก่อน จะทำการบันทึกลงสู่ฐานข้อมูลด้วย
+    \item ส่งกลับข้อมูลบัญชีและโทเคนกลับสู้ผู้ใช้งาน
 \end{enumerate}
 
 \subsection{Resume Prediction}
 \begin{figure}[H]\centering
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_resume_predict.png}}
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_prediction.png}}
     \caption{Resume Prediction Sequence Diagram}\label{fig:resumePredictSeqDiagram}
 \end{figure}
 \textbf{สถานการณ์: }ผู้ใช้ใช้งานระบบวิเคราะห์เรซูเม
@@ -302,79 +186,36 @@
     \item ผู้ใช้กรอกข้อมูลเรซูเมของตัวเอง
     \item user interface รับมือกรณีที่ผู้ใช้กรอกข้อมูลไม่ครบ และแจ้งเตือนแก่ผู้ใช้
     \item ผู้ใช้กรอกข้อมูลถูกต้องและส่งคำขอสู่บริการหลัก
-    \item บริการหลักจัดการวิเคราะห์ข้อมูลเรซูเมของผู้ใช้ ในกรณีที่ผู้ใช้ login จะทำการบันทึกค่ารับเข้าต่าง ๆ ลงสู่ฐานข้อมูลเพื่อสำรองข้อมูลให้ผู้ใช้
-    \item ส่งข้อมูลกลับสู่ผู้ใช้และแสดงผล
+    \item บริการหลักจัดการวิเคราะห์ข้อมูลเรซูเมของผู้ใช้ ผ่านการใช้บริการโมเดลปัญญาประดิษฐ์
+    \item นำผลลัพธ์มาบันทึกลงสู่ฐานข้อมูล หากผู้ใช้งาน login อยู่ จะบันทึกชื่อของผู้ใช้ลงระบบไปด้วยเพื่อระบุตัวตน หากผู้ใช้ไม่ได้ login จะนำหมายเลขของประวัติส่งกลับผู้ใช้ไปด้วย
+    \item ส่งข้อมูลกลับสู่ผู้ใช้งานและแสดงผล
 \end{enumerate}
 
-\subsection{Analyze Resume}
+\subsection{Resume Insight}
 \begin{figure}[H]\centering
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_analyze_resume.png}}
-    \caption{Analyze Resume Sequence Diagram}\label{fig:anaResumeSeqDiagram}
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_insight.png}}
+    \caption{Resume Insight Sequence Diagram}\label{fig:insightResumeSeqDiagram}
 \end{figure}
-\textbf{สถานการณ์: }ผู้ใช้เข้าดูข้อมูลเชิงลึกจากการวิเคราะห์เรซูเม
+\textbf{สถานการณ์: }ผู้ใช้เข้าดูข้อมูลเชิงลึกจากประวัติการวิเคราะห์เรซูเม
 \begin{enumerate}
+    \item หากผู้ใช้ login จะดึงประวัติการทำนายมาจากฐานข้อมูล หากไม่ใช่ จะนำมาจาก local storage ของผู้ใช้
     \item ผู้ใช้เข้าสู่หน้าวิเคราะห์ข้อมูลเชิงลึกจากช่องใดทางหนึ่ง เช่น ผ่านการ redirect จากหน้าวิเคราะห์เรซูเม หรือเข้าสู่หน้าข้อมูลเชิงลึกโดยตรง (ต้องมีข้อมูลมาก่อน)
-    \item user interface ส่งคำขอสู่ระบบบริการหลัก และดึงข้อมูลจากฐานข้อมูล
+    \item ระบบหน้าบ้าน ส่งคำขอสู่ระบบบริการหลัก เพื่อวิเคราะห์ข้อมูลจากเรซูเมนั้น ๆ
     \item บริการหลักคำนวณข้อมูลและส่งกลับสู่ผู้ใช้
     \item แสดงผลแก่ผู้ใช้
 \end{enumerate}
 
-\subsection{View Forum}
+\subsection{Watch Career Exploration}
 \begin{figure}[H]\centering
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_view_forum.png}}
-    \caption{View Forum Sequence Diagram}\label{fig:viewForumSeqDiagram}
-\end{figure}
-\textbf{สถานการณ์: }ผู้ใช้เข้าดูหน้าชุมชน
-\begin{enumerate}
-    \item ผู้ใช้เข้ากดเข้าสู่หน้าชุมชน
-    \item user interface ส่งคำขอสู่ระบบบริการหลักและดึงข้อมูลจากฐานข้อมูล
-    \item บริการหลักส่งข้อมูลกลับสู่ผู้ใช้และแสดงผล
-\end{enumerate}
-
-\subsection{Reply Forum}
-\begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_reply_forum.png}}
-    \caption{Reply Forum Sequence Diagram}\label{fig:ReplyForumSeqDiagram}
-\end{figure}
-\textbf{สถานการณ์: }ผู้ใช้ตอบกลับข้อความในกระทู้ชุมชน
-\begin{enumerate}
-    \item ผู้ใช้กดเข้าหน้าเลือกกระทู้จากชุมชน
-    \item user interface ส่งคำขอสู่บริการหลัก เพื่อดึงข้อมูลจากฐานข้อมูล
-    \item ส่งรายการกระทู้กลับสู่ผู้ใช้
-    \item ผู้ใช้เลือกกระทู้และเข้าสู่หน้ากระทู้
-    \item ผู้ใช้กดพิมพ์ข้อความและกดตอบกลับกระทู้
-    \item user interface ทำการส่งข้อมูลสู่บริการหลักเพื่อบันทุกข้อความใหม่นี้สู่ฐานข้อมูล
-    \item ส่งสถานะสำเร็จแก่ผู้ใช้และแสดงผล
-\end{enumerate}
-
-\subsection{Create Forum}
-\begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_create_forum.png}}
-    \caption{Create Forum Sequence Diagram}\label{fig:createForumSeqDiagram}
-\end{figure}
-\textbf{สถานการณ์: }ผู้ใช้สร้างกระทู้ใหม่
-\begin{enumerate}
-    \item ผู้ใช้กดสร้างกระทู้ใหม่
-    \item user interface ส่งคำขอจากบริการหลักเพื่อดึงข้อมูลประเภทกระทู้ที่อาจมีได้ และส่งกลับสู่ผู้ใช้
-    \item ผู้ใช้เลือกประเภทของกระทู้และกรอกข้อมูลกระทู้ทั้งหมด
-    \item user interface ตรวจสอบข้อมูลที่ผู้ใช้กรอก หากผิดพลาดจะแจ้งเตือนแก่ผู้ใช้ หากไม่มีปัญหาจะส่งคำขอสู่บริการหลัก
-    \item บริการหลักบันทึกข้อมูลกระทู้ลงสู่ฐานข้อมูล และส่งสถานะกลับสู่ผู้ใช้ พร้อมแสดงผล
-\end{enumerate}
-
-\subsection{See Career Node Tree}
-\begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_see_node.png}}
-    \caption{See Career Node Tree Sequence Diagram}\label{fig:nodeTreeSeqDiagram}
+    \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_exploration.png}}
+    \caption{Watch Career Exploration Sequence Diagram}\label{fig:exploreSeqDiagram}
 \end{figure}
 \textbf{สถานการณ์: }ผู้ใช้เข้าดูหน้าสายใยอาชีพ
 \begin{enumerate}
     \item ผู้ใช้เข้าสู่หน้าสายใยอาชีพ
-    \item user interface ขอข้อมูลจากบริการหลักและดึงข้อมูลจากฐานข้อมูล
+    \item ระบบหน้าบ้านขอข้อมูลจากบริการหลักและดึงข้อมูลจากฐานข้อมูล
     \item บริการหลักส่งข้อมูลกลับสู่ผู้ใช้และแสดงผล
 \end{enumerate}
 
@@ -386,87 +227,87 @@
 \section{Database}
 ระบบฐานข้อมูลของเราจะใช้เป็นรูปแบบ NoSQL ประเภท document ผ่านบริการของ MongoDB โดยมีรายละเอียดในแต่ละตาราง ดังนี้
 \begin{figure}[H]\centering
-  \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-  \setlength{\fboxsep}{0.5cm}
-  \fbox{\includegraphics[width=8cm]{./figure/figure_database.png}}
-  \caption{Database Structure}\label{fig:database}
+    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+    \setlength{\fboxsep}{0.5cm}
+    \fbox{\includegraphics[width=8cm]{./figure/figure_database.png}}
+    \caption{Database Structure}\label{fig:database}
 \end{figure}
 
 \subsection{ตารางฐานข้อมูล User}
 \begin{table}[H]
-  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
-  \hline
-  \multicolumn{3}{c}{User}                                                                                                      \\ \hline
-  Field Name  & Field Type & Description                                                                                        \\ \hline
-  uid         & string     & รหัสประจำตัวของผู้ใช้ ที่ทางระบบจะเป็นผู้กำหนดให้ เพื่อใช้แยกผู้ใช้แต่ละท่านอย่างชัดเจน            \\
-  fName       & string     & ชื่อต้นของผู้ใช้                                                                                   \\
-  lName       & string     & นามสกุลของผู้ใช้                                                                                   \\
-  email       & string     & อีเมลของผู้ใช้                                                                                     \\
-  resume\_url & string     & url สำหรับเข้าถึงไฟล์ resume ที่ผู้ใช้อัพโหลดสู่ระบบของเรา โดยระบบจะบบจะเป็นผู้จัดการข้อมูลส่วนนี้ \\
-  avatar\_url & string     & url สำหรับเข้าถึงรูปโปรไฟล์ผู้ใช้ โดยระบบจะบบจะเป็นผู้จัดการข้อมูลส่วนนี้                          \\ \hline
-  \end{tabular*}
+    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+        \hline
+        \multicolumn{3}{c}{User}                                                                                                      \\ \hline
+        Field Name  & Field Type & Description                                                                                        \\ \hline
+        uid         & string     & รหัสประจำตัวของผู้ใช้ ที่ทางระบบจะเป็นผู้กำหนดให้ เพื่อใช้แยกผู้ใช้แต่ละท่านอย่างชัดเจน            \\
+        fName       & string     & ชื่อต้นของผู้ใช้                                                                                   \\
+        lName       & string     & นามสกุลของผู้ใช้                                                                                   \\
+        email       & string     & อีเมลของผู้ใช้                                                                                     \\
+        resume\_url & string     & url สำหรับเข้าถึงไฟล์ resume ที่ผู้ใช้อัพโหลดสู่ระบบของเรา โดยระบบจะบบจะเป็นผู้จัดการข้อมูลส่วนนี้ \\
+        avatar\_url & string     & url สำหรับเข้าถึงรูปโปรไฟล์ผู้ใช้ โดยระบบจะบบจะเป็นผู้จัดการข้อมูลส่วนนี้                          \\ \hline
+    \end{tabular*}
 \end{table}
 
 \subsection{ตารางฐานข้อมูล ResumeHistory}
 \begin{table}[H]
-  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
-  \hline
-  \multicolumn{3}{c}{ResumeHistory}                                                                   \\\hline
-  Field Name    & Field Type & Description                                                            \\\hline
-  resume\_owner & string     & รหัสประจำตัวของผู้ใช้ รูปแบบเดียวกับ uid ใช้สำหรับการระบุเจ้าของข้อมูล \\
-  user\_input   & string     & ค่ารับเข้าจากผู้ใช้                                                    \\
-  input\_date   & Date       & วันที่ผู้ใช้กรอกข้อมูล \\ \hline
-  \end{tabular*}
+    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+        \hline
+        \multicolumn{3}{c}{ResumeHistory}                                                                   \\\hline
+        Field Name    & Field Type & Description                                                            \\\hline
+        resume\_owner & string     & รหัสประจำตัวของผู้ใช้ รูปแบบเดียวกับ uid ใช้สำหรับการระบุเจ้าของข้อมูล \\
+        user\_input   & string     & ค่ารับเข้าจากผู้ใช้                                                    \\
+        input\_date   & Date       & วันที่ผู้ใช้กรอกข้อมูล \\ \hline
+    \end{tabular*}
 \end{table}
 
 \subsection{ตารางฐานข้อมูล ForumStock}
 \begin{table}[H]
-  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
-  \hline
-    \multicolumn{3}{c}{ForumStock}  \\ \hline                                                                                                     
-    Field Name      & Field Type         & Description                                                                             \\\hline
-    forum\_title    & string             & ชื่อหัวข้อกระทู้                                                                                \\
-    forum\_owner    & string             & uid ของผู้ใช้ที่เป็นเจ้าของกระทู้ ใช้สำหรับระบุตัวตน                                            \\
-    content         & string             & เนื้อหาหลักของกระทู้                                                                            \\
-    forum\_type     & IForumType         & ประเภทของกระทู้ มีรูปแบบข้อมูลเป็น object ของประเภทกระทู้และ ชุดข้อมูลของ tag ที่เกี่ยวข้อง     \\
-    thumbups\_count & number             & จำนวนของการกดถูกใจกระทู้                                                                        \\
-    comments        & IUserComment{[}{]} & ความเห็นภายในกระทู้ มีรูปแบบข้อมูลเป็น object ของความเห็นหลักและข้อความตอบกลับภายในความเห็นนั้น \\ \hline
-  \end{tabular*}
+    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+        \hline
+        \multicolumn{3}{c}{ForumStock}  \\ \hline
+        Field Name      & Field Type         & Description                                                                             \\\hline
+        forum\_title    & string             & ชื่อหัวข้อกระทู้                                                                                \\
+        forum\_owner    & string             & uid ของผู้ใช้ที่เป็นเจ้าของกระทู้ ใช้สำหรับระบุตัวตน                                            \\
+        content         & string             & เนื้อหาหลักของกระทู้                                                                            \\
+        forum\_type     & IForumType         & ประเภทของกระทู้ มีรูปแบบข้อมูลเป็น object ของประเภทกระทู้และ ชุดข้อมูลของ tag ที่เกี่ยวข้อง     \\
+        thumbups\_count & number             & จำนวนของการกดถูกใจกระทู้                                                                        \\
+        comments        & IUserComment{[}{]} & ความเห็นภายในกระทู้ มีรูปแบบข้อมูลเป็น object ของความเห็นหลักและข้อความตอบกลับภายในความเห็นนั้น \\ \hline
+    \end{tabular*}
 \end{table}
 
 \subsection{ตารางฐานข้อมูล ForumTypeConfig}
 \begin{table}[H]
-  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
-  \hline
-    \multicolumn{3}{c}{ForumTypeConfig}                                           \\\hline  
-    Field Name        & Field Type   & Description                                \\\hline  
-    forum\_categories & string{[}{]} & ประเภททั้งหมดของกระทู้ที่สามารถมีได้ในระบบ \\
-    forum\_tags       & string{[}{]} & tag ของกระทู้ทั้งหมดที่สามารถมีได้ในระบบ \\ \hline  
-  \end{tabular*}
+    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+        \hline
+        \multicolumn{3}{c}{ForumTypeConfig}                                           \\\hline
+        Field Name        & Field Type   & Description                                \\\hline
+        forum\_categories & string{[}{]} & ประเภททั้งหมดของกระทู้ที่สามารถมีได้ในระบบ \\
+        forum\_tags       & string{[}{]} & tag ของกระทู้ทั้งหมดที่สามารถมีได้ในระบบ \\ \hline
+    \end{tabular*}
 \end{table}
 
 \subsection{ตารางฐานข้อมูล JobData}
 \begin{table}[H]
-  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
-  \hline
-    \multicolumn{3}{c}{JobData}                                                                      \\\hline
-    Field Name  & Field Type     & Description                                                       \\\hline
-    job\_title  & string         & ชื่อของอาชีพ                                                      \\
-    salary      & number         & ฐานเงินเดือนของอาชีพนั้น                                          \\
-    job\_detail & string         & ข้อมูลเบื้องต้นของอาชีพนั้น                                       \\
-    job\_skill  & JobSkill{[}{]} & ข้อมูลความสามารถของอาชีพนั้น มีรูปแบบและข้อมูลมาจากตาราง JobSkill \\ \hline
-  \end{tabular*}
+    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+        \hline
+        \multicolumn{3}{c}{JobData}                                                                      \\\hline
+        Field Name  & Field Type     & Description                                                       \\\hline
+        job\_title  & string         & ชื่อของอาชีพ                                                      \\
+        salary      & number         & ฐานเงินเดือนของอาชีพนั้น                                          \\
+        job\_detail & string         & ข้อมูลเบื้องต้นของอาชีพนั้น                                       \\
+        job\_skill  & JobSkill{[}{]} & ข้อมูลความสามารถของอาชีพนั้น มีรูปแบบและข้อมูลมาจากตาราง JobSkill \\ \hline
+    \end{tabular*}
 \end{table}
 
 \subsection{ตารางฐานข้อมูล JobSkill}
 \begin{table}[H]
-  \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
-  \hline
-    \multicolumn{3}{c}{JobSkill}                              \\\hline
-    Field Name    & Field Type & Description                  \\\hline
-    job\_skill    & string     & ชื่อของความสามารถนั้นๆ       \\
-    skill\_detail & string     & รายละเอียดของความสามารถนั้นๆ \\\hline
-  \end{tabular*}
+    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+        \hline
+        \multicolumn{3}{c}{JobSkill}                              \\\hline
+        Field Name    & Field Type & Description                  \\\hline
+        job\_skill    & string     & ชื่อของความสามารถนั้นๆ       \\
+        skill\_detail & string     & รายละเอียดของความสามารถนั้นๆ \\\hline
+    \end{tabular*}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -509,84 +350,84 @@
 Resume Checker เป็นฟีเจอร์ที่ให้ผู้ใช้กรอกข้อมูลของเพื่อนำไปวิเคราะห์อาชีพที่เหมาะสม โดยผู้ใช้สามารถการข้อมูลเกี่ยวกับประสบการณ์ทำงาน, การศึกษา, ทักษะ, และคุณสมบัติอื่น ๆ ที่สำคัญ
 \begin{itemize}
     \item หน้าหลัก
-    \begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
-  \fbox{\includegraphics[width=8cm]{./figure/figure_wireframe_table1_mainpage1.png}}
-  \caption{\centering หน้าหลักสำหรับกดเริ่มวิเคราะห์ Resume}\label{fig:wireframe1_1}
-\end{figure}
- \begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
-  \fbox{\includegraphics[width=8cm]{./figure/figure_wireframe_table1_mainpage2.png}}
-  \caption{\centering หน้ากรอกข้อมูลของเพื่อนำไปวิเคราะห์}\label{fig:wireframe1_2}
-\end{figure}
+          \begin{figure}[H]\centering
+              \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+              \setlength{\fboxsep}{0.5cm}
+              \fbox{\includegraphics[width=8cm]{./figure/figure_wireframe_table1_mainpage1.png}}
+              \caption{\centering หน้าหลักสำหรับกดเริ่มวิเคราะห์ Resume}\label{fig:wireframe1_1}
+          \end{figure}
+          \begin{figure}[H]\centering
+              \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+              \setlength{\fboxsep}{0.5cm}
+              \fbox{\includegraphics[width=8cm]{./figure/figure_wireframe_table1_mainpage2.png}}
+              \caption{\centering หน้ากรอกข้อมูลของเพื่อนำไปวิเคราะห์}\label{fig:wireframe1_2}
+          \end{figure}
     \item ส่วนประกอบแบบโต้ตอบ
-  \begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
-  \fbox{\includegraphics[width=8cm]{./figure/figure_wireframe_table1_component1.png}}
-  \caption{\centering ช่องสำหรับกรอกข้อมูลของเพื่อนำไปวิเคราะห์}\label{fig:wireframe1_3}
-\end{figure}
+          \begin{figure}[H]\centering
+              \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+              \setlength{\fboxsep}{0.5cm}
+              \fbox{\includegraphics[width=8cm]{./figure/figure_wireframe_table1_component1.png}}
+              \caption{\centering ช่องสำหรับกรอกข้อมูลของเพื่อนำไปวิเคราะห์}\label{fig:wireframe1_3}
+          \end{figure}
 \end{itemize}
 
 \subsection {Match Career}
 Match Career เป็นฟีเจอร์สำหรับแสดงอาชีพที่เหมาะสมกับข้อมูลที่ผู้ใช้กรอกมาทำให้ผู้ใช้สามารถรู้ถึงอาชีพที่เหมาะสมกับตนเองและข้อมูลคร่าว ๆ ของอาชีพนั้น โดยผู้ใช้สามารถกลับไปแก้ไขข้อมูลที่กรอกได้เพื่อนำมาวิเคราะห์อาชีพใหม่ รวมถึงสามารถกดวิเคราะห์ข้อมูลเชิงลึกต่อไปได้แต่ผู้ใช้ต้องสมัครและล็อคอินเพื่อเก็บข้อมูลก่อน
 \begin{itemize}
     \item หน้าหลัก
-    \begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
-   \fbox{\includegraphics[width=8cm]{./figure/figure_wireframe_table2_mainpage1.png}}
-  \caption{\centering หน้าแสดงอาชีพที่วิเคราะห์ได้}\label{fig:wireframe2_1}
-\end{figure}
+          \begin{figure}[H]\centering
+              \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+              \setlength{\fboxsep}{0.5cm}
+              \fbox{\includegraphics[width=8cm]{./figure/figure_wireframe_table2_mainpage1.png}}
+              \caption{\centering หน้าแสดงอาชีพที่วิเคราะห์ได้}\label{fig:wireframe2_1}
+          \end{figure}
 \end{itemize}
 
 \subsection {Evaluate Result}
 Evaluate Result เป็นฟีเจอร์สำหรับแสดงข้อมูลเชิงลึกของอาชีพที่วิเคราะห์ได้ในตอนแรก โดยจะแสดงข้อมูลที่มีโยชน์เพื่อให้ผู้ใช้สามารถนำไปพัฒนาทักษะของตนเองและเรซูเม่ต่อไปได้
 \begin{itemize}
     \item หน้าหลัก
-    \begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
-  \fbox{\includegraphics[width=8cm]{./figure/figure_wireframe_table3_mainpage1.png}}
-  \caption{\centering หน้าแสดงข้อมูลเชิงลึกของอาชีพ}\label{fig:wireframe3_1}
-\end{figure}
+          \begin{figure}[H]\centering
+              \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+              \setlength{\fboxsep}{0.5cm}
+              \fbox{\includegraphics[width=8cm]{./figure/figure_wireframe_table3_mainpage1.png}}
+              \caption{\centering หน้าแสดงข้อมูลเชิงลึกของอาชีพ}\label{fig:wireframe3_1}
+          \end{figure}
 \end{itemize}
 
 \subsection {Career Node}
 Career Node เป็นฟีเจอร์ที่ช่วยให้ผู้ใช้ได้เห็นภาพชัดเจนมากขึ้นเกี่ยวกับทักษะที่ต้องใช้ในอาชีพต่าง ๆ โดยจะนำเสนอข้อมูลนี้ในรูปแบบของโหนดหรือโครงสร้างเครือข่ายซึ่งช่วยให้ข้อมูลสามารถสืบค้นและเข้าใจได้ง่ายและรวดเร็ว\begin{itemize}
     \item หน้าหลัก
-    \begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
-  \fbox{\includegraphics[width=10cm]{./figure/figure_wireframe_table4_mainpage1.png}}
-  \caption{\centering หน้าแสดงทักษะที่ใช้ในสายอาชีพ}\label{fig:wireframe4_1}
-  \end{figure}
+          \begin{figure}[H]\centering
+              \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+              \setlength{\fboxsep}{0.5cm}
+              \fbox{\includegraphics[width=10cm]{./figure/figure_wireframe_table4_mainpage1.png}}
+              \caption{\centering หน้าแสดงทักษะที่ใช้ในสายอาชีพ}\label{fig:wireframe4_1}
+          \end{figure}
 \end{itemize}
 
 \subsection {Community}
 Community เป็นฟีเจอร์ที่เสริมสร้างพื้นที่สำหรับการแลกเปลี่ยนข้อมูลและความคิดเห็นระหว่างสมาชิกในระบบ โดยผู้ใช้สามารถเข้ามาสร้างและตั้งกระทู้เพื่อนำเสนอความรู้, ประสบการณ์, หรือสนทนาเกี่ยวกับหัวข้อที่น่าสนใจ\begin{itemize}
     \item หน้าหลัก
-    \begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
- \fbox{\includegraphics[width=10cm]{./figure/figure_wireframe_table5_mainpage1.png}}
-  \caption{\centering หน้าเลือกหมวดหมู่กของกระทู้}\label{fig:wireframe5_1}
-  \end{figure}
-   \begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
-   \fbox{\includegraphics[width=10cm]{./figure/figure_wireframe_table5_mainpage2.png}}
-  \caption{\centering หน้าแสดงรายการกระทู้}\label{fig:wireframe5_2}
-  \end{figure}
+          \begin{figure}[H]\centering
+              \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+              \setlength{\fboxsep}{0.5cm}
+              \fbox{\includegraphics[width=10cm]{./figure/figure_wireframe_table5_mainpage1.png}}
+              \caption{\centering หน้าเลือกหมวดหมู่กของกระทู้}\label{fig:wireframe5_1}
+          \end{figure}
+          \begin{figure}[H]\centering
+              \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+              \setlength{\fboxsep}{0.5cm}
+              \fbox{\includegraphics[width=10cm]{./figure/figure_wireframe_table5_mainpage2.png}}
+              \caption{\centering หน้าแสดงรายการกระทู้}\label{fig:wireframe5_2}
+          \end{figure}
 
- \begin{figure}[H]\centering
-    \setlength{\fboxrule}{0.2mm} % can define this in the preamble
-    \setlength{\fboxsep}{0.5cm}
-  \fbox{\includegraphics[width=10cm]{./figure/figure_wireframe_table5_mainpage3.png}}
-  \caption{\centering หน้าแสดงรายละเอียดของกระทู้}\label{fig:wireframe5_3}
-  \end{figure}
+          \begin{figure}[H]\centering
+              \setlength{\fboxrule}{0.2mm} % can define this in the preamble
+              \setlength{\fboxsep}{0.5cm}
+              \fbox{\includegraphics[width=10cm]{./figure/figure_wireframe_table5_mainpage3.png}}
+              \caption{\centering หน้าแสดงรายละเอียดของกระทู้}\label{fig:wireframe5_3}
+          \end{figure}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -628,12 +469,12 @@ Term Frequency Inverse Document Frequency (TF-IDF)
 \begin{enumerate}
     \item Navie Bayes Classification
     \item Long Short Term Memory (LSTM)
-    \begin{itemize}
-        \item Embedding layer              | max input dimension is 10,000 and embedding dimension size is 100
-        \item Bidirectional LSTM 128 units | dropout rate 40\%
-        \item Bidirectional LSTM 64 units  | dropout rate 40\%
-        \item Dense layer 25 units         | softmax as activation function
-    \end{itemize}
+          \begin{itemize}
+              \item Embedding layer              | max input dimension is 10,000 and embedding dimension size is 100
+              \item Bidirectional LSTM 128 units | dropout rate 40\%
+              \item Bidirectional LSTM 64 units  | dropout rate 40\%
+              \item Dense layer 25 units         | softmax as activation function
+          \end{itemize}
 \end{enumerate}
 \par และคณะผู้จัดทำก็ทำการใส่ข้อมูลที่เตรียมเอาไว้เพื่อทำการเทรนโมเดล โดยที่โมเดลจะทำการทำนายว่าข้อมูลเรซูเมที่ใส่เข้าไป
 เป็นอาชีพใดจากทั้งหมด 5 อาชีพ (Software Engineer, Designer, Data, Security, Cloud Management) ซึ่ง
@@ -657,20 +498,20 @@ Long Short Term Memory (LSTM) ที่มากกว่านี้ การ�
 
 \begin{enumerate}
     \item การวัดผลเว็บแอปพลิเคชัน: เราคาดการณ์จะวัดผลด้วยการทดสอบกับผู้ใช้งานกลุ่มตัวอย่าง (Usability Test) จำนวน 5 คน จากนั้นจึงเก็บความเห็นและคะแนนความพึงพอใจจากผู้ทดสอบ
-    โดยเราคาดหวังว่าจะได้ผลตอบรับในเชิงบวกและได้รับคะแนนมากกว่าร้อยละ 70 จึงจะถือว่าสำเร็จ
-    \item การวัดผลโมเดล: เนื่องจากการเทรนโมเดลของพวกเรา เป็นการเทรนที่ต้องทำให้เกิดการ overfit ดังนั้นจึงไม่สามารถใช้เกณฑ์ความแม่นยำปกติในการสรุปผลได้ 
-    เราจึงออกแบบวิธีการวัดผลโดยการทดสอบกับผู้ใช้เช่นเดียวกับเว็บแอปพลิเคชัน อย่างไรก็ตาม การวัดความพึงพอใจกับโมเดลทำนายผลเช่นนี้ 
-    ผู้ทดสอบอาจเกิดความลำเอียงกับคำตอบในใจได้ เราจึงออกแบบเงื่อนไขการวัดผลเพื่อความรัดกุมและมีประสิทธิภาพ ดังนี้
-    \begin{itemize}
-        \item เราจะทดสอบกับผู้ใช้ 25 คน
-        \item ผู้ทดสอบจะต้องบอกคำตอบที่คาดหวังในใจของตนเองก่อนล่วงหน้าที่จะได้รับคำตอบจากโมเดล
-        \item ผู้ทดสอบให้อนุญาติเก็บข้อมูลอินพุตของเรซูเมตนเอง
-        \item ให้บุคคลภายนอกจำนวน 2-3 คน อ่านข้อมูลอินพุตผู้ทดสอบ และทดลองให้คำทำนายในมุมของบุคคลภายนอกด้วย
-        \item หากผู้ทดสอบพึงพอใจกับคำตอบของโมเดล ถือว่าการทดลองรอบนั้นสำเร็จผลทันที
-        \item หากผู้ทดสอบยังไม่พอใจกับคำตอบของโมเดล และความเห็นจากบุคคลภายนอกเห็นพ้องด้วย ถือว่าการทดลองรอบนั้นไม่สำเร็จ
-        \item หากผู้ทดสอบยังไม่พอใจกับคำตอบของโมเดล แต่ความเห็นจากบุคคลภายนอกตรงกันข้าม ถือว่าการทดลองรอบนั้นเป็นโมฆะ
-        \item เราคาดหวังว่าโมเดลจะสร้างความพอใจกับผู้ใช้ได้มากกว่าร้อยละ 70 จากทั้งหมด จึงจะถือว่าประสบความสำเร็จ
-    \end{itemize}
+          โดยเราคาดหวังว่าจะได้ผลตอบรับในเชิงบวกและได้รับคะแนนมากกว่าร้อยละ 70 จึงจะถือว่าสำเร็จ
+    \item การวัดผลโมเดล: เนื่องจากการเทรนโมเดลของพวกเรา เป็นการเทรนที่ต้องทำให้เกิดการ overfit ดังนั้นจึงไม่สามารถใช้เกณฑ์ความแม่นยำปกติในการสรุปผลได้
+          เราจึงออกแบบวิธีการวัดผลโดยการทดสอบกับผู้ใช้เช่นเดียวกับเว็บแอปพลิเคชัน อย่างไรก็ตาม การวัดความพึงพอใจกับโมเดลทำนายผลเช่นนี้
+          ผู้ทดสอบอาจเกิดความลำเอียงกับคำตอบในใจได้ เราจึงออกแบบเงื่อนไขการวัดผลเพื่อความรัดกุมและมีประสิทธิภาพ ดังนี้
+          \begin{itemize}
+              \item เราจะทดสอบกับผู้ใช้ 25 คน
+              \item ผู้ทดสอบจะต้องบอกคำตอบที่คาดหวังในใจของตนเองก่อนล่วงหน้าที่จะได้รับคำตอบจากโมเดล
+              \item ผู้ทดสอบให้อนุญาติเก็บข้อมูลอินพุตของเรซูเมตนเอง
+              \item ให้บุคคลภายนอกจำนวน 2-3 คน อ่านข้อมูลอินพุตผู้ทดสอบ และทดลองให้คำทำนายในมุมของบุคคลภายนอกด้วย
+              \item หากผู้ทดสอบพึงพอใจกับคำตอบของโมเดล ถือว่าการทดลองรอบนั้นสำเร็จผลทันที
+              \item หากผู้ทดสอบยังไม่พอใจกับคำตอบของโมเดล และความเห็นจากบุคคลภายนอกเห็นพ้องด้วย ถือว่าการทดลองรอบนั้นไม่สำเร็จ
+              \item หากผู้ทดสอบยังไม่พอใจกับคำตอบของโมเดล แต่ความเห็นจากบุคคลภายนอกตรงกันข้าม ถือว่าการทดลองรอบนั้นเป็นโมฆะ
+              \item เราคาดหวังว่าโมเดลจะสร้างความพอใจกับผู้ใช้ได้มากกว่าร้อยละ 70 จากทั้งหมด จึงจะถือว่าประสบความสำเร็จ
+          \end{itemize}
 \end{enumerate}
 
 % \emph{หัวข้อต่าง ๆ ในแต่ละบทเป็นเพียงตัวอย่างเท่านั้น หัวข้อที่จะใส่ในแต่ละบทขึ้นอยู่กับโปรเจคของนักศึกษาและอาจารย์ที่ปรึกษา}
