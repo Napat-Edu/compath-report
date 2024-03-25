@@ -355,6 +355,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{ขั้นตอนการพัฒนาโมเดล}
+\subsection{กำหนดวัตถุประสงค์ และคัดเลือกโมเดลสำหรับการทดลอง}
+เพื่อสร้างโมเดลที่ตอบโจทย์กับวัตถุประสงค์ของคณะผู้จัดทำ ซึ่งคือการจำแนกประเภทของเรซูเมให้เหมาะสมกับสายอาชีพ ทางเราสังเกตุเห็นว่า การใช้งานโมเดลในหมวดของการเรียนรู้ของเครื่อง หรือ machine learning นั้น มีโมเดลที่เหมาะสมมากที่สุด ประกอบด้วย
+\begin{itemize}
+    \item Multinomial Navie Bayes
+    \item Gaussian Navie Bayes
+    \item K-Neighbors
+    \item K-Neighbors with with One vs Rest
+    \item Support Vector Machine (SVM)
+    \item Logistic Regression
+\end{itemize}
+
+อย่างไรก็ตาม ทางคณะผู้จัดทำต้องการจะทดสอบความเป็นไปได้ทางทฤษฎีและค้นหาความเป็นไปได้ใหม่ ๆ หากสามารถทำได้ อาจจะทำให้ได้รับผลลัพธ์ที่ดียิ่งกว่าสิ่งที่คาดไว้ \textbf{จึงได้คิดนำโมเดลประเภทการเรียนรู้เชิงลึก หรือ deep learning มาใช้งานด้วย
+ซึ่งคือโมเดล Bidirectional LSTM (Bi-LSTM)} ซึ่งเป็นโมเดลที่สามารถจับความสัมพันธ์ระหว่างลำดับข้อความได้ ซึ่งอาจเหมาะกับข้อมูลภายในเรซูเม อีกทั้งทรัพยากรที่ใช้ยังอยู่ในขอบเขตที่รับไหว โดยทางคณะผู้จัดทำคาดหวังเป็นอย่างมากว่าโมเดล Bi-LSTM จะสามารถสร้างโมเดลที่มีประสิทธิภาพที่ดีตามที่คาดไว้
+
 \subsection{การรวบรวมข้อมูล (Get Data)}
 \label{subsec:Data Collecting}
 ทางคณะผู้จัดทำได้เลือกนำชุดข้อมูล Updated Resume Dataset \cite{dataset} จาก Kaggle ซึ่งเป็นชุดข้อมูล
@@ -408,40 +422,54 @@ Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA 
 อัลกอริทึมนี้จะสามารถจับคำสำคัญของแต่ละสายอาชีพได้
 
 \subsection{การเทรนโมเดล (Train Model)}
-หลังจากที่ทางคณะผู้จัดทำได้ทำการเตรียมข้อมูลสำเร็จแล้ว คณะผู้จัดทำก็ได้ทำโมเดลขึ้นมาทั้งหมด 6 โมเดล เพื่อเปรียบเทียบ
-ซึ่งเป็นโมเดลสำหรับการจัดหมวดหมู่ ดังตารางต่อไปนี้
+หลังจากที่ทางคณะผู้จัดทำได้ทำการเตรียมข้อมูลสำเร็จแล้ว คณะผู้จัดทำก็ได้ทำโมเดลขึ้นมาทั้งหมด 7 โมเดล เพื่อเปรียบเทียบ
+ซึ่งเป็นโมเดลสำหรับการจัดหมวดหมู่แยกประเภท โดยจะบอกเล่าในส่วนของโมเดลประเภท machine learning ก่อน ดังตารางต่อไปนี้
 \begin{table}[H]
     \begin{tabularx}{\textwidth}{l|l|X|X}
-        \multicolumn{2}{c|}{โมเดล}                                   & พารามิเตอร์                       & หมายเหตุ                                                                  \\ \hline
-        \multirow{6}{*}{Navie Bayes}                                 & \multirow{4}{*}{Multinomial}    & alpha = 1.0                         &                                    \\ \cline{3-4}
-                                                                     &                                 & force\_alpha = True                 &                                    \\ \cline{3-4}
-                                                                     &                                 & fit\_prior = True                   &                                    \\ \cline{3-4}
-                                                                     &                                 & class\_prior = None                 &                                    \\ \cline{2-4}
-                                                                     & \multirow{2}{*}{Gaussian}       & priors = None                       &                                    \\ \cline{3-4}
-                                                                     &                                 & var\_smoothing = 1e-9               &                                    \\ \hline
-        \multirow{7}{*}{K-Neighbors}                                 & \multirow{6}{*}{K-Neighbors*}   & algorithm = brute\_force            &                                    \\ \cline{3-4}
-                                                                     &                                 & leaf\_size = 30                     &                                    \\ \cline{3-4}
-                                                                     &                                 & metric = minkowski                  &                                    \\ \cline{3-4}
-                                                                     &                                 & n\_neighbors = 5                    &                                    \\ \cline{3-4}
-                                                                     &                                 & p = 2                               & คำนวณด้วยสูตร euclidean               \\ \cline{3-4}
-                                                                     &                                 & weight = distance                   &                                    \\  \cline{2-4}
-                                                                     & One Vs Rest                     & K-Neighbors*                        & นำโมเดล K-Neighbors ก่อนหน้ามาใช้งานต่อ \\ \hline
-        \multicolumn{2}{l|}{\multirow{2}{*}{Support Vector Machine}} & kernel = sigmoid                &                                                                          \\ \cline{3-4}
-        \multicolumn{2}{l|}{}                                        & decision\_function\_shape = ovr &                                                                          \\ \hline
-        \multicolumn{2}{l|}{\multirow{3}{*}{Logistic Regression}}    & C = 5e1                         &                                                                          \\ \cline{3-4}
-        \multicolumn{2}{l|}{}                                        & solver = lbfgs                  &                                                                          \\ \cline{3-4}
-        \multicolumn{2}{l|}{}                                        & multi\_class = multinomial      &                                                                          \\ \hline
-        \multicolumn{2}{l|}{\multirow{4}{*}{Long Short Term Memory}} & Embedding layer                 & embedding dimension size is 100*100                                      \\ \cline{3-4}
-        \multicolumn{2}{l|}{}                                        & Bidirectional LSTM 128 units    & dropout rate 40\%                                                        \\ \cline{3-4}
-        \multicolumn{2}{l|}{}                                        & Bidirectional LSTM 64 units     & dropout rate 40\%                                                        \\ \cline{3-4}
-        \multicolumn{2}{l|}{}                                        & Dense Layer 25 units            & softmax as activation function                                           \\
+        \multicolumn{2}{c|}{โมเดล}                                   & พารามิเตอร์                       & หมายเหตุ                                                       \\ \hline
+        \multirow{6}{*}{Navie Bayes}                                 & \multirow{4}{*}{Multinomial}    & alpha = 1.0              &                                    \\ \cline{3-4}
+                                                                     &                                 & force\_alpha = True      &                                    \\ \cline{3-4}
+                                                                     &                                 & fit\_prior = True        &                                    \\ \cline{3-4}
+                                                                     &                                 & class\_prior = None      &                                    \\ \cline{2-4}
+                                                                     & \multirow{2}{*}{Gaussian}       & priors = None            &                                    \\ \cline{3-4}
+                                                                     &                                 & var\_smoothing = 1e-9    &                                    \\ \hline
+        \multirow{7}{*}{K-Neighbors}                                 & \multirow{6}{*}{K-Neighbors*}   & algorithm = brute\_force &                                    \\ \cline{3-4}
+                                                                     &                                 & leaf\_size = 30          &                                    \\ \cline{3-4}
+                                                                     &                                 & metric = minkowski       &                                    \\ \cline{3-4}
+                                                                     &                                 & n\_neighbors = 5         &                                    \\ \cline{3-4}
+                                                                     &                                 & p = 2                    & คำนวณด้วยสูตร euclidean               \\ \cline{3-4}
+                                                                     &                                 & weight = distance        &                                    \\  \cline{2-4}
+                                                                     & One Vs Rest                     & K-Neighbors*             & นำโมเดล K-Neighbors ก่อนหน้ามาใช้งานต่อ \\ \hline
+        \multicolumn{2}{l|}{\multirow{2}{*}{Support Vector Machine}} & kernel = sigmoid                &                                                               \\ \cline{3-4}
+        \multicolumn{2}{l|}{}                                        & decision\_function\_shape = ovr &                                                               \\ \hline
+        \multicolumn{2}{l|}{\multirow{3}{*}{Logistic Regression}}    & C = 5e1                         &                                                               \\ \cline{3-4}
+        \multicolumn{2}{l|}{}                                        & solver = lbfgs                  &                                                               \\ \cline{3-4}
+        \multicolumn{2}{l|}{}                                        & multi\_class = multinomial      &                                                               \\ \hline
     \end{tabularx}
 \end{table}
 
-โดยที่ทั้ง 6 โมเดลจะใช้คอลัมน์ Resume จากชุดข้อมูลมาเป็นข้อมูลนำเข้า โดยจะต้องผ่าน\hyperref[subsec:Data Preparation]{การเตรียมข้อมูล}ก่อน ซึ่งจะมีลักษณะเป็น 
-Term Frequency Inverse Document Frequency (TF-IDF)
+โดยที่ทั้ง 6 โมเดลจะใช้คอลัมน์ Resume จากชุดข้อมูลมาเป็นข้อมูลนำเข้า โดยจะต้องผ่าน\hyperref[subsec:Data Preparation]{การเตรียมข้อมูล}ก่อน ซึ่งจะมีลักษณะเป็น
+Term Frequency Inverse Document Frequency (TF-IDF) ในทุกโมเดล
 
-\par และคณะผู้จัดทำก็ทำการใส่ข้อมูลที่เตรียมเอาไว้เพื่อทำการเทรนโมเดล โดยที่โมเดลจะทำการทำนายว่าข้อมูลเรซูเมที่ใส่เข้าไป
+ในส่วนของ ฺBi-LSTM เราได้วางโครงสร้างและขั้นตอนการจัดการข้อมูลก่อนเข้าสู่การเทรนโมเดลเอาไว้ ดังนี้
+\begin{itemize}
+    \item นำข้อความภายในเรซูเม (Resume) มาผ่านการทำโทเคน (Tokenization) เพื่อแปลงจากอักษรแต่ละตัว ให้กลายเป็นชุดตัวเลขเฉพาะแบบดัชนี (index) เรียงกันเป็นลำดับแทน
+    \item นำข้อมูลนำเข้า มาผ่านการเติมค่าว่างให้เต็ม (padding) เพื่อให้มีขนาดของลำดับในขั้นตอนก่อนหน้า มีขนาดเท่ากันเป็นจตุรัส จึงจะนำไปใช้งานและเทรนโมเดลได้
+    \item ภายในกระบวนการของโมเดล (Embedding Layer) ข้อมูลอักษรที่กลายเป็นชุดตัวเลข จะถูกนำไปแปลงจากตัวเลขเฉพาะแบบดัชนี ให้กลายเป็นพิกัดเว็กเตอร์แทน
+    \item กระบวนการต่อมา (Bi-LSTM Layer) เลเยอร์ของ Bi-LSTM จะทำการเทียบพิกัดและหาความสัมพันธ์ของแต่ละอักษรกับคลาสที่เราวางเอาไว้ โดยใช้แนวคิดของ \hyperref[subsec:lstm]{gate และ state ของ LSTM} ซึ่งจะได้รับผลลัพธ์ออกมาเป็นเวกเตอร์ที่เข้าใกล้กับลักษณะของแต่ละคลาส
+    \item ในท้ายที่สุด ณ Output Layer พิกัดจากผลลัพธ์ก่อนหน้าจะถูกนำมาแปลงให้กลายเป็นความน่าจะเป็นที่มีค่าระหว่าง 0 ถึง 1 ด้วยวิธี softmax
+    \item คลาสที่มีความน่าจะเป็นสูงสุด จะถูกมองเป็นคำตอบของการแยกประเภทในครั้งนี้
+\end{itemize}
+ในส่วนของพารามิเตอร์สำหรับแต่ละขั้นตอนของ Bi-LSTM เราได้ตั้งค่าไว้ ดังนี้
+\begin{itemize}
+    \item Embedding Layer ซึ่งมีขนาดมิติของเว็กเตอร์ได้สูงสุด 100*100
+    \item Bi-LSTM ขนาด 128 units พร้อม dropout rate 40\% เพื่อป้องกันการ overfit
+    \item Bi-LSTM ขนาด 64 units พร้อม dropout rate 40\% เพื่อป้องกันการ overfit
+    \item Dense Layer as Output ขนาด 6 (เท่ากับจำนวนคลาสผลลัพธ์ของเรา) และมี softmax เป็น activation function
+\end{itemize}
+
+
+\par และคณะผู้จัดทำก็จะทำการใส่ข้อมูลที่เตรียมเอาไว้เพื่อทำการเทรนโมเดลทั้งหมด โดยที่โมเดลทุกตัวจะทำหน้าที่เดียวกัน คือทำการทำนายว่าข้อมูลเรซูเมที่ใส่เข้าไป
 เป็นอาชีพใดจากทั้งหมด 6 อาชีพ (Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA \& Tester)
 ดังตารางที่ \ref{tab:grouping_data} ซึ่งสามารถแสดงผลออกมาเป็นอาชีพที่คาดว่ามีลักษณะใกล้เคียงที่สุด
 
