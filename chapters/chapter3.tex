@@ -360,17 +360,22 @@
 ทางคณะผู้จัดทำได้เลือกนำชุดข้อมูล Updated Resume Dataset \cite{dataset} จาก Kaggle ซึ่งเป็นชุดข้อมูล
 ที่ประกอบไปด้วยอาชีพทั้งหมด 25 หมวด และรายละเอียดภายในเรซูเมของแต่ละอันที่จะแตกต่างกันไปในแต่ละอัน ซึ่งมีเรซูเม
 ทั้งหมด 962 เล่ม ซึ่งเป็นภาษาอังกฤษทั้งหมด
-\begin{figure}[h]\centering
+\begin{figure}[H]\centering
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
     \setlength{\fboxsep}{0.5cm}
     \fbox{\includegraphics[width=10cm]{./figure/figure_datasetCategory.png}}
     \caption{จำนวนของเรซูเมในแต่ละหมวดอาชีพ}\label{fig:datasetCategory}
 \end{figure}
-\begin{figure}[h]\centering
+ภายในชุดข้อมูล ในแต่ละแถวจะแสดงถึงข้อมูลภายในเรซูเมนั้น และจะประกอบไปด้วย 2 หลัก ดังต่อไปนี้
+\begin{enumerate}
+    \item \textbf{Category} : หมวดอาชีพของเรซูเม
+    \item \textbf{Resume} : รายละเอียดของเรซูเมที่ประกอบไปด้วย ประวัติการศึกษา, ทักษะ, ประสบการณ์การทำงาน หรือโปรเจค
+\end{enumerate}
+\begin{figure}[H]\centering
     \setlength{\fboxrule}{0.2mm} % can define this in the preamble
     \setlength{\fboxsep}{0.5cm}
     \fbox{\includegraphics[width=10cm]{./figure/figure_datasetData.png}}
-    \caption{ลักษณะข้อมูลของชุดข้อมูล}\label{fig:datasetData}
+    \caption{ตัวอย่างชุดข้อมูลที่รวบรวมมา}\label{fig:datasetData}
 \end{figure}
 \par ซึ่งทางคณะผู้จัดทำ จำเป็นต้องทำการเตรียมข้อมูลที่เหมาะสมเพื่อให้โมเดลมีประสิทธิภาพ
 
@@ -380,10 +385,11 @@
 เนื่องจากข้อมูลเรซูเม ได้มีตัวอักษรพิเศษรวมอยู่เป็นจำนวนมาก เช่น \^a, , ¢, \textbackslash r, \textbackslash n
 รวมไปถึงมีการใส่ลิงก์ภายนอกอีกด้วย ทางคณะผู้จัดทำจึงจำเป็นที่จะต้องทำให้ตัวหนังสือภายในเรซูเม เป็นเพียงตัวอักษรปกติเท่านั้น
 \par เนื่องจากทางคณะผู้จัดทำเล็งเห็นกลุ่มเป้าหมายเป็นนักศึกษาวิศวกรรมคอมพิวเตอร์ มจธ. จึงจำเป็นที่ต้องเลือกเฉพาะข้อมูลที่เป็น
-Software Engineer, Designer, Data, Security, Cloud Management ซึ่งเราจำเป็นที่จะต้อง
-ลบบางหมวดอาชีพ และทำการรวมบางอาชีพเข้าด้วยกัน ซึ่งในปัจจุบันจะเหลือเรซูเมเพียง 731 เล่มเท่านั้น
+Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA \& Tester รวมทั้งหมด 6 สายอาชีพ
+ซึ่งคณะผู้จัดจึงต้องลบบางหมวดอาชีพ และทำการรวมบางอาชีพเข้าด้วยกัน โดยพิจารณาจากรายละเอียดของแต่ละสายอาชีพ
+ซึ่งในปัจจุบันจะเหลือเรซูเมเพียง 731 เล่มเท่านั้น
 
-\begin{table}[h]
+\begin{table}[H]
     \caption{ตารางแสดงการจัดหมวดหมู่สายอาชีพใหม่}
     \label{tab:grouping_data}
     \begin{tabularx}{\textwidth}{l|X}
@@ -398,25 +404,46 @@ Software Engineer, Designer, Data, Security, Cloud Management ซึ่งเร
     \end{tabularx}
 \end{table}
 
-\par และเพื่อให้โมเดลสามารถที่จะเข้าใจภาษาของมนุษย์ได้ คณะผู้จัดทำจึงได้ใช้อัลกอริทึมในการแปลผลภาษา
-Term Frequency Inverse Document Frequency (TF-IDF)
+และคณะผู้จัดทำได้ใช้อัลกอริทึมในการคัดแยกคำด้วย Term Frequency Inverse Document Frequency (TF-IDF) โดยคณะผู้จัดทำคาดหวังว่า
+อัลกอริทึมนี้จะสามารถจับคำสำคัญของแต่ละสายอาชีพได้
 
 \subsection{การเทรนโมเดล (Train Model)}
-หลังจากที่ทางคณะผู้จัดทำได้ทำการเตรียมข้อมูลสำเร็จแล้ว คณะผู้จัดทำก็ได้ทำโมเดลขึ้นมาทั้งหมด 2 โมเดลเพื่อเปรียบเทียบ
-ซึ่งเป็นโมเดลสำหรับการจัดหมวดหมู่ ได้แก่
-\begin{enumerate}
-    \item Navie Bayes Classification
-    \item Long Short Term Memory (LSTM)
-          \begin{itemize}
-              \item Embedding layer              | max input dimension is 10,000 and embedding dimension size is 100
-              \item Bidirectional LSTM 128 units | dropout rate 40\%
-              \item Bidirectional LSTM 64 units  | dropout rate 40\%
-              \item Dense layer 25 units         | softmax as activation function
-          \end{itemize}
-\end{enumerate}
+หลังจากที่ทางคณะผู้จัดทำได้ทำการเตรียมข้อมูลสำเร็จแล้ว คณะผู้จัดทำก็ได้ทำโมเดลขึ้นมาทั้งหมด 6 โมเดล เพื่อเปรียบเทียบ
+ซึ่งเป็นโมเดลสำหรับการจัดหมวดหมู่ ดังตารางต่อไปนี้
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{l|l|X|X}
+        \multicolumn{2}{c|}{โมเดล}                                   & พารามิเตอร์                       & หมายเหตุ                                                                  \\ \hline
+        \multirow{6}{*}{Navie Bayes}                                 & \multirow{4}{*}{Multinomial}    & alpha = 1.0                         &                                    \\ \cline{3-4}
+                                                                     &                                 & force\_alpha = True                 &                                    \\ \cline{3-4}
+                                                                     &                                 & fit\_prior = True                   &                                    \\ \cline{3-4}
+                                                                     &                                 & class\_prior = None                 &                                    \\ \cline{2-4}
+                                                                     & \multirow{2}{*}{Gaussian}       & priors = None                       &                                    \\ \cline{3-4}
+                                                                     &                                 & var\_smoothing = 1e-9               &                                    \\ \hline
+        \multirow{7}{*}{K-Neighbors}                                 & \multirow{6}{*}{K-Neighbors*}   & algorithm = brute\_force            &                                    \\ \cline{3-4}
+                                                                     &                                 & leaf\_size = 30                     &                                    \\ \cline{3-4}
+                                                                     &                                 & metric = minkowski                  &                                    \\ \cline{3-4}
+                                                                     &                                 & n\_neighbors = 5                    &                                    \\ \cline{3-4}
+                                                                     &                                 & p = 2                               & คำนวณด้วยสูตร euclidean               \\ \cline{3-4}
+                                                                     &                                 & weight = distance                   &                                    \\  \cline{2-4}
+                                                                     & One Vs Rest                     & K-Neighbors*                        & นำโมเดล K-Neighbors ก่อนหน้ามาใช้งานต่อ \\ \hline
+        \multicolumn{2}{l|}{\multirow{2}{*}{Support Vector Machine}} & kernel = sigmoid                &                                                                          \\ \cline{3-4}
+        \multicolumn{2}{l|}{}                                        & decision\_function\_shape = ovr &                                                                          \\ \hline
+        \multicolumn{2}{l|}{\multirow{3}{*}{Logistic Regression}}    & C = 5e1                         &                                                                          \\ \cline{3-4}
+        \multicolumn{2}{l|}{}                                        & solver = lbfgs                  &                                                                          \\ \cline{3-4}
+        \multicolumn{2}{l|}{}                                        & multi\_class = multinomial      &                                                                          \\ \hline
+        \multicolumn{2}{l|}{\multirow{4}{*}{Long Short Term Memory}} & Embedding layer                 & embedding dimension size is 100*100                                      \\ \cline{3-4}
+        \multicolumn{2}{l|}{}                                        & Bidirectional LSTM 128 units    & dropout rate 40\%                                                        \\ \cline{3-4}
+        \multicolumn{2}{l|}{}                                        & Bidirectional LSTM 64 units     & dropout rate 40\%                                                        \\ \cline{3-4}
+        \multicolumn{2}{l|}{}                                        & Dense Layer 25 units            & softmax as activation function                                           \\
+    \end{tabularx}
+\end{table}
+
+โดยที่ทั้ง 6 โมเดลจะใช้คอลัมน์ Resume จากชุดข้อมูลมาเป็นข้อมูลนำเข้า โดยจะต้องผ่าน\hyperref[subsec:Data Preparation]{การเตรียมข้อมูล}ก่อน ซึ่งจะมีลักษณะเป็น 
+Term Frequency Inverse Document Frequency (TF-IDF)
+
 \par และคณะผู้จัดทำก็ทำการใส่ข้อมูลที่เตรียมเอาไว้เพื่อทำการเทรนโมเดล โดยที่โมเดลจะทำการทำนายว่าข้อมูลเรซูเมที่ใส่เข้าไป
-เป็นอาชีพใดจากทั้งหมด 5 อาชีพ (Software Engineer, Designer, Data, Security, Cloud Management) ซึ่ง
-สามารถแสดงผลออกมาเป็นความน่าจะเป็นของแต่ละสายอาชีพได้
+เป็นอาชีพใดจากทั้งหมด 6 อาชีพ (Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA \& Tester)
+ดังตารางที่ \ref{tab:grouping_data} ซึ่งสามารถแสดงผลออกมาเป็นอาชีพที่คาดว่ามีลักษณะใกล้เคียงที่สุด
 
 \subsection{การทดสอบข้อมูล (Test Data)}
 หลังจากที่คณะผู้จัดทำได้เทรนโมเดลจนสำเร็จแล้ว ก็ได้ลองนำเรซูเมของคณะผู้จัดทำมาลองกับโมเดล ซึ่งผลลัพธ์ที่ได้ก็ค่อนข้างน่าพอใจ
