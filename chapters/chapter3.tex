@@ -73,7 +73,8 @@
 \subsubsection{Resume Career Prediction}
 \begin{table}[H]
     % \centering
-    \begin{tabular*}{\textwidth}{|l|l|} \hline
+    \begin{tabularx}{\textwidth}{|l|X|} 
+        \hline
         Actor                 & User                                       \\ \hline
         Goal                  & ต้องการทราบถึงอาชีพที่เหมาะสมกับตนเองจากข้อมูลในเรซูเม            \\ \hline
         Precondition          & -                                               \\ \hline
@@ -88,13 +89,13 @@
         & 6a. ระบบขึ้นเตือนว่าผู้ใช้ยังกรอกข้อมูลไม่ครบ              \\
         & 7a. กลับไปที่ขั้นตอนที่ 3                              \\ \hline
         Postcodition          & ระบบแนะนำให้ผู้ใช้ไปวิเคราะห์ข้อมูลเชิงลึกของอาชีพที่ได้แนะนำไป \\ \hline
-    \end{tabular*}
+    \end{tabularx}
 \end{table}
 
 \subsubsection{Watch Career Insight}
 \begin{table}[H]
     % \centering
-    \begin{tabular*}{\textwidth}{|l|l|} \hline
+    \begin{tabularx}{\textwidth}{|l|X|} \hline
         Actor                 & User                  \\ \hline
         Goal                  & ต้องการดูข้อมูลเชิงลึกของอาชีพ         \\ \hline
         Precondition          & ผู้ใช้ต้องมีอาชีพที่ระบบแนะนำให้ในประวัติ          \\ \hline
@@ -107,7 +108,7 @@
         & 5a. ระบบแสดงอาชีพที่เหมาะสมกับผู้ใช้   \\
         & 6a. กลับไปที่ขั้นตอนที่ 1              \\ \hline
         Postcodition          & -                               \\ \hline
-    \end{tabular*}
+    \end{tabularx}
 \end{table}
 
 
@@ -235,65 +236,65 @@
 
 \subsection{ตารางฐานข้อมูล User}
 \begin{table}[H]
-    \begin{tabular*}{\textwidth}{|l|l|p{0.6\textwidth}|}
+    \begin{tabularx}{\textwidth}{|l|l|X|}
         \hline
-        \multicolumn{3}{c}{User}                                                                                                      \\ \hline
+        \multicolumn{3}{|c|}{User}                                                                                                      \\ \hline
         Field Name  & Field Type & Description                                                                                        \\ \hline
         uid         & string     & รหัสประจำตัวของผู้ใช้ ที่ทางระบบจะเป็นผู้กำหนดให้ เพื่อใช้แยกผู้ใช้แต่ละท่านอย่างชัดเจน            \\
         firstname   & string     & ชื่อต้นของผู้ใช้                                                                                   \\
         lastname    & string     & นามสกุลของผู้ใช้                                                                                   \\
         email       & string     & อีเมลของผู้ใช้                                                                                     \\
         image\_url  & string     & url สำหรับเข้าถึงรูปโปรไฟล์ของผู้ใช้ \\ \hline
-    \end{tabular*}
+    \end{tabularx}
 \end{table}
 
 \subsection{ตารางฐานข้อมูล ResumeHistory}
 \begin{table}[H]
-    \begin{tabular*}{\textwidth}{|l|l|p{0.6\textwidth}|}
+    \begin{tabularx}{\textwidth}{|l|l|X|}
         \hline
-        \multicolumn{3}{c}{ResumeHistory}                                                                   \\\hline
+        \multicolumn{3}{|c|}{ResumeHistory}                                                                   \\\hline
         Field Name    & Field Type & Description                                                            \\\hline
         resume\_owner & string     & รหัสประจำตัวของผู้ใช้ รูปแบบเดียวกับ uid ใช้สำหรับการระบุเจ้าของข้อมูล \\
         resume\_input   & IResumeInput     & ค่าเรซูเมรับเข้าจากผู้ใช้ โดยมีลักษณะข้อมูลดังภาพ ประกอบด้วย การศึกษา ความสามารถ ประสบการณ์ \\
         input\_date   & Date       & วันที่ผู้ใช้กรอกข้อมูล \\ \hline
-    \end{tabular*}
+    \end{tabularx}
 \end{table}
 
 \subsection{ตารางฐานข้อมูล Career Path Data}
 \begin{table}[H]
-    \begin{tabular*}{\textwidth}{|l|l|p{0.6\textwidth}|}
+    \begin{tabularx}{\textwidth}{|l|l|X|}
         \hline
-        \multicolumn{3}{c}{Career Path Data}                                                                      \\\hline
+        \multicolumn{3}{|c|}{Career Path Data}                                                                      \\\hline
         Field Name  & Field Type     & Description                                                       \\\hline
         career\_path\_name             & string         & ชื่อของอาชีพ                                                      \\
         career\_path\_description      & string         & ข้อมูลเบื้องต้นของอาชีพนั้น เพื่ออธิบายลักษณะของสายอาชีพให้เห็นภาพโดยง่าย \\
         related\_careers              & IRelatedCareer{[}{]} &   อาชีพที่อยู่ในสายอาชีพนั้น ๆ และข้อมูลเบื้องต้น เช่น ชื่ออาชีพ ความสามารถ ทักษะที่ควรมี \\
         base\_salary                   & IBaseSalary & ฐานเงินเดือนของอาชีพนั้นโดยเป็น object ที่จะเก็บขอบเขตเงินเดือนเอาไว้ \\ \hline
-    \end{tabular*}
+    \end{tabularx}
 \end{table}
 
 \subsection{ตารางฐานข้อมูล Skill Domain}
 \begin{table}[H]
-    \begin{tabular*}{\textwidth}{|l|l|p{0.6\textwidth}|}
+    \begin{tabularx}{\textwidth}{|l|l|X|}
         \hline
-        \multicolumn{3}{c}{Skill Domain}                              \\\hline
+        \multicolumn{3}{|c|}{Skill Domain}                              \\\hline
         Field Name    & Field Type & Description                  \\\hline
         id    & string     & หมายเลขจำเพาะของกลุ่มความสามารถที่ควรในประเภทเดียวกัน       \\
         name & string     & ชื่อของกลุ่มความสามารถในประเภทเดียวกัน เช่น basic web development \\
         skill\_list    & string[]     & ชุดของความสามารถที่อยู่ในกลุ่มนี้ ภายในจะเก็บ id ของความสามารถเอาไว้       \\
         is\_in\_resume & boolean     & ตัวแปรสำหรับกำหนดว่า ความสามารถนี้เป็นสิ่งจำเป็น แต่อาจไม่จำเป็นต้องเขียนในเรซูเมใช่หรือไม่ เพื่อนำไปทำเป็นเงื่อนไขการแสดงผล \\\hline
-    \end{tabular*}
+    \end{tabularx}
 \end{table}
 
 \subsection{ตารางฐานข้อมูล Skill Data}
 \begin{table}[H]
-    \begin{tabular*}{\textwidth}{|l|l|p{0.6\textwidth}|}
+    \begin{tabularx}{\textwidth}{|l|l|X|}
         \hline
-        \multicolumn{3}{c}{Skill Data}                              \\\hline
+        \multicolumn{3}{|c|}{Skill Data}                              \\\hline
         Field Name    & Field Type & Description                  \\\hline
         id    & string     & หมายเลขจำเพาะของความามารถนี้       \\
         name  & string[]   & ชื่อของความสามารถ \\ \hline
-    \end{tabular*}
+    \end{tabularx}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -401,7 +402,7 @@
 \par เนื่องจากทางคณะผู้จัดทำเล็งเห็นกลุ่มเป้าหมายเป็นนักศึกษาวิศวกรรมคอมพิวเตอร์ มจธ. จึงจำเป็นที่ต้องเลือกเฉพาะข้อมูลที่เป็น
 Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA \& Tester รวมทั้งหมด 6 สายอาชีพ
 ซึ่งคณะผู้จัดจึงต้องลบบางหมวดอาชีพ และทำการรวมบางอาชีพเข้าด้วยกัน โดยพิจารณาจากรายละเอียดของแต่ละสายอาชีพ
-ซึ่งในปัจจุบันจะเหลือเรซูเมเพียง 731 เล่มเท่านั้น
+ซึ่งในปัจจุบันจะเหลือเรซูเมเพียง 698 เล่มเท่านั้น
 
 \begin{table}[H]
     \caption{ตารางแสดงการจัดหมวดหมู่สายอาชีพใหม่}
@@ -426,7 +427,7 @@ Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA 
 ซึ่งเป็นโมเดลสำหรับการจัดหมวดหมู่แยกประเภท โดยจะบอกเล่าในส่วนของโมเดลประเภท machine learning ก่อน ดังตารางต่อไปนี้
 \begin{table}[H]
     \begin{tabularx}{\textwidth}{|l|l|X|X|} \hline
-        \multicolumn{2}{c|}{โมเดล}                                   & พารามิเตอร์                       & หมายเหตุ                                                       \\ \hline
+        \multicolumn{2}{|c|}{โมเดล}                                   & พารามิเตอร์                       & หมายเหตุ                                                       \\ \hline
         \multirow{6}{*}{Navie Bayes}                                 & \multirow{4}{*}{Multinomial}    & alpha = 1.0              &                                    \\ \cline{3-4}
                                                                      &                                 & force\_alpha = True      &                                    \\ \cline{3-4}
                                                                      &                                 & fit\_prior = True        &                                    \\ \cline{3-4}
@@ -440,11 +441,11 @@ Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA 
                                                                      &                                 & p = 2                    & คำนวณด้วยสูตร euclidean               \\ \cline{3-4}
                                                                      &                                 & weight = distance        &                                    \\  \cline{2-4}
                                                                      & One Vs Rest                     & K-Neighbors*             & นำโมเดล K-Neighbors ก่อนหน้ามาใช้งานต่อ \\ \hline
-        \multicolumn{2}{l|}{\multirow{2}{*}{Support Vector Machine}} & kernel = sigmoid                &                                                               \\ \cline{3-4}
-        \multicolumn{2}{l|}{}                                        & decision\_function\_shape = ovr &                                                               \\ \hline
-        \multicolumn{2}{l|}{\multirow{3}{*}{Logistic Regression}}    & C = 5e1                         &                                                               \\ \cline{3-4}
-        \multicolumn{2}{l|}{}                                        & solver = lbfgs                  &                                                               \\ \cline{3-4}
-        \multicolumn{2}{l|}{}                                        & multi\_class = multinomial      &                                                               \\ \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{Support Vector Machine}} & kernel = sigmoid                &                                                               \\ \cline{3-4}
+        \multicolumn{2}{|l|}{}                                        & decision\_function\_shape = ovr &                                                               \\ \hline
+        \multicolumn{2}{|l|}{\multirow{3}{*}{Logistic Regression}}    & C = 5e1                         &                                                               \\ \cline{3-4}
+        \multicolumn{2}{|l|}{}                                        & solver = lbfgs                  &                                                               \\ \cline{3-4}
+        \multicolumn{2}{|l|}{}                                        & multi\_class = multinomial      &                                                               \\ \hline
     \end{tabularx}
 \end{table}
 
