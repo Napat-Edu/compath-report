@@ -73,7 +73,7 @@
 \subsubsection{Resume Career Prediction}
 \begin{table}[H]
     % \centering
-    \begin{tabular*}{\textwidth}{l|l} \hline
+    \begin{tabular*}{\textwidth}{|l|l|} \hline
         Actor                 & User                                       \\ \hline
         Goal                  & ต้องการทราบถึงอาชีพที่เหมาะสมกับตนเองจากข้อมูลในเรซูเม            \\ \hline
         Precondition          & -                                               \\ \hline
@@ -94,7 +94,7 @@
 \subsubsection{Watch Career Insight}
 \begin{table}[H]
     % \centering
-    \begin{tabular*}{\textwidth}{l|l} \hline
+    \begin{tabular*}{\textwidth}{|l|l|} \hline
         Actor                 & User                  \\ \hline
         Goal                  & ต้องการดูข้อมูลเชิงลึกของอาชีพ         \\ \hline
         Precondition          & ผู้ใช้ต้องมีอาชีพที่ระบบแนะนำให้ในประวัติ          \\ \hline
@@ -235,7 +235,7 @@
 
 \subsection{ตารางฐานข้อมูล User}
 \begin{table}[H]
-    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+    \begin{tabular*}{\textwidth}{|l|l|p{0.6\textwidth}|}
         \hline
         \multicolumn{3}{c}{User}                                                                                                      \\ \hline
         Field Name  & Field Type & Description                                                                                        \\ \hline
@@ -249,7 +249,7 @@
 
 \subsection{ตารางฐานข้อมูล ResumeHistory}
 \begin{table}[H]
-    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+    \begin{tabular*}{\textwidth}{|l|l|p{0.6\textwidth}|}
         \hline
         \multicolumn{3}{c}{ResumeHistory}                                                                   \\\hline
         Field Name    & Field Type & Description                                                            \\\hline
@@ -261,7 +261,7 @@
 
 \subsection{ตารางฐานข้อมูล Career Path Data}
 \begin{table}[H]
-    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+    \begin{tabular*}{\textwidth}{|l|l|p{0.6\textwidth}|}
         \hline
         \multicolumn{3}{c}{Career Path Data}                                                                      \\\hline
         Field Name  & Field Type     & Description                                                       \\\hline
@@ -274,7 +274,7 @@
 
 \subsection{ตารางฐานข้อมูล Skill Domain}
 \begin{table}[H]
-    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+    \begin{tabular*}{\textwidth}{|l|l|p{0.6\textwidth}|}
         \hline
         \multicolumn{3}{c}{Skill Domain}                              \\\hline
         Field Name    & Field Type & Description                  \\\hline
@@ -287,7 +287,7 @@
 
 \subsection{ตารางฐานข้อมูล Skill Data}
 \begin{table}[H]
-    \begin{tabular*}{\textwidth}{l|l|p{0.6\textwidth}}
+    \begin{tabular*}{\textwidth}{|l|l|p{0.6\textwidth}|}
         \hline
         \multicolumn{3}{c}{Skill Data}                              \\\hline
         Field Name    & Field Type & Description                  \\\hline
@@ -406,7 +406,7 @@ Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA 
 \begin{table}[H]
     \caption{ตารางแสดงการจัดหมวดหมู่สายอาชีพใหม่}
     \label{tab:grouping_data}
-    \begin{tabularx}{\textwidth}{l|X}
+    \begin{tabularx}{\textwidth}{|l|X|} \hline
         สายอาชีพใหม่        & ประกอบด้วย                                                                                                   \\ \hline
         Software Engineer & Web Designing, Java Developer, SAP Developer, Python Developer, Blockchain, ETL Developer, DotNet Developer \\\hline
         Data \& AI        & Business Analyst,Database,Data Science, Hadoop                                                              \\\hline
@@ -414,7 +414,7 @@ Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA 
         Network Security  & Network Security Engineer                                                                                   \\\hline
         Cloud Management  & Operations Manager, DevOps Engineer, PMO                                                                    \\\hline
         QA \& Tester      & Testing, Automation Testing, *Software Tester, *Quality Assurance                                           \\\hline
-        \multicolumn{2}{l}{หมายเหตุ : * เป็นข้อมูลที่ทางผู้จัดทำหาเพิ่มเติมจาก \href{https://th.jobsdb.com/}{JobDB}}                                 \\ \hline
+        \multicolumn{2}{l}{หมายเหตุ : * เป็นข้อมูลที่ทางผู้จัดทำหาเพิ่มเติมจาก \href{https://th.jobsdb.com/}{JobDB}}                                 \\ \hline\hline
     \end{tabularx}
 \end{table}
 
@@ -425,7 +425,7 @@ Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA 
 หลังจากที่ทางคณะผู้จัดทำได้ทำการเตรียมข้อมูลสำเร็จแล้ว คณะผู้จัดทำก็ได้ทำโมเดลขึ้นมาทั้งหมด 7 โมเดล เพื่อเปรียบเทียบ
 ซึ่งเป็นโมเดลสำหรับการจัดหมวดหมู่แยกประเภท โดยจะบอกเล่าในส่วนของโมเดลประเภท machine learning ก่อน ดังตารางต่อไปนี้
 \begin{table}[H]
-    \begin{tabularx}{\textwidth}{l|l|X|X}
+    \begin{tabularx}{\textwidth}{|l|l|X|X|} \hline
         \multicolumn{2}{c|}{โมเดล}                                   & พารามิเตอร์                       & หมายเหตุ                                                       \\ \hline
         \multirow{6}{*}{Navie Bayes}                                 & \multirow{4}{*}{Multinomial}    & alpha = 1.0              &                                    \\ \cline{3-4}
                                                                      &                                 & force\_alpha = True      &                                    \\ \cline{3-4}
@@ -471,7 +471,7 @@ Term Frequency Inverse Document Frequency (TF-IDF) ในทุกโมเด�
 
 \par และคณะผู้จัดทำก็จะทำการใส่ข้อมูลที่เตรียมเอาไว้เพื่อทำการเทรนโมเดลทั้งหมด โดยที่โมเดลทุกตัวจะทำหน้าที่เดียวกัน คือทำการทำนายว่าข้อมูลเรซูเมที่ใส่เข้าไป
 เป็นอาชีพใดจากทั้งหมด 6 อาชีพ (Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA \& Tester)
-ดังตารางที่ \ref{tab:grouping_data} ซึ่งสามารถแสดงผลออกมาเป็นอาชีพที่คาดว่ามีลักษณะใกล้เคียงที่สุด
+ดัง\textbf{ตารางที่ \ref{tab:grouping_data}} ซึ่งสามารถแสดงผลออกมาเป็นอาชีพที่คาดว่ามีลักษณะใกล้เคียงที่สุด
 
 \subsection{การทดสอบข้อมูล (Test Data)}
 หลังจากที่คณะผู้จัดทำได้เทรนโมเดลจนสำเร็จแล้ว ก็ได้ลองนำเรซูเมของคณะผู้จัดทำมาลองกับโมเดล ซึ่งผลลัพธ์ที่ได้ก็ค่อนข้างน่าพอใจ
