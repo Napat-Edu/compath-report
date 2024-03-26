@@ -12,11 +12,11 @@
 คณะผู้จัดทำได้ทำการแบ่งชุดข้อมูลออกเป็น 2 ส่วน ข้อมูลสำหรับการทดลอง ข้อมูลสำหรับการประเมินโมเดล
 และคณะผู้จัดทำได้รวบรวมเรซูเมจากนักศึกษาวิศวกรรมคอมพิวเตอร์ มจธ. จำนวนดังตารางต่อไปนี้
 \begin{table}[H]
-    \begin{tabularx}{\textwidth}{X|X|l}
+    \begin{tabularx}{\textwidth}{|X|X|l|} \hline
         ประเภทของชุดข้อมูล & จำนวนเรซูเม            & หมายเหตุ                                   \\ \hline
         Training Set    & 164 (80\% ของชุดข้อมูล) &                                           \\ \hline
         Validation Set  & 41 (20\% ของชุดข้อมูล)  &                                           \\ \hline
-        Testing Set     & 13                   & เรซูเมจากนักศึกษาวิศวกรรมคอมพิวเตอร์ มจธ. รุ่น 34 \\
+        Testing Set     & 13                   & เรซูเมจากนักศึกษาวิศวกรรมคอมพิวเตอร์ มจธ. รุ่น 34 \\ \hline
     \end{tabularx}
 \end{table}
 \subsection{Model Experiment}
@@ -24,8 +24,8 @@
 \begin{table}[H]
     \caption{ตารางเปรียบเทียบความแม่นยำของแต่ละโมเดล}
     \label{tab:Model accuracy}
-    \begin{tabularx}{\textwidth}{X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
-        \multirow{2}{*}{Machine Learning Algorithm} & \multicolumn{2}{c}{Accuracy (Resumes, Percent)}               \\ \cline{2-3}
+    \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline
+        \multirow{2}{*}{Machine Learning Algorithm} & \multicolumn{2}{c|}{Accuracy (Resumes, Percent)}               \\ \cline{2-3}
                                                     & \centering Validation Set                       & Testing Set \\ \hline
         Multinomial Naive Bayes                     & 19 (46.34\%)                                    & 2 (15.38\%) \\ \hline
         Gaussian Naive Bayes                        & 27 (65.85\%)                                    & 3 (23.08\%) \\ \hline
@@ -33,7 +33,7 @@
         OneVsRest (+ K-Neighbors)                   & 37 (90.24\%)                                    & 9 (69.23\%) \\ \hline
         Support Vector Machine                      & 36 (87.80\%)                                    & 7 (53.85\%) \\ \hline
         Logistic Regression                         & 35 (85.37\%)                                    & 7 (53.85\%) \\ \hline
-        Bidirectional LSTM                          & 22 (54.84\%)                                    & 4 (30.70\%) \\
+        Bidirectional LSTM                          & 22 (54.84\%)                                    & 4 (30.70\%) \\ \hline
     \end{tabularx}
 \end{table}
 
@@ -58,7 +58,7 @@
 \begin{table}[H]
     \caption{ตาราง Confusion Matrix ของ K-Nearest Neighbors ในการทำนาย Validation Set}
     \label{tab:confusion matrix}
-    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+    \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline
                  & Cloud                    & Data                     & Designer                 & Dev                       & QA                       & Security                 \\ \hline
         Cloud    & {\cellcolor[gray]{.9}} 5 & 0                        & 0                        & 0                         & 0                        & 0                        \\ \hline
         Data     & 1                        & {\cellcolor[gray]{.9}} 6 & 0                        & 0                         & 0                        & 0                        \\ \hline
