@@ -9,7 +9,7 @@
     \item \textbf{จุดประสงค์ของการทดสอบ}
           \begin{itemize}
               \item \textbf{เป้าหมายของการทดสอบ} : เพื่อวัดประสิทธิภาพการใช้งานของเว็บแอปพลิเคชันกับผู้ใช้
-              \item \textbf{คำถามที่ใช้ในการทดสอบ} : เราได้เตรียมคำถามไว้ถามผู้ใช้หลังจากการทดสอบ โดยแบ่งคำถามออกเป็น 3 ประเภท ดังตาราง ดังนี้
+              \item \textbf{คำถามที่ใช้ในการทดสอบ} : เราได้เตรียมคำถามไว้ถามผู้ใช้หลังจากการทดสอบ โดยแบ่งคำถามออกเป็น 3 ประเภท \ref{tab:question-table} ดังนี้
                     \begin{table}[H]
                         \caption{ตารางคำถามที่ใช้ในการทดสอบ}
                         \label{tab:question-table}
@@ -56,7 +56,7 @@
               \label{tab:my-table}
               \begin{tabularx}{\textwidth}{|X|X|X|}
                   \hline
-                  \textbf{Who do you want to talk to?} & \textbf{What exact criteria will identify the people you want to talk to?} & \textbf{What screening will you ask? (Question shouldn't reveal "right" answers.)} \\ \hline
+                  \textbf{คุณสมบัติที่ต้องการ} & \textbf{เกณฑ์การวัดคุณสมบัติ} & \textbf{คำถามที่ใช้สัมภาษณ์} \\ \hline
                   นักศึกษาที่ข้อมูลเหมาะสมกับข้อมูลที่เรามี        & นักศึกษาวิศวกรรมคอมพิวเตอร์                                                     & คุณเรียนอยู่ภาควิชาอะไร                                                                 \\ \hline
                   ต้องการสมัครงาน                        & เรียนอยู่ปี 4, กำลังจะจบการศึกษา                                                  & ตอนนี้เรียนอยู่ชั้นปีอะไร                                                                  \\ \hline
                   ต้องการฝึกงาน                          & เรียนอยู่ปี 3, เรียนอยู่ปี 4, กำลังจะจบการศึกษา                                       & ตอนนี้เรียนอยู่ชั้นปีอะไร                                                                  \\ \hline
@@ -73,7 +73,7 @@
               \label{tab:excludeUT}
               \begin{tabularx}{\textwidth}{|X|X|X|}
                   \hline
-                  \textbf{Who do you want to exclude?} & \textbf{What exact criteria will identify the people you want to talk to?} & \textbf{What screening will you ask? (Question shouldn't reveal "right" answers.)} \\ \hline
+                  \textbf{คุณสมบัติที่ไม่ต้องการ} & \textbf{เกณฑ์การวัดคุณสมบัติ} & \textbf{คำถามที่ใช้สัมภาษณ์} \\ \hline
                   คนที่ยังไม่สนใจที่จะฝึกงานหรือสมัครงาน        & คนที่ยังศึกษาไม่ถึงระดับปริญญาตรี                                                   & โปรดระบุระดับการศึกษาของคุณ                                                            \\ \hline
                   ไม่ได้สนใจงานทางด้านสาย tech            & คนที่สนใจสายงานอื่นนอกจาก 6 สายที่เรามีข้อมูล                                       & คุณสนใจทำสายอาชีพอะไรในอนาคต                                                          \\ \hline
               \end{tabularx}
@@ -182,25 +182,25 @@
               \fbox{\includegraphics[width=14cm]{./figure/UT/PrioritizeUT.png}}
               \caption{รูปแสดงการเรียงลำดับความสำคัญของปัญหาพี่พบ}\label{fig:PrioritizeUT}
           \end{figure}
-    \item \textbf{Create recommendations.}
+    \item \textbf{คำแนะนำสำหรับปัญหาที่พบ}
           \begin{table}[H]
               \caption{แนะนำแนวทางวิธีการแก้ไขปัญหา}
               \label{tab:recommendationsUT}
-              \begin{tabularx}{\textwidth}{|l|X|l|X|l|}
+              \begin{tabularx}{\textwidth}{|l|X|l|X|X|}
                   \hline
-                  \textbf{issue type}                 & \textbf{issues}                    & \textbf{page}      & \textbf{recommendations}                          & \textbf{ease of fixing} \\ \hline
-                  \multirow[t]{2}{*}{unclear context} & ไม่มั่นใจว่าต้องกรอกข้อมูลเป็นภาษาอะไร     & Career Prediction  & มีข้อความระบุให้กรอกข้อมูลเป็นภาษาอังกฤษ                  & Medium                  \\ \cline{2-5}
-                                                      & ไม่ได้ใช้ resume กรอก                 & Career Prediction  & แบ่ง section การกรอกให้ละเอียดมากขึ้น                  & Difficult               \\ \hline
-                  not disable button                  & กดตอน load                         & Career Prediction  & ปิดการใช้งานปุ่มระหว่างการรอโหลด                       & Easy                    \\ \hline
-                  string matching                     & ปัญหา section ทักษะ                  & Career Insight     & นำเทคนิคการตรวจจับคำที่ดีขึ้นมาใช้                          & Difficult               \\ \hline
-                  technical issue                     & Node บัง                            & Career Exploration & ทำ Auto Layout ให้กับ Node                           & Medium                  \\ \hline
-                  \multirow[t]{3}{*}{user interface}  & ไม่รู้ว่ากดดู card history อื่น จากหน้านี้ได้ & Career Insight     & ย้าย section ของการเลือกการ์ดมาไว้ในส่วนที่มองเห็นง่ายกว่านี้ & Medium                  \\ \cline{2-5}
-                                                      & ไม่ได้กดไป CE จากหน้านี้                & Career Insight     & ทำ section แนะนำให้ไปดูสายใยอาชีพให้ดึงดูมากกว่านี้          & Medium                  \\ \cline{2-5}
-                                                      & สับสนตอนดูผลทำนาย                     & Career Prediction  & ลดจำนวนปุ่ม, ทำเป็น save อัตโนมัติ                        & Medium                  \\ \hline
-                  unclear context                     & ไม่มั่นใจในการกรอก                    & Career Prediction  & ยกตัวอย่างทักษะให้มากและชัดเจนมากกว่านี้                  & Medium                  \\ \hline
-                  ML limitation                       & กรอกสิ่งที่คาดไม่ถึง                     & Career Prediction  & เทรนข้อมูลเพิ่ม                                       & Difficult               \\ \hline
-                  \multirow[t]{2}{*}{user interface}  & สับสน กราฟและทักษะ                   & Career Insight     & เขียนอธิบายกราฟว่าเชื่องโยงกับทักษะอย่างไร                & Medium                  \\ \cline{2-5}
-                                                      & ไม่รู้ว่ากด Expand ได้                  & Career Exploration & สร้าง tooltips สำหรับการใช้งาน                        & Medium                  \\ \hline
+                  \textbf{ประเภทของปัญหา}                 & \textbf{ปัญหาที่พบ}                    & \textbf{หน้า}      & \textbf{แนวทางการแก้ไขปัญหา}                          & \textbf{ระดับความยากในการแก้ไขปัญหา} \\ \hline
+                  \multirow[t]{2}{*}{คำชี้แจงไม่ชัดเจน} & ไม่มั่นใจว่าต้องกรอกข้อมูลเป็นภาษาอะไร     & Career Prediction  & มีข้อความระบุให้กรอกข้อมูลเป็นภาษาอังกฤษ                  & ปานกลาง                  \\ \cline{2-5}
+                                                      & ไม่ได้ใช้เรซูเมกรอก                 & Career Prediction  & แบ่ง section การกรอกให้ละเอียดมากขึ้น                  & ยาก               \\ \hline
+                  ปุ่มสามารถกดได้ระหว่างโหลด                  & กดตอนโหลด                         & Career Prediction  & ปิดการใช้งานปุ่มระหว่างการรอโหลด                       & ง่าย                    \\ \hline
+                  string matching                     & ปัญหาในส่วนทักษะ                  & Career Insight     & นำเทคนิคการตรวจจับคำที่ดีขึ้นมาใช้                          & ยาก               \\ \hline
+                  technical issue                     & โหนดบัง                            & Career Exploration & ทำ Auto Layout ให้กับโหนด                           & ปานกลาง                  \\ \hline
+                  \multirow[t]{3}{*}{user interface}  & ไม่รู้ว่ากดดูการทำนายอื่น ๆ จากหน้านี้ได้ & Career Insight     & ย้ายส่วนของการเลือกการ์ดมาไว้ในส่วนที่มองเห็นง่ายกว่านี้ & ปานกลาง                  \\ \cline{2-5}
+                                                      & ไม่ได้กดไป Career Exploration จากหน้านี้                & Career Insight     & ทำส่วนที่แนะนำให้ไปดูสายใยอาชีพให้ดึงดูมากกว่านี้          & ปานกลาง                  \\ \cline{2-5}
+                                                      & สับสนตอนดูผลทำนาย                     & Career Prediction  & ลดจำนวนปุ่ม, ทำเป็นบันทึกอัตโนมัติ                        & ปานกลาง                  \\ \hline
+                  คำชี้แจงไม่ชัดเจน                     & ไม่มั่นใจในการกรอก                    & Career Prediction  & ยกตัวอย่างทักษะให้มากและชัดเจนมากกว่านี้                  & ปานกลาง                  \\ \hline
+                  ML limitation                       & กรอกสิ่งที่คาดไม่ถึง                     & Career Prediction  & เทรนข้อมูลเพิ่ม                                       & ยาก               \\ \hline
+                  \multirow[t]{2}{*}{user interface}  & สับสน กราฟและทักษะ                   & Career Insight     & เขียนอธิบายกราฟว่าเชื่องโยงกับทักษะอย่างไร                & ปานกลาง                  \\ \cline{2-5}
+                                                      & ไม่รู้ว่ากด Expand ได้                  & Career Exploration & สร้าง tooltips สำหรับการใช้งาน                        & ปานกลาง                  \\ \hline
               \end{tabularx}
           \end{table}
 \end{enumerate}
