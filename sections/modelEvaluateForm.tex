@@ -1,0 +1,48 @@
+\section{Model Evaluation}
+หลังจากที่คณะผู้จัดทำได้พัฒนาโมเดลขึ้นมาจนสำเร็จแล้ว ทางคณะผู้จัดทำไม่สามารถที่จะประเมินผลความแม่นยำของโมเดลได้ด้วยวิธีปกติ
+คณะผู้จัดทำจึงได้ทำแบบฟอร์มสำรวจความคิดเห็นของผู้เชี่ยวชาญที่อยู่ในสายงานคอมพิวเตอร์ ไม่ว่าจะเป็นอาจารย์ภายในภาควิชาวิศวกรรมคอมพิวเตอร์ มจธ.
+ผู้ที่ทำงานในสายงาน Developer, Data \& AI รวมไปถึง Designer มาทำแบบฟอร์ม รวมทั้งสิ้น 10 ท่าน เพื่อนำผลมาเปรียบเทียบกับโมเดลว่าตรงกันหรือไม่
+\subsection{Model Evaluation Form}
+เนื่องจากทางคณะผู้จัดทำได้นำเรซูเมจริงมาทดสอบทั้งหมด 14 เล่ม ซึ่งเป็นของนักศึกษาวิศวกรรมคอมพิวเตอร์ชั้นปีที่ 3 และ 4
+คณะผู้จัดทำได้แบ่งแบบฟอร์มออกเป็นทั้งหมด 3 ชุด โดยที่แบบสอบถามแต่ละชุดมีจำนวนผู้ทำแบบสอบถาม ดังต่อไปนี้
+\begin{itemize}
+    \item ชุดที่ 1 จำนวน 3 ท่าน
+    \item ชุดที่ 2 จำนวน 3 ท่าน
+    \item ชุดที่ 3 จำนวน 4 ท่าน
+\end{itemize}
+ซึ่งแต่ละชุดจะประกอบไปด้วยเรซูเมต่าง ๆ ดังนี้
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{|c|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+        \hline
+        \multirow{2}{*}{ชุดที่} & \multicolumn{14}{c|}{เรซูเมเล่มที่}                                                                                                                                                                          \\ \cline{2-15}
+                             & 1                               & 2          & 3          & 4          & 5          & 6          & 7          & 8          & 9          & 10         & 11         & 12         & 13         & 14         \\ \hline
+        1                    &                                 &            &            &            &            &            &            & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\ \hline
+        2                    &                                 &            & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &            &            &            &            &            \\ \hline
+        3                    & \checkmark                      & \checkmark & \checkmark & \checkmark & \checkmark &            &            &            &            &            &            &            & \checkmark & \checkmark \\ \hline
+    \end{tabularx}
+\end{table}
+\subsection{Model Evalutaion Summary}
+หลังจากที่คณะผู้จัดทำได้นำผลลัพธ์จากแบบฟอร์มมาเปรียบเทียบกับการทำนายของโมเดล โดยทางคณะผู้จัดทำจะให้ความสำคัญกับผลที่ได้จากการสำรวจมากกว่า
+สายอาชีพที่ฝึกงาน ซึ่งจะได้ผลลัพธ์ ดังนี้
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{|c|X|X|X|X|X|X|}
+        \hline
+        \multirow{2}{*}{เล่มที่} & \multirow{2}{*}{สายอาชีพที่ฝึกงาน} & \multicolumn{3}{c|}{ความคิดเห็นของผู้ที่ทำแบบทดสอบ}     & \multirow{2}{*}{สรุปผลการสำรวจ}                             & \multirow{2}{*}{ผลของโมเดล}                                                                                    \\ \cline{3-5}
+                              &                                & อันดับที่ 1                                          & อันดับที่ 2                                                   & อันดับที่ 3                            &                                  &                                        \\ \hline
+        1                     & Developer                      & Developer(4)                                     & Designer(1), Cloud Management(2)                          & QA \& Tester(1)                    & Developer                        & Developer                              \\ \hline
+        2                     & Developer                      & Developer(4)                                     & Data \& AI(1)                                             &                                    & Developer                        & Developer                              \\ \hline
+        3                     & Designer                       & Designer(4), Developer(3)                        & Designer(2), Developer(3)                                 & QA \& Tester(1)                    & Designer                         & Designer                               \\ \hline
+        4                     & Designer                       & Designer(5), Developer(1), QA \& Tester(1)       & Developer(2), Security(1)                                 & Cloud Management(1)                & Designer                         & Designer                               \\ \hline
+        5                     & Data \& AI                     & Data \& AI(6), Developer(1)                      & Developer(3)                                              & Cloud Management(1)                & Data \& AI                       & Data \& AI                             \\ \hline
+        6                     & Data \& AI                     & Cloud Management(1), Data \& AI(1), Developer(1) & Data \& AI(1)                                             & Designer(1)                        & Data \& AI                       & Data \& AI                             \\ \hline
+        7                     & Data \& AI                     & Data \& AI(3)                                    & Developer(1)                                              & Cloud Management(1)                & Data \& AI                       & Data \& AI                             \\ \hline
+        8                     & Security                       & Designer(2), Developer(3), Security(1)           & Designer(1), Developer(1), Security(1), QA \& Tester(1)   & Data \& AI(1), Cloud Management(1) & {\cellcolor[gray]{.9}}Developer  & {\cellcolor[gray]{.9}}Designer         \\ \hline
+        9                     & Cloud Management               & Developer(4), Cloud Management(2)                & Designer(2), Developer(2)                                 & Data \& AI(2)                      & Developer                        & Developer                              \\ \hline
+        10                    & Cloud Management               & Data \& AI(2), Cloud Management(1)               & Developer(2), Cloud Management(1)                         & Designer(1)                        & {\cellcolor[gray]{.9}}Data \& AI & {\cellcolor[gray]{.9}}Cloud Management \\ \hline
+        11                    & QA \& Tester                   & Developer(2), QA \& Tester(1)                    & Designer(1), Developer(1)                                 & Data \& AI(1)                      & Developer                        & Developer                              \\ \hline
+        12                    & QA \& Tester                   & Developer(2), QA \& Tester(1)                    & Designer(1), Developer(1), QA \& Tester(1)                & Data \& AI(1)                      & {\cellcolor[gray]{.9}}Developer  & {\cellcolor[gray]{.9}}QA \& Tester     \\ \hline
+        13                    & QA \& Tester                   & Designer(2), Developer(5)                        & Data \& AI(2), Designer(1), Developer(2), QA \& Tester(2) & Designer(2), QA \& Tester(2)       & Developer                        & Developer                              \\ \hline
+        14                    & Security                       & Developer(2), Security(5)                        & Designer(1), Dev(2), Security(2), QA \& Tester(1)         & Developer(1)                       & Security                         & Security                               \\ \hline
+    \end{tabularx}
+\end{table}
+โดยคิดรวมความถูกต้องได้เป็น 11 เรซูเมจากทั้งหมด 14 เรซูเม คิดเป็น 78.57\%
