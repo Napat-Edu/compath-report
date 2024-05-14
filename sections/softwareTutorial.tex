@@ -1,6 +1,6 @@
 \section{การใช้งานแอปพลิเคชัน}
 \subsection{การใช้งานหน้า Career Prediction}
-ผู้ใช้สามารถเริ่มทำนายสายอาชีพได้จากการกดไปทำนายสายอาชีพ (1) ดังรูป \ref{fig:start-CP} ดังนี้
+ผู้ใช้สามารถเริ่มทำนายสายอาชีพได้จากการกด กรอกข้อมูล (1) หรือ อัปโหลดไฟล์ (2) ดังรูป \ref{fig:start-CP} ดังนี้
 \begin{figure}[H]\centering
     \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/start-CP.png}}
     \caption{รูปแสดงหน้าหลักของหน้าทำนายสายอาชีพ}\label{fig:start-CP}
@@ -21,19 +21,24 @@
 โดยมีเงื่อนไขว่าผู้ใช้จำเป็นต้องกรอกให้ครบทั้ง 3 ส่วน จึงจะสามารถเริ่มการทำนายสายอาชีพได้ ถ้าหากกรอกไม่ครบระบบจะแสดงข้อความให้กรอกข้อมูลให้ครบดังรูป \ref{fig:warning-CP}
 \begin{figure}[H]\centering
     \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/warning-CP.png}}
-    \caption{รูปแสดงการแจ้งเตื่อนเมื่อผู้ใช้กรอกข้อมูลในการทำนายไม่ครบถ้วน}\label{fig:warning-CP}
+    \caption{รูปแสดงการแจ้งเตื่อนเมื่อผู้ใช้กรอกข้อมูลไม่ครบถ้วน}\label{fig:warning-CP}
+\end{figure}
+และจำเป็นจะต้องกรอกข้อมูลเป็นภาษาอังฤษเท่านั้น ถ้าหากกรอกเป็นภาษาอื่นจะแสดงข้อความให้กรอกเป็นภาษาอังกฤษเท่านั้นดังรูป \ref{fig:warningTH-CP}
+\begin{figure}[H]\centering
+    \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/warningTH-CP.png}}
+    \caption{รูปแสดงการแจ้งเตื่อนเมื่อผู้ใช้กรอกข้อมูลเป็นภาษาอื่นที่ไม่ใช้ภาษาอังกฤษ}\label{fig:warningTH-CP}
 \end{figure}
 หลังจากผู้ใช้กรอกข้อมูลครบถ้วน ผู้ใช้จำเป็นต้องกดยอมรับข้อตกลงและเงื่อนไขการใช้งาน (1) เพื่อยินยอมการเก็บข้อมูลที่ผู้ใช้กรอก จึงจะสามารถเริ่มทำนายสายอาชีพได้ โดยจะเริ่มทำนายสายอาชีพเมื่อผู้ใช้กดเริ่มทำนาย (2) ดังรูป \ref{fig:accept-CP}
 \begin{figure}[H]\centering
     \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/accept-CP.png}}
     \caption{รูปแสดงการยอมรับข้อตกลงการเก็บข้อมูลและเริ่มการทำนายสายอาชีพ}\label{fig:accept-CP}
 \end{figure}
-จากนั้นระบบจะแสดงอาชีพที่เหมาะสมโดยอ้างอิงจากข้อมูลที่ผู้ใช้กรอกมา และแสดงข้อมูลพื้นฐานของสายอาชีพที่ทำนายได้ รวมถึงผู้ใช้ยังสามารถดูข้อมูลเชิงลึกของสายอาชีพดังรูป \ref{fig:home-CI} ได้จาการกดดูเพิ่มเติม (1) และยังสามารถบันทึก (2) และแก้ไข (3) การทำนายสายอาชีพได้ดังรูป \ref{fig:viewmore-CP} 
+จากนั้นระบบจะแสดงอาชีพที่เหมาะสมโดยอ้างอิงจากข้อมูลที่ผู้ใช้กรอกมา และแสดงข้อมูลพื้นฐานของสายอาชีพที่ทำนายได้ รวมถึงผู้ใช้ยังสามารถดูข้อมูลเชิงลึกของสายอาชีพดังรูป \ref{fig:home-CI} ได้จาการกดดูข้อมูลเชิงลึก (1) และยังสามารถกลับไปแก้ไขข้อมูลได้ (2) ดังรูป \ref{fig:viewmore-CP} 
 \begin{figure}[H]\centering
     \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/viewmore-CP.png}}
     \caption{รูปแสดงหน้าผลการทำนายสายอาชีพ}\label{fig:viewmore-CP}
 \end{figure}
-โดยเมื่อผู้ใช้บันทึกผลการทำนายสายอาชีพแล้วระบบจะแสดงการ์ดที่ทำนายไว้ เพื่อให้ผู้ใช้สามารถดูข้อมูลต่าง ๆ ที่เคยทำนายไว้ได้ รวมถึงสามารถเปิดเมนู (1) เพื่อแก้ไข (2) และลบ (3) การ์ดที่เคยทำนายสายอาชีพไว้ได้ดังรูป \ref{fig:cardhistory-CP} 
+โดยหลังจากที่ผู้ใช้ทำการทำนายสายอาชีพเรียบร้อยแล้ว ระบบจะแสดงประวัติการทำนายขอผู้ใช้ ทำให้สามารถดูข้อมูลเชิงลึกของสายอาชีพดังรูป \ref{fig:home-CI} ได้จาการกดดูข้อมูลเชิงลึก (1) และสามารถลบประวัติการทำนาย (2) ดังรูป \ref{fig:cardhistory-CP} 
 \begin{figure}[H]\centering
     \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/cardhistory-CP.png}}
     \caption{รูปแสดงหน้าหลักของหน้าทำนายสายอาชีพที่มีประวัติการทำนายแล้ว}\label{fig:cardhistory-CP}
@@ -64,17 +69,21 @@
     \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/skillaction-CI.png}}
     \caption{รูปแสดงการใช้งานในส่วนทักษะ}\label{fig:skillaction-CI}
 \end{figure}
-ผู้ใช้สามารถเลือกดูข้อมูลเชิงลึกจากประวัติการทำนายจากเมนูการ์ดสายอาชีพ (1) โดยจะแสดงการ์ดที่เคยถูกทำนายรวมถึงเวลาและวันที่ที่ถูกทำนาย(2) และผู้ใช้สามารถกดเพื่อไปสร้างการ์ดทำนายใหม่ได้จากเมนู (3) ดังรูป \ref{fig:cardhistory-CI}
+ผู้ใช้สามารถเลือกดูข้อมูลเชิงลึกจากประวัติการทำนายจากเมนูการ์ดสายอาชีพ (1) โดยจะแสดงการ์ดที่เคยถูกทำนายรวมถึงเวลาและวันที่ที่ถูกทำนาย (2) และผู้ใช้สามารถกดเพื่อไปสร้างการ์ดทำนายใหม่ได้จากเมนู (3) ดังรูป \ref{fig:cardhistory-CI}
 \begin{figure}[H]\centering
     \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/cardhistory-CI.png}}
-    \caption{รูปแสดงการใช้งานเลือกการ์ดสายอาชีพเพื่อดูข้อมูลเชิงลึก}\label{fig:cardhistory-CI}
+    \caption{รูปแสดงการใช้งานการเลือกการ์ดสายอาชีพเพื่อดูข้อมูลเชิงลึก}\label{fig:cardhistory-CI}
 \end{figure}
-
+ผู้ใช้สามารถเปรียบเทียบข้อมูลที่กรอกกับสายอาชีพอื่น ๆ ได้จากการเลือกเปรียบเทียบสายอาชีพ (1) โดยเมื่อเลือกสายอาชีพที่เปรียบเทียบ (2) ข้อมูลด้านล่างจะเปลี่ยนเป็นของสายอาชีพที่เปรียบเทียบทั้งหมด และสามารถยกเลิกการเปรียบเทียบได้ (3) ดังรูป \ref{fig:compare-CI}
+\begin{figure}[H]\centering
+    \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/compare-CI.png}}
+    \caption{รูปแสดงการใช้งานการเปรียบเทียบสายอาชีพเพื่อดูข้อมูลเชิงลึก}\label{fig:compare-CI}
+\end{figure}
 \subsection{การใช้งานหน้า Career Exploration}
 ผู้ใช้สามารถดูสายอาชีพต่าง ๆ ได้ดังภาพ \ref{fig:info-CE} - \ref{fig:home-CE} ดังนี้
 \begin{figure}[H]\centering
     \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/info-CE.png}}
-    \caption{รูปแสดงการเริ่มทำนายสายอาชีพ}\label{fig:info-CE}
+    \caption{รูปแสดงสายอาชีพทั้งหมดในหน้า Career Exploration}\label{fig:info-CE}
 \end{figure}
 โดยข้อมูลหน้านี้จะแบ่งออกเป็น 4 ขั้น ดังรูป \ref{fig:info-CE} ดังนี้
 \begin{enumerate}
@@ -87,5 +96,16 @@
 โดยผู้ใช้ยังสามารถเลือกดูทักษะที่ใช้ของอาชีพอื่น ๆ ได้จากการกดที่ชื่ออาชีพที่ต้องการ (1) รวมถึงสามารถเพิ่มลดขนาดหน้าจอได้จากปุ่ม + - (2) ดังรูป \ref{fig:home-CE}
 \begin{figure}[H]\centering
     \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/home-CE.png}}
-    \caption{รูปแสดงการเริ่มทำนายสายอาชีพ}\label{fig:home-CE}
+    \caption{รูปแสดงการใช้งานหน้า Career Exploration}\label{fig:home-CE}
+\end{figure}
+\subsection{การลงทะเบียนเข้าใช้งานด้วย Google Account}
+ผู้ใช้สามารถละทะเบียนเข้าใช้งานหรือเข้าสู้ระบบได้จากการกด Sign in with Google (1) ดังรูป \ref{fig:login-CP}
+\begin{figure}[H]\centering
+    \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/login-CP.png}}
+    \caption{รูปแสดงการลงชื่อเข้าใช้}\label{fig:login-CP}
+\end{figure}
+ผู้ใช้สามารถกดออกจากระบบ (1) ดังรูป \ref{fig:logout-CP}
+\begin{figure}[H]\centering
+    \fbox{\includegraphics[width=12cm]{./figure/tutorial-picture/logout-CP.png}}
+    \caption{รูปแสดงการออกจากระบบ}\label{fig:logout-CP}
 \end{figure}
