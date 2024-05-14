@@ -367,8 +367,8 @@
 \begin{itemize}
     \item Multinomial Navie Bayes
     \item Gaussian Navie Bayes
-    \item K-Neighbors
-    \item K-Neighbors with with One vs Rest
+    \item K-Nearest Neighbors
+    \item K-Nearest Neighbors with One vs Rest
     \item Support Vector Machine (SVM)
     \item Logistic Regression
 \end{itemize}
@@ -440,13 +440,13 @@ Software Engineer, Data \& AI, Designer, Network Security, Cloud Management, QA 
                                                                      &                                 & class\_prior = None      &                                    \\ \cline{2-4}
                                                                      & \multirow{2}{*}{Gaussian}       & priors = None            &                                    \\ \cline{3-4}
                                                                      &                                 & var\_smoothing = 1e-9    &                                    \\ \hline
-        \multirow{7}{*}{K-Neighbors}                                 & \multirow{6}{*}{K-Neighbors*}   & algorithm = brute\_force &                                    \\ \cline{3-4}
+        \multirow{7}{*}{K-Nearest Neighbors}                                 & \multirow{6}{*}{K-Nearest Neighbors*}   & algorithm = brute\_force &                                    \\ \cline{3-4}
                                                                      &                                 & leaf\_size = 30          &                                    \\ \cline{3-4}
                                                                      &                                 & metric = minkowski       &                                    \\ \cline{3-4}
                                                                      &                                 & n\_neighbors = 5         &                                    \\ \cline{3-4}
                                                                      &                                 & p = 2                    & คำนวณด้วยสูตร euclidean               \\ \cline{3-4}
                                                                      &                                 & weight = distance        &                                    \\  \cline{2-4}
-                                                                     & One Vs Rest                     & K-Neighbors*             & นำโมเดล K-Neighbors ก่อนหน้ามาใช้งานต่อ \\ \hline
+                                                                     & One Vs Rest                     & K-Nearest Neighbors*             & นำโมเดล K-Nearest Neighbors ก่อนหน้ามาใช้งานต่อ \\ \hline
         \multicolumn{2}{|l|}{\multirow{2}{*}{Support Vector Machine}} & kernel = sigmoid                &                                                               \\ \cline{3-4}
         \multicolumn{2}{|l|}{}                                        & decision\_function\_shape = ovr &                                                               \\ \hline
         \multicolumn{2}{|l|}{\multirow{3}{*}{Logistic Regression}}    & C = 5e1                         &                                                               \\ \cline{3-4}
