@@ -135,22 +135,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \abstract
 
-The origin is from the problem that students do not know how to develop themselves, what knowledge and skills are required to suit their 
-desired career paths. Sometimes they may not even know what career they want or are suited for. This affects when they are writing a 
-resume, that do not reflect the necessary knowledge for their desired job when applying.
-So, we aimed to develop machine learning model to help analyze and classification career paths from text data in the target group's 
-resumes. We also developed a web application as an interface for entering resume data and utilizing our machine learning model, also 
-capable of storing the result of classification history in a database. These resume histories were then analyzed, and the results shown 
-to users, highlighting suitable skills or areas for further development based on their resume. Users could also view skill data related 
-to all career paths in the system in a node tree format. The goal was to provide guidance on tailoring resumes for desired careers, guide 
-a learning path in those careers, and give an overview of essential skills for each career to the target student group.
+The motivation of this project is from the problem that students do not know how to develop knowledge and skills required to 
+employ their desired career paths. Sometimes they may not even know what career they want or are suited for. This affects when 
+they are writing a resume, that do not reflect the necessary knowledge for their desired job when applying.To solve this problem, 
+we aimed to develop machine learning model to help analyze and classification career paths from text data in the target group's 
+resumes. We also developed a web application as an interface for entering resume data and utilizing our machine learning model, 
+also capable of storing the result of classification history in a database. These resume histories were then analyzed, and 
+the results shown to users, highlighting suitable skills or areas for further development based on their resume. Users could 
+also view skill data related to all career paths in the system in a node tree format. The goal was to provide guidance on 
+tailoring resumes for desired careers, guide a learning path in those careers, and give an overview of essential skills for each 
+career to the target student group.
 
-In machine learning model training, we used a raw dataset of 962 records, each containing a resume and career name. After consolidating 
-related careers into 6 groups, removing duplicates and low-quality records, 205 records remained for training, and 14 additional records 
-that we collected more by ourselves for quality testing. We trained and developed multiple models, using the TF-IDF algorithm to 
-identify significant words inside resume based on words frequency. Model performance was evaluated by comparing expert opinions on 
-the resumes from the test set against to the model outputs. At the end of development, the best performing model was 
-K-Nearest Neighbors (KNN), with 78.57\% accuracy.
+We used a raw dataset of 962 records in the training process, each containing a resume and career name. 
+After consolidating related careers into 6 groups, removing duplicates and low-quality records, 205 records remained for training, 
+and 14 additional records that we collected more by ourselves for quality testing. We trained and developed multiple models, 
+using the TF-IDF algorithm to identify significant words inside resume based on words frequency. Model performance was evaluated 
+by comparing expert opinions on the resumes from the test set against to the model outputs. At the end of development, the best 
+performing model was K-Nearest Neighbors (KNN), with 78.57\% accuracy.
+
+In addition, we also get a result from web application usability testing for evaluate this project, with 70 peoples in target group.
+We got an average score at 4.47 out of 5 that is 89\%, considered as a succeed, and which is this project 
+was able to successfully fulfill its purpose.
 
 \begin{flushleft}
     \begin{tabular*}{\textwidth}{@{}lp{0.8\textwidth}}
@@ -167,17 +172,25 @@ K-Nearest Neighbors (KNN), with 78.57\% accuracy.
 % \thaifont
 \thaiabstract
 
-จุดเริ่มต้นมาจากปัญหาที่นักศึกษาไม่ทราบว่าควรพัฒนาตนเองอย่างไร ความรู้และทักษะแบบใด เพื่อให้ตนเองเหมาะสมกับสายอาชีพที่สนใจ 
-บางทีอาจไม่ทราบสายอาชีพที่ตนเองต้องการหรือถนัดเสียด้วยซ้ำ ซึ่งส่งผลต่อเนื่องไปถึงการเขียนเรซูเมที่ไม่ได้สะท้อนถึงองค์ความรู้ที่จำเป็นต่อสายอาชีพอย่างที่ต้องการในการสมัครงาน
-เราจึงคิดพัฒนาการเรียนรู้ของเครื่องด้วยด้วยปัญญาประดิษฐ์ เพื่อนำมาช่วยในการวิเคราะห์และแยกประเภทสายอาชีพจากข้อมูลตัวอักษรจากเรซูเมของกลุ่มเป้าหมาย 
-รวมถึงพัฒนาเว็บแอปพลิเคชันเพื่อนำมาเป็นสื่อกลางในการกรอกข้อมูลเรซูเมและใช้งานปัญญาประดิษฐ์ สามารถบันทึกประวัติการแยกประเภทสายอาชีพลงสู่ฐานข้อมูล จากนั้นนำประวัติเรซูเมเหล่านั้นมาวิเคราะห์และแสดงผลแก่ผู้ใช้ให้เห็นถึงทักษะที่เหมาะสมหรือควรพัฒนาเพิ่มเติมของตัวเองจากเรซูเม และสามารถดูข้อมูลทักษะที่เกี่ยวข้องกับสายอาชีพต่าง ๆ ทั้งหมดในระบบได้ในรูปแบบแผนภาพต้นไม้ โดยคาดหวังว่าจะสามารถช่วยแนะแนวการปรับเรซูเมให้ตรงกับสายอาชีพที่ต้องการ ชี้ให้เห็นเส้นทางการเรียนรู้ต่อในสายอาชีพนั้น รวมไปถึงภาพรวมทักษะที่จำเป็นของสายอาชีพให้แก่นักศึกษากลุ่มเป้าหมายได้
+จุดเริ่มต้นของโครงงานนี้มาจากปัญหาที่นักศึกษาไม่ทราบว่าควรพัฒนาความรู้และทักษะใด เพื่อให้ตนเองเหมาะสมกับสายอาชีพที่สนใจ 
+นอกจากนี้บางครั้งผู้เรียนอาจไม่ทราบสายอาชีพที่ตนเองต้องการหรือถนัด ซึ่งส่งผลต่อเนื่องไปถึงการเขียนประวัติย่อ (resume) 
+ที่ไม่ได้สะท้อนถึงองค์ความรู้ที่จำเป็นต่อสายอาชีพอย่างที่ต้องการในการสมัครงาน เราจึงคิดพัฒนาการเรียนรู้ของเครื่องด้วยด้วยปัญญาประดิษฐ์ 
+เพื่อนำมาช่วยในการวิเคราะห์และแยกประเภทสายอาชีพจากข้อมูลตัวอักษรจากประวัติย่อของกลุ่มเป้าหมาย 
+รวมถึงพัฒนาเว็บแอปพลิเคชันเพื่อนำมาเป็นสื่อกลางในการกรอกข้อมูลประวัติย่อและใช้งานปัญญาประดิษฐ์ โดยระบบสามารถบันทึกประวัติการแยกประเภทสายอาชีพลงสู่ฐานข้อมูล 
+จากนั้นนำประวัติเรซูเมเหล่านั้นมาวิเคราะห์และแสดงผลแก่ผู้ใช้ให้เห็นถึงทักษะที่เหมาะสมหรือควรพัฒนาเพิ่มเติมของตัวเองจากเรซูเม 
+และสามารถดูข้อมูลทักษะที่เกี่ยวข้องกับสายอาชีพต่าง ๆ ทั้งหมดในระบบได้ในรูปแบบแผนภาพต้นไม้ โดยคาดหวังว่าจะสามารถช่วยแนะแนวการปรับเรซูเมให้ตรงกับสายอาชีพที่ต้องการ 
+ชี้ให้เห็นเส้นทางการเรียนรู้ต่อในสายอาชีพนั้น รวมไปถึงภาพรวมทักษะที่จำเป็นของสายอาชีพให้แก่นักศึกษากลุ่มเป้าหมายได้ 
 
-ในการเทรนโมเดลปัญญาประดิษฐ์ เราได้นำชุดข้อมูลดิบจำนวน 962 รายการมาใช้ โดยข้อมูลในแต่ละรายการประกอบด้วยข้อมูลเรซูเมและชื่ออาชีพของเรซูเมนั้น 
+ในการฝึกสอนโมเดลปัญญาประดิษฐ์ เราได้นำชุดข้อมูลดิบจำนวน 962 รายการมาใช้ โดยข้อมูลในแต่ละรายการประกอบด้วยข้อมูลเรซูเมและชื่ออาชีพของเรซูเมนั้น 
 จากนั้นนำข้อมูลเหล่านั้นมาคัดกรองและเตรียมข้อมูล ซึ่งเราได้ทำการรวมสายอาชีพที่เกี่ยวข้องกันให้เหลือเพียง 6 สายอาชีพ คัดกรองรายการที่มีความซ้ำกันและไม่มีคุณภาพ 
-จนเหลือเพียง 205 รายการที่เหมาะสมแก่การใช้งาน และ14 รายการสำหรับการทดสอบคุณภาพซึ่งทางเราเป็นผู้รวบรวมมาด้วยตัวเอง  
-โดยเรานำชุดข้อมูลเหล่านี้ไปเทรนและพัฒนากับโมเดลหลายประเภทเพื่อทดสอบสมมติฐาน และใช้งานอัลกอริทึม TF-IDF 
-กับโมเดลแต่ละประเภทเพื่อจับจุดคำสำคัญของเรซูเมจากความถี่ของคำนั้น ๆ โดยวัดผลโมเดลด้วยการเปรียบเทียบจากความเห็นของผู้เชี่ยวชาญในสายอาชีพที่มีต่อเรซูเมชุดทดสอบและผลลัพธ์จากโมเดล 
-หลังเสร็จสิ้นกระบวนการพัฒนา โมเดลที่ให้ผลลัพธ์ที่ดีที่สุดคือ K-Nearest Neighbors (KNN) ซึ่งมีความแม่นยำที่ 78.57\% 
+จนเหลือเพียง 205 รายการที่เหมาะสมแก่การใช้งาน และ 14 รายการสำหรับการทดสอบคุณภาพซึ่งทางเราเป็นผู้รวบรวมมาด้วยตัวเอง 
+โดยเรานำชุดข้อมูลเหล่านี้ไปฝึกสอนและพัฒนากับโมเดลหลายประเภทเพื่อทดสอบสมมติฐาน และใช้งานอัลกอริทึม TF-IDF 
+กับโมเดลแต่ละประเภทเพื่อจับจุดคำสำคัญของเรซูเมจากความถี่ของคำนั้น ๆ 
+โดยวัดผลโมเดลด้วยการเปรียบเทียบจากความเห็นของผู้เชี่ยวชาญในสายอาชีพที่มีต่อเรซูเมชุดทดสอบและผลลัพธ์จากโมเดล หลังเสร็จสิ้นกระบวนการพัฒนา 
+โมเดลที่ให้ผลลัพธ์ที่ดีที่สุดคือ K-Nearest Neighbors (KNN) ซึ่งมีความแม่นยำที่ 78.57\%
+
+นอกจากนี้ เรายังได้รับผลตอบรับจากการนำเว็บแอปพลิเคชันไปทดสอบเพื่อวัดผลโครงงาน โดยทดสอบกับผู้ใช้จำนวน 70 คน และได้รับคะแนนเฉลี่ยอยู่ที่ 4.47 เต็ม 5
+นับเป็น 89\% ซึ่งถือว่าบรรลุเป้าหมายที่วางไว้ และนับว่าโครงงานนี้สามารถทำตามจุดประสงค์ได้สำเร็จ
 
 \begin{flushleft}
     \begin{tabular*}{\textwidth}{@{}lp{0.8\textwidth}}
@@ -194,11 +207,12 @@ K-Nearest Neighbors (KNN), with 78.57\% accuracy.
 %%%%%%%%%%%%%%%%%%%%%%% Acknowledgments %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \preface
-ขอขอบพระคุณอาจารย์ที่ปรึกษา คณะกรรมการ พ่อแม่พี่น้อง เพื่อนร่วมชั้นปี และผศ.ดร.ขจรพงษ์ อัครจิตสกุล ผู้ซึ่งเป็นอาจารย์ที่ปรึกษาแรกเริ่มในภาคการศึกษาที่ 1
+ขอขอบพระคุณอาจารย์ที่ปรึกษา คณะกรรมการ พ่อแม่พี่น้อง และผศ.ดร.ขจรพงษ์ อัครจิตสกุล ผู้ซึ่งเป็นอาจารย์ที่ปรึกษาแรกเริ่มในภาคการศึกษาที่ 1
 รวมไปถึงผู้ให้อนุญาติในการทดสอบโครงงานทุกท่าน
-ที่ช่วยให้โครงงานนี้สำเร็จไปได้ด้วยดี และถูกปรับปรุงจนสามารถใช้งานได้ตามที่คาดหวังไว้ และมีประสิทธิภาพมากพอในระดับที่น่าพึงพอใจ
+ที่ช่วยให้โครงงานนี้สำเร็จไปได้ด้วยดี และถูกปรับปรุงจนสามารถนำมาใช้งานได้ตามที่คาดหวังไว้ และมีประสิทธิภาพมากพอในระดับที่น่าพึงพอใจ
 
-และขอขอบคุณแก่ผู้ให้ความช่วยเหลือทางอ้อม นั่นคือ นายศุภกร รักนะ และเพื่อนร่วมชั้นปีคนออื่น ๆ ที่ให้ความร่วมมือในการถ่ายวิดีโอโปรโมตต่าง ๆ และเป็นนักแสดงที่มากความสามารถ
+และขอขอบคุณแก่ผู้ให้ความช่วยเหลือทางอ้อม นั่นคือ นายศุภกร รักนะ และเพื่อนร่วมชั้นปีคนอื่น ๆ ที่ให้ความร่วมมือในการถ่ายวิดีโอโปรโมตต่าง ๆ เป็นนักแสดงที่มากความสามารถ
+และให้ความเห็นที่ดีในการปรับปรุงพัฒนาโครงงานเรื่อยมา
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% ToC, List of figures/tables %%%%%%%%%%%%%%%%
