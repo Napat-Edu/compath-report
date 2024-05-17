@@ -59,7 +59,12 @@
 
 จากการออกเก็บข้อมูลกับผู้ใช้ดังที่กล่าวไป ทำให้เราทราบว่าผู้ใช้ต้องการระบบช่วยเหลือการตรวจสอบเรซูเมเป็นหลัก ส่วนระบบชุมชนไม่ได้รับความสนใจมากนัก 
 อาจเป็นเพราะมีแหล่งข้อมูลเดิมอยู่แล้ว และฟีเจอร์นี้เป็นเพียงการนำข้อมูลมารวมกันและสร้างชุมชนใหม่ให้เท่านั้น จึงไม่ได้รับความสนใจเท่าที่ควร 
-เราจึงวางแผนเพื่อการพัฒนาระบบช่วยเหลือและปรับปรุงเรซูเมเป็นหลักต่อไป
+เราจึงวางแผนเพื่อการพัฒนาระบบช่วยเหลือและปรับปรุงเรซูเมเป็นหลักต่อไป โดยแบ่งออกเป็น 3 ฟีเจอร์หลัก ประกอบด้วย
+\begin{enumerate}
+    \item  \textbf{Career Prediction} \label{subsec:Career Prediction} : ฟีเจอร์ในการส่งคำขอไปยังบริการปัญญาประดิษฐ์และแยกประเภทเรซูเมให้แก่ผู้ใช้ และบันทึกประวัติการแยกประเภท
+    \item  \textbf{Career Insight} \label{subsec:Career Insight} : ฟีเจอร์สำหรับนำประวัติการแยกประเภทของเรซูเม มาค้นหาข้อมูลเชิงลึกภายในเรซูเม เพื่อบ่งบอกข้อมูลภายในเรซูเม ว่าผู้ใช้มีทักษะที่เหมาะสม ขาด หรือทักษะเสริมที่ดีอะไรบ้าง
+    \item  \textbf{Career Exploration} \label{subsec:Career Exploration} : ฟีเจอร์สำหรับแสดงผลสายอาชีพและทักษะทั้งหมดที่เราสนับสนุนภายในเว็บแอปพลิเคชัน โดยแสดงผลในรูปแบบแผนภาพต้นไม้ที่อ่านง่าย
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % System Functional Section
@@ -218,9 +223,9 @@
     \fbox{\includegraphics[width=8cm]{./figure/sequence-diagram/figure_sequence_exploration.png}}
     \caption{Watch Career Exploration Sequence Diagram}\label{fig:exploreSeqDiagram}
 \end{figure}
-\textbf{สถานการณ์: }ผู้ใช้เข้าดูหน้าสายใยอาชีพ
+\textbf{สถานการณ์: }ผู้ใช้เข้าดูหน้า \hyperref[subsec:Career Exploration]{Career Exploration}
 \begin{enumerate}
-    \item ผู้ใช้เข้าสู่หน้าสายใยอาชีพ
+    \item ผู้ใช้เข้าสู่หน้า \hyperref[subsec:Career Exploration]{Career Exploration}
     \item ระบบหน้าบ้านขอข้อมูลจากบริการหลักและดึงข้อมูลจากฐานข้อมูล
     \item บริการหลักส่งข้อมูลกลับสู่ผู้ใช้และแสดงผล
 \end{enumerate}
@@ -360,7 +365,7 @@
 คือหน้าสำหรับดูทักษะที่ควรเรียนรู้ของอาชีพที่สนใจและข้อมูลของอาชีพอื่น ๆ ที่ใกล้เคียง ดังรูป \ref{fig:CE.png} ดังนี้
 \begin{figure}[H]\centering
     \fbox{\includegraphics[width=12cm]{./figure/UI-picture/CE.png}}
-    \caption{รูปแสดงการออกแบบหน้าสายใยอาชีพ}\label{fig:CE.png}
+    \caption{รูปแสดงการออกแบบหน้า \hyperref[subsec:Career Exploration]{Career Exploration}}\label{fig:CE.png}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Data Modeling Section
